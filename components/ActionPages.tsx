@@ -149,7 +149,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
                 <div><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
                     "Morning Worship Service | 10:00 AM",
@@ -355,7 +355,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div>
                 <h4 className="text-2xl font-bold text-teal-800 mb-4 uppercase tracking-wider font-heading">Our Responsibility</h4>
                 <p className="mb-6 italic">As believers, there are four primary responsibilities we are called to uphold: Prayer, Outreach, Reading the Bible, and Fellowship.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Daily Prayer:</h5>
                         <p>Seeking God in prayer is a fundamental necessity of maintaining our relationship with Him.</p>
@@ -671,7 +671,7 @@ const AnnouncementGroup = ({
              <div className="h-px bg-white/10 flex-grow"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {items.map((item, i) => (
                 <div key={i} className={`relative overflow-hidden group rounded-2xl bg-[#121212] border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}>
                     <div className={`absolute inset-0 bg-gradient-to-br ${style.bg} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>

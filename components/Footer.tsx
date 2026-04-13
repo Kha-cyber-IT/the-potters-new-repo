@@ -28,12 +28,10 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   ];
 
   const handleFooterClick = (page: Page, label: string) => {
-    setPage(page);
     if (label === 'Locations') {
-      setTimeout(() => {
-        const el = document.getElementById('global-reach');
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 150);
+      (setPage as (page: Page, scrollTarget?: string) => void)(page, 'global-reach');
+    } else {
+      setPage(page);
     }
   };
 

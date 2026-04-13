@@ -57,7 +57,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
                  <p className="mb-8 text-xl font-medium">Find ways you and your family can grow and make impact.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                  <MinistryCard 
                     img="https://i.postimg.cc/Wbqw12rC/1763585178432.jpg" 
                     title="Live music Drama & Testimonials" 

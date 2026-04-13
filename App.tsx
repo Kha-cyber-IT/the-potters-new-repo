@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Page } from './types';
 import { Navigation } from './components/Navigation';
 import { Home } from './components/Home';
@@ -8,16 +8,27 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
+  const scrollTargetRef = useRef<string | null>(null);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    });
+    const target = scrollTargetRef.current;
+    scrollTargetRef.current = null;
+    if (target) {
+      requestAnimationFrame(() => {
+        const el = document.getElementById(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } else {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      });
+    }
   }, [currentPage]);
 
-  const handleSetPage = (page: Page) => {
+  const handleSetPage = useCallback((page: Page, scrollTarget?: string) => {
+    if (scrollTarget) scrollTargetRef.current = scrollTarget;
     setCurrentPage(page);
-  };
+  }, []);
 
   const renderContent = () => {
     switch (currentPage) {
