@@ -22,7 +22,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <BackButton label="Back to Mission" target={Page.Home} />
         
         {/* Top Half: Existing Contact Card */}
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10">
+        <div className="relative w-full rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl bg-black border-none md:border md:border-white/10">
             <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?q=80&w=1200" 
                  alt="Contact Background" 
                  className="absolute inset-0 w-full h-full object-cover opacity-40" />
@@ -71,7 +71,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             While our home is here in Soweto, our family spans the globe. The Potter's House is a worldwide fellowship of over 3,000 churches across 130 nations. Wherever you go, you can always find family.
         </p>
 
-        <div className="aspect-video rounded-[2.5rem] bg-white/5 border border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-8">
+        <div className="aspect-video rounded-none md:rounded-[2.5rem] bg-white/5 border-none md:border md:border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-4 md:p-8">
             <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
                             className="absolute inset-0 w-full h-full pointer-events-none"
@@ -104,7 +104,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-gray-200">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
             <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1200" 
                  alt="Header" 
                  className="absolute inset-0 w-full h-full object-cover opacity-60" />
@@ -134,7 +134,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="text-center space-y-12">
                 {/* Local Church Map */}
-                <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/JgER99H8Lh5eDmQ77', '_blank')}>
+                <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl border-none md:border md:border-gray-200 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/JgER99H8Lh5eDmQ77', '_blank')}>
                     <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
                                             className="absolute inset-0 w-full h-full pointer-events-none"
@@ -151,7 +151,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 </div>
 
                 {/* Global Church Finder (cfmmap) */}
-                <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
                     <iframe
                                             src="https://www.cfmmap.org/"
                                             className="absolute inset-0 w-full h-full"
@@ -329,7 +329,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="text-center px-4">
                 <h4 className="text-3xl font-bold text-blue-300 mb-6 uppercase tracking-wider font-heading">Your life can make impact!</h4>
                 
-                <div className="bg-white/50 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/30 max-w-2xl mx-auto mb-10">
+                <div className="bg-white/50 md:backdrop-blur-md p-4 px-4 md:p-8 rounded-none md:rounded-2xl shadow-none md:shadow-xl border-none md:border md:border-white/30 max-w-2xl mx-auto mb-10">
                     <p className="text-xl text-gray-900 font-medium">Every Saturday, we send groups into the city to share the gospel to people in apartment complexes, neighborhoods, and shopping centers.</p>
                 </div>
 
@@ -348,7 +348,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mb-12 px-4">
-            <div className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30 max-w-3xl text-center">
+            <div className="bg-white/60 md:backdrop-blur-md rounded-none md:rounded-3xl p-4 px-4 md:p-8 shadow-none md:shadow-xl border-none md:border md:border-white/30 max-w-3xl text-center">
                 <p className="text-lg leading-relaxed text-gray-900 font-medium">
                     In a world full of opinions and so much uncertainty, it is so important to be grounded in Truth. God's Word is the solid foundation on which we can build our lives and make the best decision for our future.
                 </p>
@@ -411,7 +411,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         
         <div className="text-center max-w-2xl mx-auto mb-16">
             <h4 className="text-3xl font-bold text-blue-400 mb-8 uppercase tracking-widest font-heading">Your generosity is changing the world!</h4>
-            <div className="glass-card-blue p-8 rounded-3xl">
+            <div className="bg-transparent p-0 md:glass-card-blue md:p-8 rounded-none md:rounded-3xl">
                 <p className="text-xl leading-relaxed text-white">When we live our lives driven by obedience and generosity, we are able to reach our local community and the nations beyond</p>
             </div>
         </div>
@@ -628,7 +628,7 @@ const ExpectCard = ({ title, content }: { title: string; content: string }) => (
 );
 
 const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
-    <div className="bg-white/60 backdrop-blur-sm border border-gray-200 p-6 rounded-2xl shadow-sm">
+    <div className="bg-white/60 md:backdrop-blur-sm border-none md:border md:border-gray-200 p-4 px-4 md:p-6 rounded-none md:rounded-2xl shadow-none md:shadow-sm">
         <h4 className="text-2xl font-bold text-gray-900 mb-4 uppercase font-heading">{day}</h4>
         <div className="space-y-3 text-lg text-gray-700">
             {times.map((t, i) => <p key={i}>{t}</p>)}
@@ -637,7 +637,7 @@ const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
 );
 
 const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) => (
-    <div className="bg-gradient-to-br from-[#0D9488] to-[#134E4A] rounded-xl md:rounded-2xl border border-teal-400/20 p-4 md:p-6 hover:border-teal-400/40 transition-all duration-300 hover:shadow-lg">
+    <div className="bg-gradient-to-br from-[#0D9488] to-[#134E4A] rounded-none md:rounded-2xl border-none md:border md:border-teal-400/20 p-4 px-4 md:p-6 md:hover:border-teal-400/40 transition-all duration-300 md:hover:shadow-lg">
         <h5 className="text-sm md:text-lg font-bold text-teal-100 uppercase tracking-wider mb-3 md:mb-4 font-heading">{region}</h5>
         <ul className="space-y-2">
             {dates.map((d, i) => (
@@ -685,9 +685,9 @@ const AnnouncementGroup = ({
              <div className="h-px bg-white/10 flex-grow"></div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 md:gap-5">
             {items.map((item, i) => (
-                <div key={i} className={`relative overflow-hidden group rounded-2xl md:rounded-3xl ${style.card} border ${style.border} hover:border-white/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl`}>
+                <div key={i} className={`relative overflow-hidden group rounded-none md:rounded-3xl ${style.card} border-none md:border ${style.border} md:hover:border-white/40 transition-all duration-500 md:hover:-translate-y-2 md:hover:shadow-2xl`}>
                     {/* Top accent bar */}
                     <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
                     {/* Decorative circle */}

@@ -135,7 +135,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="bg-[#121519] border border-white/5 rounded-3xl md:rounded-[3rem] p-10 md:p-14 relative overflow-hidden shadow-2xl w-full"
+              className="bg-[#121519] border-none md:border md:border-white/5 rounded-none md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-none md:shadow-2xl w-full"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -166,7 +166,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && setPage(Page.NewBuilding)}
-                className="block relative rounded-3xl md:rounded-[3rem] overflow-hidden border border-white/5 cursor-pointer h-[250px] md:h-[300px] shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="block relative rounded-none md:rounded-[3rem] overflow-hidden border-none md:border md:border-white/5 cursor-pointer h-[200px] md:h-[300px] shadow-none md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110"
@@ -214,7 +214,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     hidden: { opacity: 0, scale: 0.95, y: 40 },
                     visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                 }}
-                className="w-full md:col-span-2 bg-[#FEFACD] rounded-3xl p-6 md:p-10"
+                className="w-full md:col-span-2 bg-[#FEFACD] rounded-none md:rounded-3xl p-4 px-4 md:p-10"
               >
                   <h4 className="text-2xl md:text-3xl font-black mb-6 text-[#0B0D0F]"> 
                     <span className="border-l-[6px] md:border-l-[8px] border-[#0B0D0F] pl-4 md:pl-6">Sunday</span>
@@ -247,7 +247,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 flex-1"
+                    className="w-full bg-white/5 md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
                   >
                       <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
                         <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
@@ -268,7 +268,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 flex-1"
+                    className="w-full bg-white/5 md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
                   >
                       <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
                         <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>

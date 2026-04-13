@@ -29,13 +29,13 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             <p className="mb-8 text-lg font-medium">How do we do that? Through evangelism, discipleship, and church planting.</p>
             
             <div className="space-y-6 mb-12">
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Evangelism:</strong> Because the world is full of lost souls who need to hear the truth of Jesus Christ.</p>
                 </div>
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Discipleship:</strong> Because every believer needs to be trained for the ministry of the Gospel.</p>
                 </div>
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Church Planting:</strong> Because our greatest impact will be in the cities and nations outside our own that we can reach.</p>
                 </div>
             </div>
