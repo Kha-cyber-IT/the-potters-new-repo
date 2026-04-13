@@ -73,23 +73,16 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="aspect-video rounded-[2.5rem] bg-white/5 border border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-8">
             <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
-                            className="absolute inset-0 w-full h-full pointer-events-none"
+                            src="https://www.cfmmap.org/"
+                            className="absolute inset-0 w-full h-full"
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Global Church Map"
+                            title="Global Church Map — CFM"
             />
-            <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
-            {/* Eldorado Park Highlight */}
-            <div className="absolute top-[40%] right-[15%] bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl z-10 hidden md:block">
-                <p className="text-white font-bold text-sm">The Potter's House of</p>
-                <p className="text-blue-300 font-bold text-lg">Eldorado Park, Soweto</p>
-            </div>
-
-            <ModernButton text="EXPLORE GLOBAL MAP" href="https://www.cfmmap.org/" variant="ghost" className="relative z-10 mt-auto" />
+            <ModernButton text="OPEN FULL MAP" href="https://www.cfmmap.org/" variant="ghost" className="relative z-10 mt-auto" />
         </div>
 
       </div>

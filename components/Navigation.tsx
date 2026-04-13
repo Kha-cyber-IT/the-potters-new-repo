@@ -120,8 +120,18 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'About Us',
       subItems: [
         { label: 'Our Staff', page: Page.OurStaff },
-        { label: 'Our Vision & Beliefs', page: Page.Stories },
+        { label: 'Our Vision', page: Page.OurVision },
+        { label: 'Beliefs & Stories', page: Page.Stories },
         { label: 'New Building', page: Page.NewBuilding },
+      ]
+    },
+    {
+      id: 'Ministries',
+      label: 'Ministries',
+      subItems: [
+        { label: 'Church Planting', page: Page.ChurchPlanting },
+        { label: 'Recovery', page: Page.Recovery },
+        { label: "Children's Ministry", page: Page.ChildrensMinistry },
       ]
     },
     {
@@ -129,7 +139,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Events',
       subItems: [
         { label: '2026 Calendar', page: Page.Events2026 },
-        { label: 'Conference', page: Page.Conference2025 }
+        { label: 'Conference 2025', page: Page.Conference2025 }
       ]
     },
     {
@@ -137,6 +147,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Broadcast',
       subItems: [
         { label: 'Watch Live', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Stories & Podcasts', page: Page.Stories },
         { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' }
       ]
     },
@@ -146,6 +157,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       subItems: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
+        { label: 'Give', page: Page.Give },
         { label: 'Find Church', url: 'https://www.cfmmap.org/' }
       ]
     }

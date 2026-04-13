@@ -286,6 +286,45 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
+        {/* TYMEBANK-STYLE FEATURE HIGHLIGHTS */}
+        <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.12 } }
+            }}
+            className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          >
+            {[
+              { bg: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', label: 'Events 2026', desc: 'Fellowship dates & regional schedules', page: Page.Events2026 },
+              { bg: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', label: 'Conference', desc: 'Bible Conference announcements', page: Page.Conference2025 },
+              { bg: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', label: 'Give', desc: 'Support the mission & building fund', page: Page.Give },
+              { bg: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', label: 'Plan a Visit', desc: 'Find us & plan your first visit', page: Page.PlanAVisit },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+                }}
+                onClick={() => setPage(item.page)}
+                className={`${item.bg} rounded-2xl md:rounded-3xl p-5 md:p-8 cursor-pointer group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden`}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
+                <h4 className="text-lg md:text-xl font-black text-white uppercase tracking-wider mb-2 font-heading">{item.label}</h4>
+                <p className="text-white/70 text-xs md:text-sm font-medium leading-relaxed">{item.desc}</p>
+                <div className="mt-4 md:mt-6 flex items-center gap-2 text-white/50 group-hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+                  <span>Explore</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
         <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-4 md:px-6 lg:px-0">
           <motion.div
