@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { X, ChevronRight, ArrowLeft } from 'lucide-react';
+import { X, ChevronRight, ChevronDown, ArrowLeft } from 'lucide-react';
 import { CustomMenuIcon } from './CustomMenuIcon';
 import { Page, NavigationProps } from '../types';
 
@@ -15,6 +15,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [desktopDropdown, setDesktopDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -35,25 +36,82 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
     };
   }, [isOpen]);
 
+  // Close desktop dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => setDesktopDropdown(null);
+    if (desktopDropdown) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [desktopDropdown]);
+
   const handleNavClick = (page: Page) => {
     setIsOpen(false);
     setActiveSubMenu(null);
+    setDesktopDropdown(null);
     setPage(page);
   };
 
   const handleLinkClick = (url: string) => {
     setIsOpen(false);
     setActiveSubMenu(null);
+    setDesktopDropdown(null);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  const navItems = [
-    { id: Page.Home, label: 'Home' },
-    { id: Page.OurStaff, label: 'Staff' },
-    { id: Page.NewBuilding, label: 'New Building' },
-    { id: Page.Conference2025, label: 'Conference' },
-    { id: Page.Events2026, label: 'Events' },
-    { id: Page.Stories, label: 'Stories' },
+  // TymeBank-style desktop nav: grouped dropdowns + direct links
+  const desktopMenuData = [
+    { id: Page.Home, label: 'Home', type: 'link' as const },
+    {
+      id: 'about',
+      label: 'About Us',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'Our Staff', page: Page.OurStaff },
+        { label: 'Our Vision', page: Page.OurVision },
+        { label: 'Beliefs & Stories', page: Page.Stories },
+      ]
+    },
+    {
+      id: 'ministries',
+      label: 'Ministries',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'New Building', page: Page.NewBuilding },
+        { label: 'Church Planting', page: Page.ChurchPlanting },
+        { label: 'Recovery', page: Page.Recovery },
+        { label: "Children's Ministry", page: Page.ChildrensMinistry },
+      ]
+    },
+    {
+      id: 'events',
+      label: 'Events',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'Conference 2025', page: Page.Conference2025 },
+        { label: 'Events 2026', page: Page.Events2026 },
+      ]
+    },
+    {
+      id: 'broadcast',
+      label: 'Broadcast',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'Watch Live', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Stories & Podcasts', page: Page.Stories },
+        { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
+      ]
+    },
+    {
+      id: 'connect',
+      label: 'Get Connected',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'Contact Us', page: Page.GetConnected },
+        { label: 'Plan a Visit', page: Page.PlanAVisit },
+        { label: 'Give', page: Page.Give },
+      ]
+    },
   ];
 
   const mobileMenuData = [
@@ -62,7 +120,8 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'About Us',
       subItems: [
         { label: 'Our Staff', page: Page.OurStaff },
-        { label: 'Our Vision & Beliefs', page: Page.Stories }
+        { label: 'Our Vision & Beliefs', page: Page.Stories },
+        { label: 'New Building', page: Page.NewBuilding },
       ]
     },
     {
@@ -86,6 +145,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Contact',
       subItems: [
         { label: 'Get in Touch', page: Page.GetConnected },
+        { label: 'Plan a Visit', page: Page.PlanAVisit },
         { label: 'Find Church', url: 'https://www.cfmmap.org/' }
       ]
     }
@@ -93,47 +153,89 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
   return (
     <>
-      <nav className="fixed top-0 z-[100] w-full px-0 py-6 transition-all duration-300 bg-[#0B0D0F]/90 backdrop-blur-md shadow-lg border-b border-white/10">
+      <nav className={`fixed top-0 z-[100] w-full transition-all duration-300 ${
+        scrolled ? 'bg-[#0B0D0F] shadow-lg' : 'bg-[#0B0D0F]/90 backdrop-blur-md'
+      } border-b border-white/10`}>
 
-        {/* DESKTOP LAYOUT */}
-        <div className="hidden md:flex items-center justify-between relative w-full">
-            {/* Centered Glassmorphism Pill */}
-            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-[15px] border border-[rgba(255,255,255,0.1)] rounded-[100px] px-[24px] py-[10px] flex items-center gap-6 shadow-xl">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`text-sm font-bold transition-colors hover:text-white font-heading tracking-wide ${
-                    currentPage === item.id ? 'text-white' : 'text-white/70'
-                  } focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none rounded-md px-2 py-1`}
-                >
-                  {item.label}
-                </button>
+        {/* DESKTOP LAYOUT — TymeBank style: Logo left, links center, CTA right */}
+        <div className="hidden md:flex items-center justify-between w-full px-6 lg:px-10 py-3">
+            {/* Logo on the left */}
+            <div className="flex-shrink-0 flex items-center cursor-pointer active-elevate" onClick={() => handleNavClick(Page.Home)}>
+                <img
+                  src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
+                  alt="PH Logo"
+                  className="h-12 w-auto object-contain max-w-[160px]"
+                />
+            </div>
+
+            {/* Center nav links with dropdowns */}
+            <div className="flex items-center gap-1 lg:gap-2">
+              {desktopMenuData.map((item) => (
+                item.type === 'link' ? (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id as Page)}
+                    className={`text-sm font-medium transition-colors hover:text-white px-3 py-2 rounded-md ${
+                      currentPage === item.id ? 'text-white' : 'text-white/70'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <div key={item.id} className="relative">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setDesktopDropdown(desktopDropdown === item.id ? null : item.id);
+                      }}
+                      className={`text-sm font-medium transition-colors hover:text-white px-3 py-2 rounded-md flex items-center gap-1 ${
+                        desktopDropdown === item.id ? 'text-white' : 'text-white/70'
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${desktopDropdown === item.id ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {/* Dropdown panel */}
+                    {desktopDropdown === item.id && item.subItems && (
+                      <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-[#1a1d24] border border-white/10 rounded-lg shadow-xl py-2 z-50">
+                        {item.subItems.map((sub, i) => (
+                          <button
+                            key={i}
+                            onClick={() => sub.page ? handleNavClick(sub.page) : sub.url ? handleLinkClick(sub.url) : null}
+                            className="w-full text-left px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                          >
+                            {sub.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
               ))}
+            </div>
 
-              {/* Restored Find Church Link Button */}
+            {/* Right side CTA buttons — TymeBank style */}
+            <div className="flex-shrink-0 flex items-center gap-3">
+              <button
+                onClick={() => handleNavClick(Page.Give)}
+                className="text-sm font-medium text-white/80 hover:text-white px-4 py-2 rounded-full border border-white/20 hover:border-white/40 transition-all"
+              >
+                Give
+              </button>
               <a
                 href="https://www.cfmmap.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-sm font-bold transition-colors hover:text-white font-heading tracking-wide text-white/70 focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none rounded-md px-2 py-1 inline-block text-center`}
+                className="text-sm font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-5 py-2 rounded-full transition-colors shadow-md"
               >
                 Find Church
               </a>
             </div>
-
-            {/* Logo stretched to far right */}
-            <div className="flex items-center cursor-pointer active-elevate ml-auto" onClick={() => handleNavClick(Page.Home)}>
-                <img
-                  src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
-                  alt="PH Logo"
-                  className="h-14 w-auto object-contain object-right max-w-[180px]"
-                />
-            </div>
         </div>
 
-        {/* MOBILE LAYOUT (Kept similar functionality for smaller screens) */}
-        <div className="md:hidden flex items-center justify-between w-full">
+        {/* MOBILE LAYOUT */}
+        <div className="md:hidden flex items-center justify-between w-full px-4 py-3">
             <div className="flex items-center gap-2 cursor-pointer active-elevate" onClick={() => handleNavClick(Page.Home)}>
                 <img
                   src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
@@ -142,46 +244,46 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                 />
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle — TymeBank hamburger style */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
-              className="p-2 active-elevate rounded-md bg-white/5 border border-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+              className="p-2 active-elevate rounded-md hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <CustomMenuIcon className="w-8 h-8" />}
+              {isOpen ? <X className="w-6 h-6 text-white" /> : <CustomMenuIcon className="w-7 h-7" />}
             </button>
         </div>
       </nav>
 
-      {/* MINIMALIST MOBILE MENU (Slide-in Panel) */}
+      {/* MOBILE MENU — TymeBank style: dark slide-in panel */}
       <div 
-        className={`fixed inset-0 z-[105] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+        className={`fixed inset-0 z-[105] bg-black/60 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
         onClick={() => setIsOpen(false)}
       />
       <div 
         id="mobile-menu"
-        className={`fixed top-0 right-0 bottom-0 w-[75%] max-w-sm z-[110] liquid-glass-grey shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-sm z-[110] bg-[#0B0D0F] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
-        {/* Top Bar inside Mobile Menu */}
-        <div className="w-full px-4 py-6 flex items-center justify-between">
+        {/* Top Bar — Logo + X close (TymeBank style) */}
+        <div className="w-full px-5 py-4 flex items-center justify-between border-b border-white/10">
           <img
             src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
             alt="PH Logo"
-            className="h-10 w-auto object-contain object-left max-w-[140px]"
+            className="h-9 w-auto object-contain object-left max-w-[130px]"
           />
           <button
             onClick={() => {
               setIsOpen(false);
-              setTimeout(() => setActiveSubMenu(null), 300); // reset submenu after close animation
+              setTimeout(() => setActiveSubMenu(null), 300);
             }}
             aria-label="Close menu"
-            className="p-2 text-white hover:text-white/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-md"
+            className="p-2 text-white/60 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-md"
           >
-              <X size={32} />
+              <X size={28} />
           </button>
         </div>
 
@@ -193,11 +295,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
             initial={{ x: 0 }}
             animate={{ x: activeSubMenu ? '-100%' : '0%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="absolute inset-0 w-full h-full flex flex-col py-8 overflow-y-auto"
+            className="absolute inset-0 w-full h-full flex flex-col pt-4 overflow-y-auto"
           >
               <button
                 onClick={() => handleNavClick(Page.Home)}
-                className="w-full text-left px-8 py-5 text-lg font-medium text-white/90 hover:text-white capitalize border-b border-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="w-full text-left px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
               >
                 Home
               </button>
@@ -206,10 +308,10 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                 <button
                   key={menu.id}
                   onClick={() => setActiveSubMenu(menu.id)}
-                  className="w-full flex items-center justify-between px-8 py-5 text-lg font-medium text-white/90 hover:text-white capitalize border-b border-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 group"
+                  className="w-full flex items-center justify-between px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none group"
                 >
                   {menu.label}
-                  <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors" />
                 </button>
               ))}
           </motion.div>
@@ -221,30 +323,48 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               initial={{ x: '100%' }}
               animate={{ x: activeSubMenu === menu.id ? '0%' : '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute inset-0 w-full h-full flex flex-col py-8 overflow-y-auto"
+              className="absolute inset-0 w-full h-full flex flex-col pt-4 overflow-y-auto"
             >
               <button
                 onClick={() => setActiveSubMenu(null)}
-                className="w-full flex items-center gap-4 px-8 py-4 text-sm font-medium text-gray-400 hover:text-white capitalize border-b border-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="w-full flex items-center gap-3 px-6 py-3 text-sm font-medium text-white/50 hover:text-white border-b border-white/[0.06] transition-colors focus:outline-none"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
               </button>
 
-              <div className="mt-4">
-                  {menu.subItems.map((sub, i) => (
-                    <button
-                      key={i}
-                      onClick={() => sub.page ? handleNavClick(sub.page) : sub.url ? handleLinkClick(sub.url) : null}
-                      className="w-full text-left px-8 py-5 text-lg font-medium text-white/90 hover:text-white capitalize border-b border-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-                    >
-                      {sub.label}
-                    </button>
-                  ))}
-              </div>
+              <p className="px-6 pt-4 pb-2 text-xs font-semibold text-white/30 uppercase tracking-wider">{menu.label}</p>
+
+              {menu.subItems.map((sub, i) => (
+                <button
+                  key={i}
+                  onClick={() => sub.page ? handleNavClick(sub.page) : sub.url ? handleLinkClick(sub.url) : null}
+                  className="w-full text-left px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
+                >
+                  {sub.label}
+                </button>
+              ))}
             </motion.div>
           ))}
 
+        </div>
+
+        {/* Bottom CTA buttons in mobile menu — TymeBank style */}
+        <div className="px-5 py-5 border-t border-white/10 space-y-3">
+          <button
+            onClick={() => handleNavClick(Page.Give)}
+            className="w-full text-sm font-medium text-white/80 hover:text-white px-4 py-3 rounded-full border border-white/20 hover:border-white/40 transition-all text-center"
+          >
+            Give
+          </button>
+          <a
+            href="https://www.cfmmap.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-sm font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-4 py-3 rounded-full transition-colors text-center shadow-md"
+          >
+            Find Church
+          </a>
         </div>
       </div>
     </>
