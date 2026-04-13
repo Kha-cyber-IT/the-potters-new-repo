@@ -9,6 +9,8 @@ import { Footer } from './components/Footer';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
   const scrollTargetRef = useRef<string | null>(null);
+  const navCounterRef = useRef(0);
+  const [navTick, setNavTick] = useState(0);
 
   useEffect(() => {
     const target = scrollTargetRef.current;
@@ -26,10 +28,12 @@ export default function App() {
         });
       });
     }
-  }, [currentPage]);
+  }, [currentPage, navTick]);
 
   const handleSetPage = useCallback((page: Page, scrollTarget?: string) => {
-    if (scrollTarget) scrollTargetRef.current = scrollTarget;
+    scrollTargetRef.current = scrollTarget ?? null;
+    navCounterRef.current += 1;
+    setNavTick(navCounterRef.current);
     setCurrentPage(page);
   }, []);
 
