@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { X, ChevronRight, ChevronDown, ArrowLeft } from 'lucide-react';
+import { X, ChevronDown, ArrowLeft } from 'lucide-react';
 import { CustomMenuIcon } from './CustomMenuIcon';
 import { Page, NavigationProps } from '../types';
 
@@ -264,16 +264,16 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       />
       <div 
         id="mobile-menu"
-        className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-sm z-[110] bg-[#0B0D0F] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 w-[80%] max-w-sm z-[110] bg-[#0B0D0F] rounded-bl-2xl shadow-2xl transition-transform duration-300 ease-in-out flex flex-col max-h-[85vh] ${
           isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
         {/* Top Bar — Logo + X close (TymeBank style) */}
-        <div className="w-full px-5 py-4 flex items-center justify-between border-b border-white/10">
+        <div className="w-full px-5 py-3 flex items-center justify-between border-b border-white/10">
           <img
             src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
             alt="PH Logo"
-            className="h-9 w-auto object-contain object-left max-w-[130px]"
+            className="h-8 w-auto object-contain object-left max-w-[120px]"
           />
           <button
             onClick={() => {
@@ -281,13 +281,13 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               setTimeout(() => setActiveSubMenu(null), 300);
             }}
             aria-label="Close menu"
-            className="p-2 text-white/60 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-md"
+            className="p-1.5 text-white/60 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-md"
           >
-              <X size={28} />
+              <X size={24} />
           </button>
         </div>
 
-        {/* Overflow Container for Sliding Menus */}
+        {/* Menu content — compact items */}
         <div className="relative w-full flex-1 overflow-hidden">
 
           {/* Main Level Menu */}
@@ -295,11 +295,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
             initial={{ x: 0 }}
             animate={{ x: activeSubMenu ? '-100%' : '0%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="absolute inset-0 w-full h-full flex flex-col pt-4 overflow-y-auto"
+            className="absolute inset-0 w-full h-full flex flex-col pt-2 overflow-y-auto"
           >
               <button
                 onClick={() => handleNavClick(Page.Home)}
-                className="w-full text-left px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
+                className="w-full text-left px-5 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
               >
                 Home
               </button>
@@ -308,10 +308,10 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                 <button
                   key={menu.id}
                   onClick={() => setActiveSubMenu(menu.id)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none group"
+                  className="w-full flex items-center justify-between px-5 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none group"
                 >
                   {menu.label}
-                  <ChevronRight className="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors" />
+                  <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white/70 transition-colors -rotate-90" />
                 </button>
               ))}
           </motion.div>
@@ -323,23 +323,23 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               initial={{ x: '100%' }}
               animate={{ x: activeSubMenu === menu.id ? '0%' : '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute inset-0 w-full h-full flex flex-col pt-4 overflow-y-auto"
+              className="absolute inset-0 w-full h-full flex flex-col pt-2 overflow-y-auto"
             >
               <button
                 onClick={() => setActiveSubMenu(null)}
-                className="w-full flex items-center gap-3 px-6 py-3 text-sm font-medium text-white/50 hover:text-white border-b border-white/[0.06] transition-colors focus:outline-none"
+                className="w-full flex items-center gap-2 px-5 py-2.5 text-xs font-medium text-white/50 hover:text-white border-b border-white/[0.06] transition-colors focus:outline-none"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-3.5 h-3.5" />
                 Back
               </button>
 
-              <p className="px-6 pt-4 pb-2 text-xs font-semibold text-white/30 uppercase tracking-wider">{menu.label}</p>
+              <p className="px-5 pt-3 pb-1.5 text-[11px] font-semibold text-white/30 uppercase tracking-wider">{menu.label}</p>
 
               {menu.subItems.map((sub, i) => (
                 <button
                   key={i}
                   onClick={() => sub.page ? handleNavClick(sub.page) : sub.url ? handleLinkClick(sub.url) : null}
-                  className="w-full text-left px-6 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
+                  className="w-full text-left px-5 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/5 border-b border-white/[0.06] transition-colors focus:outline-none"
                 >
                   {sub.label}
                 </button>
@@ -349,11 +349,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
         </div>
 
-        {/* Bottom CTA buttons in mobile menu — TymeBank style */}
-        <div className="px-5 py-5 border-t border-white/10 space-y-3">
+        {/* Bottom CTA buttons — compact TymeBank style */}
+        <div className="px-5 py-3 border-t border-white/10 space-y-2">
           <button
             onClick={() => handleNavClick(Page.Give)}
-            className="w-full text-sm font-medium text-white/80 hover:text-white px-4 py-3 rounded-full border border-white/20 hover:border-white/40 transition-all text-center"
+            className="w-full text-xs font-medium text-white/80 hover:text-white px-3 py-2 rounded-full border border-white/20 hover:border-white/40 transition-all text-center"
           >
             Give
           </button>
@@ -361,7 +361,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
             href="https://www.cfmmap.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full text-sm font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-4 py-3 rounded-full transition-colors text-center shadow-md"
+            className="block w-full text-xs font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-3 py-2 rounded-full transition-colors text-center shadow-md"
           >
             Find Church
           </a>
