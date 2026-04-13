@@ -678,7 +678,7 @@ const AnnouncementGroup = ({
   return (
     <div className="mb-12 md:mb-16">
         <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-             <div className={`p-2.5 md:p-3 rounded-xl bg-white/10 border border-white/15 ${style.accent}`}>
+             <div className={`p-2.5 md:p-3 rounded-2xl ${style.card} border ${style.border} shadow-lg ${style.accent}`}>
                 {Icon && <Icon size={20} className="md:w-6 md:h-6" />}
              </div>
              <h4 className={`text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest ${style.accent} font-heading`}>{title}</h4>
@@ -687,20 +687,22 @@ const AnnouncementGroup = ({
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
             {items.map((item, i) => (
-                <div key={i} className={`relative overflow-hidden group rounded-xl md:rounded-2xl ${style.card} border ${style.border} hover:border-white/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl`}>
+                <div key={i} className={`relative overflow-hidden group rounded-2xl md:rounded-3xl ${style.card} border ${style.border} hover:border-white/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl`}>
                     {/* Top accent bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    {/* Decorative circle */}
+                    <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
 
                     <div className="p-4 md:p-6 relative z-10">
                         <div className="flex items-start gap-2.5 md:gap-3 mb-2 md:mb-3">
-                            <div className={`w-7 h-7 md:w-8 md:h-8 rounded-lg ${style.badge} border border-white/10 flex items-center justify-center flex-shrink-0 text-[10px] md:text-xs font-bold`}>
+                            <div className={`w-8 h-8 md:w-9 md:h-9 rounded-xl ${style.badge} border border-white/15 flex items-center justify-center flex-shrink-0 text-[10px] md:text-xs font-black shadow-sm`}>
                                 {String(i + 1).padStart(2, '0')}
                             </div>
-                            <h5 className="text-sm md:text-lg font-bold text-white leading-snug font-heading">
+                            <h5 className="text-sm md:text-lg font-black text-white leading-snug font-heading">
                                 {item.title}
                             </h5>
                         </div>
-                        <p className="text-white/70 text-xs md:text-sm leading-relaxed font-medium pl-[38px] md:pl-11">
+                        <p className="text-white/70 text-xs md:text-sm leading-relaxed font-medium pl-[42px] md:pl-12">
                             {item.desc}
                         </p>
                     </div>
