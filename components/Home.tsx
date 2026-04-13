@@ -122,7 +122,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
               />
             </motion.div>
           </div>
@@ -286,8 +286,8 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
-        {/* TYMEBANK-STYLE FEATURE HIGHLIGHTS */}
-        <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0">
+        {/* TYMEBANK-STYLE FEATURE HIGHLIGHTS — desktop only */}
+        <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0 hidden md:block">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -296,7 +296,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 hidden: {},
                 visible: { transition: { staggerChildren: 0.12 } }
             }}
-            className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            className="max-w-[1400px] mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           >
             {[
               { bg: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', label: 'Events 2026', desc: 'Fellowship dates & regional schedules', page: Page.Events2026 },
@@ -342,37 +342,22 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 md:gap-8 items-stretch"
           >
             {/* Left Side: New to the Church Bento Card */}
-            {/* Mobile: merged single section, Desktop: side-by-side */}
+            {/* Mobile: edge-to-edge plain text section, Desktop: side-by-side card */}
             <motion.div
               variants={{
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center md:text-left bg-[#789A99] p-6 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="flex flex-col text-center md:text-left bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.15em] md:tracking-[0.2em] font-heading mb-3 md:mb-4">
+              <h2 className="text-lg md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4">
                 New to The Potter's House?
               </h2>
-              <p className="text-base md:text-xl font-medium text-[#0B0D0F]/80 mb-6 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
+              <p className="text-sm md:text-xl font-medium text-[#0B0D0F]/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              {/* Mobile: show QR + WhatsApp inline */}
-              <div className="md:hidden flex flex-col items-center mb-6">
-                <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
-                  <div className="w-28 h-28 bg-white flex items-center justify-center overflow-hidden">
-                    <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
-                      alt="WhatsApp Channel QR Code"
-                      className="w-full h-full object-contain"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                </div>
-                <p className="text-sm font-medium text-[#0B0D0F]/70 mb-4">Scan or tap to follow us on WhatsApp</p>
-              </div>
-
-              <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch gap-3 w-full mt-2 md:mt-0">
+              <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch gap-3 w-full">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
@@ -385,13 +370,39 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     variant="dark"
                     className="w-full justify-center md:w-auto h-10 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
                   />
-                  <ModernButton
-                    text="Join Channel"
-                    href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
-                    variant="dark"
-                    className="md:hidden w-full justify-center h-10 text-xs tracking-[0.15em]"
-                  />
               </div>
+            </motion.div>
+
+            {/* Mobile-only: QR WhatsApp section — separate edge-to-edge block */}
+            <motion.div
+              variants={{
+                  hidden: { opacity: 0, scale: 0.95, y: 40 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+              }}
+              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8"
+            >
+              <h2 className="text-lg font-black text-[#0B0D0F] uppercase tracking-[0.1em] font-heading mb-2">
+                Stay Connected
+              </h2>
+              <p className="text-sm font-medium text-[#0B0D0F]/80 mb-4 leading-relaxed">
+                Follow us on WhatsApp for daily devotions and updates.
+              </p>
+              <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
+                <div className="w-28 h-28 bg-white flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                    alt="WhatsApp Channel QR Code"
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+              <ModernButton
+                text="Join Channel"
+                href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                variant="dark"
+                className="w-full justify-center h-10 text-xs tracking-[0.15em]"
+              />
             </motion.div>
 
             {/* Right Side: Stay Connected Bento Card (Desktop only split, mobile merged above) */}
@@ -502,7 +513,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                      className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
                     />
                 </motion.div>
             </motion.div>

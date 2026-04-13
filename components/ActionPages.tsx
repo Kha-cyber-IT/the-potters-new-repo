@@ -73,16 +73,23 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="aspect-video rounded-[2.5rem] bg-white/5 border border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-8">
             <iframe
-                            src="https://www.cfmmap.org/"
-                            className="absolute inset-0 w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                            className="absolute inset-0 w-full h-full pointer-events-none"
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Global Church Map — CFM"
+                            title="Global Church Map"
             />
+            <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
-            <ModernButton text="OPEN FULL MAP" href="https://www.cfmmap.org/" variant="ghost" className="relative z-10 mt-auto" />
+            {/* Eldorado Park Highlight */}
+            <div className="absolute top-[40%] right-[15%] bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl z-10 hidden md:block">
+                <p className="text-white font-bold text-sm">The Potter's House of</p>
+                <p className="text-blue-300 font-bold text-lg">Eldorado Park, Soweto</p>
+            </div>
+
+            <ModernButton text="EXPLORE GLOBAL MAP" href="https://www.cfmmap.org/" variant="ghost" className="relative z-10 mt-auto" />
         </div>
 
       </div>
@@ -90,14 +97,14 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     );
   }
 
-  // PAGE 7: PLAN A VISIT (Stone Gradient)
+  // PAGE 7: PLAN A VISIT (Who We Are color)
   if (page === Page.PlanAVisit) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-[#212E4E]">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#F0F7FF]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-gray-200">
             <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1200" 
                  alt="Header" 
                  className="absolute inset-0 w-full h-full object-cover opacity-60" />
@@ -107,7 +114,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="text-center mb-12">
-             <h3 className="inline-block bg-teal-600 text-white text-xl md:text-2xl font-bold py-3 px-10 rounded-full shadow-lg border border-white/20 uppercase tracking-widest font-heading">What You Can Expect</h3>
+             <h3 className="inline-block bg-teal-600 text-white text-xl md:text-2xl font-bold py-3 px-10 rounded-full shadow-lg border border-teal-500 uppercase tracking-widest font-heading">What You Can Expect</h3>
         </div>
 
         <div className="grid grid-cols-1 gap-12 text-center mb-20">
@@ -117,16 +124,17 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="mb-8 text-center">
-            <h3 className="inline-flex items-center justify-center gap-4 bg-white text-black text-xl md:text-2xl font-bold py-4 px-10 rounded-full shadow-lg border border-white/20 uppercase tracking-widest font-heading">
+            <h3 className="inline-flex items-center justify-center gap-4 bg-gray-900 text-white text-xl md:text-2xl font-bold py-4 px-10 rounded-full shadow-lg border border-gray-700 uppercase tracking-widest font-heading">
                 <span>Visit Us</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
             </h3>
         </div>
 
         <div className="text-center space-y-12">
-                <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/JgER99H8Lh5eDmQ77', '_blank')}>
+                {/* Local Church Map */}
+                <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/JgER99H8Lh5eDmQ77', '_blank')}>
                     <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
                                             className="absolute inset-0 w-full h-full pointer-events-none"
@@ -142,6 +150,19 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     </div>
                 </div>
 
+                {/* Global Church Finder (cfmmap) */}
+                <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                    <iframe
+                                            src="https://www.cfmmap.org/"
+                                            className="absolute inset-0 w-full h-full"
+                                            style={{ border: 0 }}
+                                            allowFullScreen
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title="Global Church Finder — CFM"
+                    />
+                </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
                 <div><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
@@ -152,11 +173,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 <div><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
             </div>
             
-            <div className="pt-10 border-t border-white/10">
-                 <h4 className="text-2xl font-bold text-blue-300 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
+            <div className="pt-10 border-t border-gray-300">
+                 <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
                  <button
                     onClick={() => window.open('https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA', '_blank')}
-                    className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase py-3 px-6 md:py-4 md:px-12 rounded-full flex items-center justify-center gap-4 mx-auto font-heading text-sm md:text-base"
+                    className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase py-3 px-8 rounded-full flex items-center justify-center gap-4 mx-auto font-heading text-sm md:text-base"
                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.226-11.63-.226-15.234 0C.486 3.407 0 4.888 0 7.5v9c0 2.612.486 4.093 4.381 4.316 3.604.226 11.63.226 15.234 0 3.896-.223 4.381-1.704 4.381-4.316v-9c0-2.612-.486-4.093-4.381-4.316zM9 16.5v-9L16 12l-7 4.5z"/></svg>
                     Stream Now
@@ -288,7 +309,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="flex justify-center mt-8">
                 <button
                   onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                  className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                  className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                     Play on Spotify
@@ -580,7 +601,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     <div className="flex justify-center md:justify-start">
                         <button
                           onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                          className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                          className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                             Play Testimony Pod
@@ -600,16 +621,16 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 const ExpectCard = ({ title, content }: { title: string; content: string }) => (
     <div className="max-w-2xl mx-auto">
         <h4 className="text-2xl font-bold text-blue-300 mb-3 uppercase tracking-wider font-heading">{title}</h4>
-        <p className="text-lg leading-relaxed text-gray-800">
+        <p className="text-lg leading-relaxed text-gray-700">
             {content}
         </p>
     </div>
 );
 
 const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
-    <div className="glass-card-blue p-6 rounded-2xl">
-        <h4 className="text-2xl font-bold text-blue-300 mb-4 uppercase font-heading">{day}</h4>
-        <div className="space-y-3 text-lg text-gray-800">
+    <div className="bg-white/60 backdrop-blur-sm border border-gray-200 p-6 rounded-2xl shadow-sm">
+        <h4 className="text-2xl font-bold text-gray-900 mb-4 uppercase font-heading">{day}</h4>
+        <div className="space-y-3 text-lg text-gray-700">
             {times.map((t, i) => <p key={i}>{t}</p>)}
         </div>
     </div>

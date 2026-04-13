@@ -52,9 +52,9 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 
         {/* Cloud Blue Ministries Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0 mt-0">
-            <div className="max-w-4xl mx-auto text-center mb-8">
-                 <h2 className="text-3xl font-bold mb-4 uppercase tracking-widest font-heading text-gray-900">Explore our ministries.</h2>
-                 <p className="mb-8 text-xl font-medium">Find ways you and your family can grow and make impact.</p>
+            <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
+                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900">Explore our ministries.</h2>
+                 <p className="mb-4 md:mb-8 text-sm md:text-xl font-medium">Find ways you and your family can grow and make impact.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -304,12 +304,12 @@ const VisionPoint = ({ title, content }: { title: string; content: string }) => 
     </div>
 );
 const MinistryCard = ({ img, title, sub, label, clickable }: { img: string; title: string; sub: string; label?: string; clickable?: () => void }) => (
-    <div className={`relative w-full aspect-[2.5/1] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group ${clickable ? 'cursor-pointer' : ''}`} onClick={clickable}>
+    <div className={`relative w-full aspect-[2/1] md:aspect-[2.5/1] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10 group ${clickable ? 'cursor-pointer' : ''}`} onClick={clickable}>
         <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black/40">
-            {label && <span className="bg-white text-black px-4 py-1 rounded-full font-bold text-sm mb-3 uppercase tracking-widest font-heading">{label}</span>}
-            <h3 className="text-white text-xl md:text-3xl font-black text-shadow-strong text-center uppercase tracking-widest font-heading">{title}</h3>
-            <h4 className="text-blue-300 text-lg md:text-2xl font-bold text-shadow-strong text-center uppercase mt-2 font-heading">{sub}</h4>
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-3 md:p-4 bg-black/40">
+            {label && <span className="bg-white text-black px-3 py-0.5 md:px-4 md:py-1 rounded-full font-bold text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-widest font-heading">{label}</span>}
+            <h3 className="text-white text-base md:text-3xl font-black text-shadow-strong text-center uppercase tracking-wider md:tracking-widest font-heading">{title}</h3>
+            <h4 className="text-blue-300 text-sm md:text-2xl font-bold text-shadow-strong text-center uppercase mt-1 md:mt-2 font-heading">{sub}</h4>
         </div>
     </div>
 );

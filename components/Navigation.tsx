@@ -122,7 +122,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
         { label: 'Our Staff', page: Page.OurStaff },
         { label: 'Our Vision', page: Page.OurVision },
         { label: 'Beliefs & Stories', page: Page.Stories },
-        { label: 'New Building', page: Page.NewBuilding },
       ]
     },
     {
@@ -157,8 +156,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       subItems: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
-        { label: 'Give', page: Page.Give },
-        { label: 'Find Church', url: 'https://www.cfmmap.org/' }
       ]
     }
   ];
@@ -361,23 +358,8 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
         </div>
 
-        {/* Bottom CTA buttons — compact TymeBank style */}
-        <div className="px-5 py-3 border-t border-white/10 space-y-2">
-          <button
-            onClick={() => handleNavClick(Page.Give)}
-            className="w-full text-xs font-medium text-white/80 hover:text-white px-3 py-2 rounded-full border border-white/20 hover:border-white/40 transition-all text-center"
-          >
-            Give
-          </button>
-          <a
-            href="https://www.cfmmap.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-xs font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-3 py-2 rounded-full transition-colors text-center shadow-md"
-          >
-            Find Church
-          </a>
-        </div>
+        {/* Bottom padding for menu */}
+        <div className="px-5 py-3" />
       </div>
     </>
   );
