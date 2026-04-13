@@ -15,19 +15,25 @@ export default function App() {
   useEffect(() => {
     const target = scrollTargetRef.current;
     scrollTargetRef.current = null;
+    let rafId1: number;
+    let rafId2: number;
     if (target) {
-      requestAnimationFrame(() => {
+      rafId1 = requestAnimationFrame(() => {
         const el = document.getElementById(target);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     } else {
       // Double rAF ensures DOM is fully painted before scrolling
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+      rafId1 = requestAnimationFrame(() => {
+        rafId2 = requestAnimationFrame(() => {
           window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
         });
       });
     }
+    return () => {
+      cancelAnimationFrame(rafId1);
+      cancelAnimationFrame(rafId2);
+    };
   }, [currentPage, navTick]);
 
   const handleSetPage = useCallback((page: Page, scrollTarget?: string) => {
