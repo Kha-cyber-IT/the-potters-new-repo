@@ -19,8 +19,11 @@ export default function App() {
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     } else {
+      // Double rAF ensures DOM is fully painted before scrolling
       requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+        });
       });
     }
   }, [currentPage]);

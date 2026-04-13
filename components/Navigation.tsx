@@ -50,6 +50,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
   const navItems = [
     { id: Page.Home, label: 'Home' },
     { id: Page.OurStaff, label: 'Staff' },
+    { id: Page.NewBuilding, label: 'New Building' },
     { id: Page.Conference2025, label: 'Conference' },
     { id: Page.Events2026, label: 'Events' },
     { id: Page.Stories, label: 'Stories' },
@@ -95,18 +96,9 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       <nav className="fixed top-0 z-[100] w-full px-0 py-6 transition-all duration-300 bg-[#0B0D0F]/90 backdrop-blur-md shadow-lg border-b border-white/10">
 
         {/* DESKTOP LAYOUT */}
-        <div className="hidden md:flex items-center justify-start gap-12 relative w-full">
-            {/* Inline Flat Logo Left */}
-            <div className="flex items-center cursor-pointer active-elevate" onClick={() => handleNavClick(Page.Home)}>
-                <img
-                  src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
-                  alt="PH Logo"
-                  className="h-14 w-auto object-contain object-left max-w-[180px]"
-                />
-            </div>
-
+        <div className="hidden md:flex items-center justify-between relative w-full">
             {/* Centered Glassmorphism Pill */}
-            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-[15px] border border-[rgba(255,255,255,0.1)] rounded-[100px] px-[30px] py-[10px] flex items-center gap-8 shadow-xl">
+            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-[15px] border border-[rgba(255,255,255,0.1)] rounded-[100px] px-[24px] py-[10px] flex items-center gap-6 shadow-xl">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -128,6 +120,15 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               >
                 Find Church
               </a>
+            </div>
+
+            {/* Logo stretched to far right */}
+            <div className="flex items-center cursor-pointer active-elevate ml-auto" onClick={() => handleNavClick(Page.Home)}>
+                <img
+                  src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
+                  alt="PH Logo"
+                  className="h-14 w-auto object-contain object-right max-w-[180px]"
+                />
             </div>
         </div>
 
@@ -161,7 +162,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       />
       <div 
         id="mobile-menu"
-        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-md z-[110] bg-[#1E232E] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 bottom-0 w-[75%] max-w-sm z-[110] liquid-glass-grey shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >

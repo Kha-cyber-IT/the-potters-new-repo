@@ -110,7 +110,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="flex-1 sm:flex-none w-full sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-4 px-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="flex-1 sm:flex-none w-full sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-3 px-4 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,7 +122,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-4 px-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
               />
             </motion.div>
           </div>
@@ -303,49 +303,71 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 md:gap-8 items-stretch"
           >
             {/* Left Side: New to the Church Bento Card */}
+            {/* Mobile: merged single section, Desktop: side-by-side */}
             <motion.div
               variants={{
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center md:text-left bg-[#789A99] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="flex flex-col text-center md:text-left bg-[#789A99] p-6 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-2xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.2em] font-heading mb-4">
+              <h2 className="text-xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.15em] md:tracking-[0.2em] font-heading mb-3 md:mb-4">
                 New to The Potter's House?
               </h2>
-              <p className="text-lg md:text-xl font-medium text-[#0B0D0F]/80 mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
+              <p className="text-base md:text-xl font-medium text-[#0B0D0F]/80 mb-6 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
                 Get in touch with a staff member and let us know how we can help.
               </p>
+
+              {/* Mobile: show QR + WhatsApp inline */}
+              <div className="md:hidden flex flex-col items-center mb-6">
+                <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
+                  <div className="w-28 h-28 bg-white flex items-center justify-center overflow-hidden">
+                    <img
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                      alt="WhatsApp Channel QR Code"
+                      className="w-full h-full object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                </div>
+                <p className="text-sm font-medium text-[#0B0D0F]/70 mb-4">Scan or tap to follow us on WhatsApp</p>
+              </div>
 
               <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch gap-3 w-full mt-2 md:mt-0">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-12 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="w-full justify-center md:w-auto h-10 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
                   />
                   <ModernButton
                     text="Plan Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-12 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="w-full justify-center md:w-auto h-10 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                  />
+                  <ModernButton
+                    text="Join Channel"
+                    href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                    variant="dark"
+                    className="md:hidden w-full justify-center h-10 text-xs tracking-[0.15em]"
                   />
               </div>
             </motion.div>
 
-            {/* Right Side: Stay Connected Bento Card */}
+            {/* Right Side: Stay Connected Bento Card (Desktop only split, mobile merged above) */}
             <motion.div
               variants={{
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl mt-0 md:mt-0"
+              className="hidden md:flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
               <h2 className="text-2xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.2em] font-heading mb-4">
                 Stay Connected
               </h2>
               <p className="text-lg md:text-xl font-medium text-[#0B0D0F]/80 mb-10 leading-relaxed max-w-md">
-                Follow The Potter’s House of Eldorado Park on WhatsApp for daily devotions and updates.
+                Follow The Potter's House of Eldorado Park on WhatsApp for daily devotions and updates.
               </p>
 
               <div className="bg-white p-4 rounded-2xl mb-10 inline-block shadow-sm">
@@ -441,7 +463,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-4 px-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                      className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
                     />
                 </motion.div>
             </motion.div>

@@ -184,13 +184,13 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             {/* VIMEO EMBEDS */}
             <div className="mt-6 mb-16 space-y-8">
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>
             
@@ -286,7 +286,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
     <div className="bg-transparent p-0 rounded-none border-none md:bg-white/40 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
-        <img src={img} alt={name} className="w-3/4 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
+        <img src={img} alt={name} className="w-1/2 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
         <div className="flex-1 text-center md:text-left">
             <h4 className="text-xl md:text-2xl font-bold text-gray-900 uppercase tracking-widest font-heading mb-2">{name}</h4>
             <p className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-widest font-heading">{role}</p>
