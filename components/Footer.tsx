@@ -24,7 +24,18 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   const contactLinks: { page?: Page; url?: string; label: string; }[] = [
     { page: Page.GetConnected, label: "Get Connected" },
     { page: Page.PlanAVisit, label: "Visit Us" },
+    { page: Page.GetConnected, label: "Locations" },
   ];
+
+  const handleFooterClick = (page: Page, label: string) => {
+    setPage(page);
+    if (label === 'Locations') {
+      setTimeout(() => {
+        const el = document.getElementById('global-reach');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  };
 
   const socialLinks = [
     { 
@@ -45,7 +56,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   ];
 
   return (
-    <footer className="bg-black text-white w-full py-12 px-4 md:px-12 2xl:px-32">
+    <footer className="bg-black text-white w-full py-12 px-0">
       <div className="max-w-7xl mx-auto">
         <motion.div
             initial="hidden"
@@ -108,7 +119,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
                     {c.label}
                   </a>
                 ) : (
-                  <button key={c.label} onClick={() => c.page && setPage(c.page)} className="text-white hover:underline text-left lg:text-right">
+                  <button key={c.label} onClick={() => c.page && handleFooterClick(c.page, c.label)} className="text-white hover:underline text-left lg:text-right">
                     {c.label}
                   </button>
                 )

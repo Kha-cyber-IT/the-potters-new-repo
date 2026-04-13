@@ -18,7 +18,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.GetConnected) {
     return (
       <section className="w-full pt-24 md:pt-32 pb-24 min-h-screen animate-fade-in text-left text-white/90 bg-[#1A2517]">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
         {/* Top Half: Existing Contact Card */}
@@ -66,7 +66,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="border-b border-white/10 mt-16 mb-16 max-w-4xl mx-auto"></div>
 
         {/* Bottom Half: Global Map Section */}
-        <h3 className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading">LOCAL ROOTS. GLOBAL REACH.</h3>
+        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28">LOCAL ROOTS. GLOBAL REACH.</h3>
         <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-12 leading-relaxed">
             While our home is here in Soweto, our family spans the globe. The Potter's House is a worldwide fellowship of over 3,000 churches across 130 nations. Wherever you go, you can always find family.
         </p>
@@ -109,7 +109,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.PlanAVisit) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-stone-700 to-stone-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
@@ -149,14 +149,14 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8 text-center">
-                <div className="col-span-4 md:col-span-8 2xl:col-span-4"><TimeCard day="Sunday" times={[
+            <div className="grid grid-cols-1 md:grid-cols-3 text-center">
+                <div><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
                     "Morning Worship Service | 10:00 AM",
                     "Evening Worship Service | 5:00 PM"
                 ]} /></div>
-                <div className="col-span-4 md:col-span-4 2xl:col-span-4"><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
-                <div className="col-span-4 md:col-span-4 2xl:col-span-4"><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
+                <div><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
+                <div><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
             </div>
             
             <div className="pt-10 border-t border-white/10">
@@ -179,7 +179,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Conference2025) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-indigo-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         <div className="text-center mb-16">
             <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
@@ -280,7 +280,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Stories) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#C2D8C4]">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="text-center mb-10">
@@ -355,20 +355,20 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div>
                 <h4 className="text-2xl font-bold text-teal-800 mb-4 uppercase tracking-wider font-heading">Our Responsibility</h4>
                 <p className="mb-6 italic">As believers, there are four primary responsibilities we are called to uphold: Prayer, Outreach, Reading the Bible, and Fellowship.</p>
-                <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8">
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Daily Prayer:</h5>
                         <p>Seeking God in prayer is a fundamental necessity of maintaining our relationship with Him.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Outreach:</h5>
                         <p>Sharing the Gospel of Jesus Christ with others.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Reading The Bible:</h5>
                         <p>Feeding our spirit with the Word of God, and living thereby.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Fellowship:</h5>
                         <p>Gathering together in a local assembly of believers for worship and admonition.</p>
                     </div>
@@ -385,7 +385,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Give) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-emerald-800 to-teal-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
@@ -437,7 +437,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Events2026) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-cyan-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         <div className="text-center mb-12">
             <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
@@ -540,7 +540,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.ChildrensMinistry || page === Page.Recovery) {
     return (
       <div className="w-full min-h-screen animate-fade-in text-left text-white/90 bg-[#A85D5C] pt-24 md:pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-0 md:px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-0">
             <div className="px-4 md:px-0 mb-6">
                 <BackButton label="Back to About Us" target={Page.AboutUs} />
             </div>
@@ -587,7 +587,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     <div className="flex justify-center md:justify-start">
                         <button
                           onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                          className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:px-12 2xl:px-32 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                          className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                             Play Testimony Pod
@@ -671,9 +671,9 @@ const AnnouncementGroup = ({
              <div className="h-px bg-white/10 flex-grow"></div>
         </div>
         
-        <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3">
             {items.map((item, i) => (
-                <div key={i} className={`col-span-4 md:col-span-4 2xl:col-span-4 relative overflow-hidden group rounded-2xl bg-[#121212] border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}>
+                <div key={i} className={`relative overflow-hidden group rounded-2xl bg-[#121212] border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}>
                     <div className={`absolute inset-0 bg-gradient-to-br ${style.bg} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
                     <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${style.bg.replace('from-', 'from-').replace('/20', '').replace('/25', '')} to-transparent`}></div>
 

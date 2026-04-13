@@ -10,7 +10,9 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    });
   }, [currentPage]);
 
   const handleSetPage = (page: Page) => {

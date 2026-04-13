@@ -50,10 +50,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
         {/* Main Grid Container */}
-        <div className="w-full px-4 md:px-12 2xl:px-32 relative z-10 grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8 items-center">
+        <div className="w-full px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center">
 
           {/* LEFT SIDE: Flowing Text & Buttons */}
-          <div className="col-span-4 md:col-span-8 2xl:col-span-6 flex flex-col gap-8 w-full max-w-6xl mx-auto 2xl:mx-0">
+          <div className="flex flex-col gap-8 w-full max-w-6xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -128,7 +128,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </div>
 
           {/* RIGHT SIDE: The Cards (Stats & Banner) */}
-          <div className="col-span-4 md:col-span-8 2xl:col-span-6 flex flex-col gap-8 w-full justify-self-end mt-12 2xl:mt-0">
+          <div className="flex flex-col gap-8 w-full justify-self-end mt-12 lg:mt-0">
             
             {/* Stats Card */}
             <motion.div
@@ -185,7 +185,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       </section>
 
       {/* LOWER SECTION: Classic Silver & White Theme */}
-      <div className="w-full text-center px-4 md:px-12 2xl:px-32 mt-20 md:mt-40">
+      <div className="w-full text-center px-0 mt-20 md:mt-40">
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
@@ -287,7 +287,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-0 md:px-4 md:px-12 2xl:px-32">
+        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-0">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -397,7 +397,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         }
                     }
                 }}
-                className="relative z-10 px-4 md:px-12 2xl:px-32 w-full max-w-4xl mx-auto text-center"
+                className="relative z-10 px-0 w-full max-w-4xl mx-auto text-center"
             >
                 <div className="flex flex-col items-center justify-center gap-6 mb-12">
                     <motion.div

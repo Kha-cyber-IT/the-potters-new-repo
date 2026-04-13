@@ -92,7 +92,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
   return (
     <>
-      <nav className="fixed top-0 z-[100] w-full px-4 md:px-12 2xl:px-32 py-6 transition-all duration-300 bg-[#0B0D0F]/90 backdrop-blur-md shadow-lg border-b border-white/10">
+      <nav className="fixed top-0 z-[100] w-full px-0 py-6 transition-all duration-300 bg-[#0B0D0F]/90 backdrop-blur-md shadow-lg border-b border-white/10">
 
         {/* DESKTOP LAYOUT */}
         <div className="hidden md:flex items-center justify-start gap-12 relative w-full">
@@ -101,7 +101,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                 <img
                   src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
                   alt="PH Logo"
-                  className="h-20 w-auto object-contain object-left"
+                  className="h-14 w-auto object-contain object-left max-w-[180px]"
                 />
             </div>
 
@@ -137,7 +137,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                 <img
                   src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
                   alt="PH Logo"
-                  className="h-16 w-auto object-contain object-left"
+                  className="h-10 w-auto object-contain object-left max-w-[140px]"
                 />
             </div>
 
@@ -166,11 +166,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
         }`}
       >
         {/* Top Bar inside Mobile Menu */}
-        <div className="w-full px-4 md:px-12 2xl:px-32 py-6 flex items-center justify-between">
+        <div className="w-full px-4 py-6 flex items-center justify-between">
           <img
             src="https://i.postimg.cc/HW79Ljpk/1763367303077.png"
             alt="PH Logo"
-            className="h-12 w-auto object-contain object-left"
+            className="h-10 w-auto object-contain object-left max-w-[140px]"
           />
           <button
             onClick={() => {
