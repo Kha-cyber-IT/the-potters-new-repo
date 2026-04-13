@@ -18,7 +18,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.GetConnected) {
     return (
       <section className="w-full pt-24 md:pt-32 pb-24 min-h-screen animate-fade-in text-left text-white/90 bg-[#1A2517]">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
         {/* Top Half: Existing Contact Card */}
@@ -101,7 +101,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.PlanAVisit) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-[#212E4E]">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
@@ -179,11 +179,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Conference2025) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-indigo-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
-        <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
-            <p className="text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
+        <div className="text-center mb-10 md:mb-16">
+            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
+            <p className="text-base md:text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
         </div>
         
         <div className="space-y-4">
@@ -280,7 +280,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Stories) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#C2D8C4]">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="text-center mb-10">
@@ -385,7 +385,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Give) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-emerald-800 to-teal-900">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
@@ -437,11 +437,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Events2026) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-cyan-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
-        <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
-            <p className="text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
+        <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
+            <p className="text-base md:text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
         </div>
 
         <div className="space-y-12">
@@ -459,16 +459,16 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             />
 
             {/* DISCIPLESHIPS SECTION */}
-            <div className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-teal-400">
-                        <Users size={24} />
+            <div className="mb-12 md:mb-16">
+                <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                    <div className="p-2.5 md:p-3 rounded-xl bg-white/10 border border-white/15 text-teal-200">
+                        <Users size={20} className="md:w-6 md:h-6" />
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-black uppercase tracking-widest text-teal-400 font-heading">Regional Discipleship Schedules 2026</h4>
+                    <h4 className="text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest text-teal-200 font-heading">Regional Discipleship Schedules 2026</h4>
                     <div className="h-px bg-white/10 flex-grow"></div>
                 </div>
 
-                <div className="space-y-10">
+                <div className="space-y-4 md:space-y-10">
                     <ScheduleList region="JOHANNESBURG MEN’S DISCIPLESHIPS" dates={[
                         "April 6 - Jonathan Heimberg",
                         "May 11 - Vickash Juggai",
@@ -524,9 +524,9 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 ]} 
             />
             
-            <div className="pt-20 border-t border-white/10 text-center">
-                <h4 className="text-2xl font-bold text-white mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
-                <div className="glass-card-blue p-2 rounded-3xl max-w-4xl mx-auto shadow-2xl border border-white/10 overflow-hidden">
+            <div className="pt-12 md:pt-20 border-t border-white/10 text-center">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
+                <div className="glass-card-blue p-1.5 md:p-2 rounded-2xl md:rounded-3xl max-w-4xl mx-auto shadow-2xl border border-white/10 overflow-hidden">
                     <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-2xl" />
                 </div>
             </div>
@@ -540,7 +540,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.ChildrensMinistry || page === Page.Recovery) {
     return (
       <div className="w-full min-h-screen animate-fade-in text-left text-white/90 bg-[#A85D5C] pt-24 md:pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
             <div className="px-4 md:px-0 mb-6">
                 <BackButton label="Back to About Us" target={Page.AboutUs} />
             </div>
@@ -623,13 +623,13 @@ const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
 );
 
 const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) => (
-    <div className="bg-gradient-to-br from-[#161821] to-[#0d0f14] rounded-2xl border border-white/[0.07] p-5 md:p-6 hover:border-white/15 transition-all duration-300">
-        <h5 className="text-base md:text-lg font-bold text-teal-400 uppercase tracking-wider mb-4 font-heading">{region}</h5>
-        <ul className="space-y-2.5">
+    <div className="bg-gradient-to-br from-[#0D9488] to-[#134E4A] rounded-xl md:rounded-2xl border border-teal-400/20 p-4 md:p-6 hover:border-teal-400/40 transition-all duration-300 hover:shadow-lg">
+        <h5 className="text-sm md:text-lg font-bold text-teal-100 uppercase tracking-wider mb-3 md:mb-4 font-heading">{region}</h5>
+        <ul className="space-y-2">
             {dates.map((d, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/80">
-                    <div className="w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 text-teal-400 text-[10px] font-bold">{i + 1}</div>
-                    <span className="text-sm md:text-base">{d}</span>
+                <li key={i} className="flex items-center gap-2.5 md:gap-3 text-white/80">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-md bg-teal-400/20 border border-teal-300/20 flex items-center justify-center flex-shrink-0 text-teal-200 text-[9px] md:text-[10px] font-bold">{i + 1}</div>
+                    <span className="text-xs md:text-base">{d}</span>
                 </li>
             ))}
         </ul>
@@ -650,46 +650,43 @@ const AnnouncementGroup = ({
   icon?: any;
 }) => {
   const styles = {
-    cyan: { text: 'text-cyan-400', bg: 'from-cyan-500/20' },
-    emerald: { text: 'text-emerald-400', bg: 'from-emerald-500/20' },
-    amber: { text: 'text-amber-400', bg: 'from-amber-500/20' },
-    rose: { text: 'text-rose-400', bg: 'from-rose-500/20' },
-    purple: { text: 'text-purple-400', bg: 'from-purple-500/20' },
-    orange: { text: 'text-orange-400', bg: 'from-orange-500/20' },
-    teal: { text: 'text-teal-400', bg: 'from-teal-600/25' },
+    cyan: { text: 'text-white', accent: 'text-cyan-300', card: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', border: 'border-cyan-400/30', badge: 'bg-cyan-400/20 text-cyan-200', bar: 'via-cyan-400/60' },
+    emerald: { text: 'text-white', accent: 'text-emerald-300', card: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', border: 'border-emerald-400/30', badge: 'bg-emerald-400/20 text-emerald-200', bar: 'via-emerald-400/60' },
+    amber: { text: 'text-white', accent: 'text-amber-200', card: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', border: 'border-amber-400/30', badge: 'bg-amber-400/20 text-amber-200', bar: 'via-amber-400/60' },
+    rose: { text: 'text-white', accent: 'text-rose-200', card: 'bg-gradient-to-br from-[#BE123C] to-[#881337]', border: 'border-rose-400/30', badge: 'bg-rose-400/20 text-rose-200', bar: 'via-rose-400/60' },
+    purple: { text: 'text-white', accent: 'text-purple-200', card: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', border: 'border-purple-400/30', badge: 'bg-purple-400/20 text-purple-200', bar: 'via-purple-400/60' },
+    orange: { text: 'text-white', accent: 'text-orange-200', card: 'bg-gradient-to-br from-[#C2410C] to-[#7C2D12]', border: 'border-orange-400/30', badge: 'bg-orange-400/20 text-orange-200', bar: 'via-orange-400/60' },
+    teal: { text: 'text-white', accent: 'text-teal-200', card: 'bg-gradient-to-br from-[#0D9488] to-[#134E4A]', border: 'border-teal-400/30', badge: 'bg-teal-400/20 text-teal-200', bar: 'via-teal-400/60' },
   };
   
   const style = styles[variant];
 
   return (
-    <div className="mb-16">
-        <div className="flex items-center gap-4 mb-8">
-             <div className={`p-3 rounded-xl bg-white/5 border border-white/10 ${style.text}`}>
-                {Icon && <Icon size={24} />}
+    <div className="mb-12 md:mb-16">
+        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+             <div className={`p-2.5 md:p-3 rounded-xl bg-white/10 border border-white/15 ${style.accent}`}>
+                {Icon && <Icon size={20} className="md:w-6 md:h-6" />}
              </div>
-             <h4 className={`text-2xl md:text-3xl font-black uppercase tracking-widest ${style.text} font-heading`}>{title}</h4>
+             <h4 className={`text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest ${style.accent} font-heading`}>{title}</h4>
              <div className="h-px bg-white/10 flex-grow"></div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
             {items.map((item, i) => (
-                <div key={i} className={`relative overflow-hidden group rounded-2xl bg-gradient-to-br from-[#161821] to-[#0d0f14] border border-white/[0.07] hover:border-white/20 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]`}>
-                    {/* Ambient glow on hover */}
-                    <div className={`absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gradient-to-br ${style.bg} to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 blur-2xl pointer-events-none`}></div>
+                <div key={i} className={`relative overflow-hidden group rounded-xl md:rounded-2xl ${style.card} border ${style.border} hover:border-white/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl`}>
                     {/* Top accent bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent ${style.bg.replace('from-', 'via-').replace('/20', '/60').replace('/25', '/60')} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-                    <div className="p-5 md:p-6 relative z-10">
-                        <div className="flex items-start gap-3 mb-3">
-                            <div className={`w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 ${style.text} text-xs font-bold`}>
+                    <div className="p-4 md:p-6 relative z-10">
+                        <div className="flex items-start gap-2.5 md:gap-3 mb-2 md:mb-3">
+                            <div className={`w-7 h-7 md:w-8 md:h-8 rounded-lg ${style.badge} border border-white/10 flex items-center justify-center flex-shrink-0 text-[10px] md:text-xs font-bold`}>
                                 {String(i + 1).padStart(2, '0')}
                             </div>
-                            <h5 className="text-base md:text-lg font-bold text-white leading-snug font-heading">
+                            <h5 className="text-sm md:text-lg font-bold text-white leading-snug font-heading">
                                 {item.title}
                             </h5>
                         </div>
-                        <div className={`w-6 h-[1.5px] mb-3 ${style.text} opacity-30 group-hover:w-12 group-hover:opacity-70 transition-all duration-500`}></div>
-                        <p className="text-gray-400 text-sm leading-relaxed font-medium pl-11">
+                        <p className="text-white/70 text-xs md:text-sm leading-relaxed font-medium pl-[38px] md:pl-11">
                             {item.desc}
                         </p>
                     </div>

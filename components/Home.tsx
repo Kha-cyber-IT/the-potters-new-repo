@@ -185,7 +185,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       </section>
 
       {/* LOWER SECTION: Classic Silver & White Theme */}
-      <div className="w-full text-center px-0 mt-20 md:mt-40">
+      <div className="w-full text-center px-4 md:px-6 lg:px-0 mt-20 md:mt-40">
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
@@ -287,7 +287,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-0">
+        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-4 md:px-6 lg:px-0">
           <motion.div
             initial="hidden"
             whileInView="visible"

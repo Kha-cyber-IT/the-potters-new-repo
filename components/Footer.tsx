@@ -54,7 +54,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   ];
 
   return (
-    <footer className="bg-black text-white w-full py-12 px-0">
+    <footer className="bg-black text-white w-full py-10 md:py-12 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
             initial="hidden"

@@ -32,7 +32,7 @@ export default function App() {
     }
     return () => {
       cancelAnimationFrame(rafId1);
-      cancelAnimationFrame(rafId2);
+      if (rafId2 !== undefined) cancelAnimationFrame(rafId2);
     };
   }, [currentPage, navTick]);
 

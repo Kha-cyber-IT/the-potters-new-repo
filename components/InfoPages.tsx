@@ -17,7 +17,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.AboutUs) {
     return (
       <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-0 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <div className="px-4 md:px-0">
               <BackButton label="Back to Mission" target={Page.Home} />
             </div>
@@ -90,7 +90,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.OurStaff) {
     return (
       <div className="animate-fade-in text-left text-gray-900 bg-[#DFDCDA] pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-0 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Mission" target={Page.Home} />
         <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
 
@@ -141,7 +141,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.NewBuilding) {
     return (
       <section id="new-building-content" className="w-full bg-[#D1D066] pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900">
-        <div className="max-w-7xl mx-auto px-0 pt-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <button onClick={() => setPage(Page.Home)} className="mb-8 text-gray-900 hover:text-gray-700 transition-colors flex items-center gap-2">
               <ArrowLeft size={20} /> Back to Mission
             </button>
@@ -224,7 +224,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.ChurchPlanting) {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-0 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Staff" target={Page.OurStaff} />
         <h3 className="text-3xl font-bold text-blue-300 mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
 
@@ -257,7 +257,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.OurVision) {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#00272B]">
-        <div className="w-full max-w-7xl mx-auto px-0 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Conference" target={Page.Conference2025} />
 
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
