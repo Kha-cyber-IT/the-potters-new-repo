@@ -33,21 +33,6 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       
       {/* HERO SECTION: True Side-by-Side Layout */}
       <section className="relative min-h-screen flex items-start w-full mt-8 md:mt-16 pb-12 overflow-hidden">
-        {/* Optimized Outline Map Background */}
-        <img
-          src="https://i.postimg.cc/wvZqBrKP/d6c65989f73d6dc2b44f1d29c43ef8d6.jpg"
-          alt="World Map Outline"
-          loading="eager"
-          fetchPriority="high"
-          className="absolute inset-0 z-0 w-full h-full object-cover object-center pointer-events-none opacity-5 md:opacity-10"
-          style={{
-            maskImage: 'radial-gradient(ellipse at center, transparent 0%, black 70%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 0%, black 70%)'
-          }}
-        />
-
-        {/* Background Glow */}
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
         {/* Main Grid Container */}
         <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
@@ -106,11 +91,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-start items-center w-full sm:w-auto"
+              className="flex flex-row gap-3 sm:gap-6 justify-start items-center w-full sm:w-auto"
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="flex-1 sm:flex-none w-full sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-3 px-4 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="flex-1 sm:flex-none sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-3 px-4 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,7 +107,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
               />
             </motion.div>
           </div>
@@ -357,18 +342,18 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch gap-3 w-full">
+              <div className="flex flex-row justify-center md:justify-start items-stretch gap-3 w-full flex-wrap">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-10 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
                   <ModernButton
                     text="Plan Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-10 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
               </div>
             </motion.div>
@@ -440,21 +425,8 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
-        {/* Cinematic Floating Broadcasts Section */}
-        <div className="relative w-full overflow-hidden min-h-[50vh] flex flex-col justify-center py-20 mb-20 md:mb-40 group border-none">
-
-            {/* Soft Ambient Purple Glow */}
-            <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-                <div className="w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"></div>
-            </div>
-
-            {/* Seamless Merging Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-105 opacity-20 z-0"
-              style={{ backgroundImage: "url('https://i.postimg.cc/026T1kg6/1766087333269.jpg')" }}
-            ></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#F5F0E8] via-transparent to-[#F5F0E8] z-1 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8] via-transparent to-[#F5F0E8] z-1 pointer-events-none"></div>
+        {/* Broadcasts Section — clean on cream */}
+        <div className="relative w-full flex flex-col justify-center py-20 mb-20 md:mb-40 border-none">
             
             {/* Scroll Revealed Content */}
             <motion.div

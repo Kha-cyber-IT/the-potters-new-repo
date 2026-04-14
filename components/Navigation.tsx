@@ -297,14 +297,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
         </div>
 
         {/* Menu content — compact items */}
-        <div className="relative w-full flex-1 overflow-hidden">
+        <div className="relative w-full flex-1 overflow-y-auto overflow-x-hidden">
 
           {/* Main Level Menu */}
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: activeSubMenu ? '-100%' : '0%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="absolute inset-0 w-full h-full flex flex-col pt-2 overflow-y-auto"
+          <div
+            className={`w-full flex flex-col pt-2 ${activeSubMenu ? 'hidden' : ''}`}
           >
               <button
                 onClick={() => handleNavClick(Page.Home)}
@@ -323,16 +320,13 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                   <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white/70 transition-colors -rotate-90" />
                 </button>
               ))}
-          </motion.div>
+          </div>
 
           {/* Sub Levels */}
           {mobileMenuData.map((menu) => (
-            <motion.div
+            <div
               key={`sub-${menu.id}`}
-              initial={{ x: '100%' }}
-              animate={{ x: activeSubMenu === menu.id ? '0%' : '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute inset-0 w-full h-full flex flex-col pt-2 overflow-y-auto"
+              className={`w-full flex flex-col pt-2 ${activeSubMenu === menu.id ? '' : 'hidden'}`}
             >
               <button
                 onClick={() => setActiveSubMenu(null)}
@@ -353,7 +347,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
                   {sub.label}
                 </button>
               ))}
-            </motion.div>
+            </div>
           ))}
 
         </div>
