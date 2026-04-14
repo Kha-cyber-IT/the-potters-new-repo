@@ -72,7 +72,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               variants={sentence}
               initial="hidden"
               animate="show"
-              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter flex flex-wrap gap-x-3 gap-y-2 lg:max-w-4xl"
+              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-gray-900 leading-[1.1] tracking-tighter flex flex-wrap gap-x-3 gap-y-2 lg:max-w-4xl"
             >
               {splitText.map((txt, i) => (
                 <motion.span key={`start-${i}`} variants={word} className="inline-block">
@@ -96,7 +96,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed font-light lg:max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light lg:max-w-2xl"
             >
               We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span> This is the single greatest hope we have of true life and true transformation!
             </motion.p>
@@ -247,14 +247,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
-                  >
-                      <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                        <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
-                      </h4>
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                    >
+                                        <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
+                                          <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
+                                        </h4>
                       
-                      <div className="flex flex-col pl-2 md:pl-8">
-                          <div className="flex flex-col md:flex-row md:items-center text-white">
+                                        <div className="flex flex-col pl-2 md:pl-8">
+                                            <div className="flex flex-col md:flex-row md:items-center text-white">
                               <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
                               <span className="hidden md:inline mx-4">—</span>
                               <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Weekly Worship</span>
@@ -268,14 +268,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
-                  >
-                      <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                        <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
-                      </h4>
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                    >
+                                        <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
+                                          <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
+                                        </h4>
                       
-                      <div className="flex flex-col pl-2 md:pl-8">
-                          <div className="flex flex-col md:flex-row md:items-center text-white">
+                                        <div className="flex flex-col pl-2 md:pl-8">
+                                            <div className="flex flex-col md:flex-row md:items-center text-white">
                               <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
                               <span className="hidden md:inline mx-4">—</span>
                               <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">One80 Content</span>
