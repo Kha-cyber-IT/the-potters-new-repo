@@ -1,150 +1,137 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Page, NavigationProps } from '../types';
-import { MapPin, Mail, Phone, Youtube, Music, MessageCircle, Map as MapIcon } from 'lucide-react';
+import { Youtube, Music, Mail } from 'lucide-react';
 
 export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
-  const leftLinks = [
-    { page: Page.AboutUs, label: "About Us" },
-    { page: Page.OurStaff, label: "Our Staff" },
-    { page: Page.Give, label: "Giving" },
+  const sections = [
+    {
+      heading: 'About',
+      links: [
+        { label: 'About Us', page: Page.AboutUs },
+        { label: 'Our Staff', page: Page.OurStaff },
+        { label: 'Giving', page: Page.Give },
+      ],
+    },
+    {
+      heading: 'Ministries',
+      links: [
+        { label: 'Recovery Ministry', page: Page.Recovery },
+        { label: "Children's Ministry", page: Page.ChildrensMinistry },
+        { label: 'Church Planting', page: Page.ChurchPlanting },
+      ],
+    },
+    {
+      heading: 'Believes',
+      links: [
+        { label: 'Our Vision', page: Page.OurVision },
+        { label: 'Beliefs & Stories', page: Page.Stories },
+        { label: 'Events', page: Page.Events2026 },
+      ],
+    },
+    {
+      heading: 'Contact Us',
+      links: [
+        { label: 'Get in Touch', page: Page.GetConnected },
+        { label: 'Plan a Visit', page: Page.PlanAVisit },
+        { label: 'Locations', page: Page.GetConnected, scrollTarget: 'global-reach' },
+      ],
+    },
   ];
 
-  const middleLinks = [
-    { page: Page.Recovery, label: "Recovery Ministry" },
-    { page: Page.ChildrensMinistry, label: "Children's Ministry" },
-    { page: Page.ChurchPlanting, label: "Church Planting" },
-  ];
-
-  const rightLinks = [
-    { page: Page.OurVision, label: "Our Vision" },
-    { page: Page.Stories, label: "Beliefs & Stories" },
-  ];
-
-  const contactLinks: { page?: Page; url?: string; label: string; }[] = [
-    { page: Page.GetConnected, label: "Get Connected" },
-    { page: Page.PlanAVisit, label: "Visit Us" },
-    { page: Page.GetConnected, label: "Locations" },
-  ];
-
-  const handleFooterClick = (page: Page, label: string) => {
-    if (label === 'Locations') {
-      (setPage as (page: Page, scrollTarget?: string) => void)(page, 'global-reach');
-    } else {
-      (setPage as (page: Page, scrollTarget?: string) => void)(page);
-    }
+  const handleClick = (page: Page, scrollTarget?: string) => {
+    (setPage as (page: Page, scrollTarget?: string) => void)(page, scrollTarget);
   };
 
   const socialLinks = [
-    { 
-      icon: <Youtube className="flex-shrink-0 h-6 w-6" />, 
-      label: "YouTube", 
-      url: "https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-    },
-    { 
-      icon: <Music className="flex-shrink-0 h-6 w-6" />,
-      label: "Spotify",
-      url: "https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc"
-    },
-    {
-      icon: <Mail className="flex-shrink-0 h-6 w-6" />,
-      label: "Email",
-      url: "mailto:joburg@worldcfm.com"
-    }
+    { icon: <Youtube className="flex-shrink-0 h-6 w-6" />, label: 'YouTube', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+    { icon: <Music className="flex-shrink-0 h-6 w-6" />, label: 'Spotify', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
+    { icon: <Mail className="flex-shrink-0 h-6 w-6" />, label: 'Email', url: 'mailto:joburg@worldcfm.com' },
   ];
 
   return (
-    <footer className="bg-black text-white w-full py-10 md:py-12 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-black text-white w-full">
+
+      {/* Mobile footer — plain text, edge-to-edge */}
+      <div className="md:hidden">
+        {sections.map((section, si) => (
+          <div key={section.heading} className="border-b border-white/10">
+            <p className="px-4 pt-5 pb-2 text-[11px] font-bold tracking-[0.25em] uppercase text-white/40">
+              {section.heading}
+            </p>
+            {section.links.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleClick(link.page, (link as any).scrollTarget)}
+                className="w-full text-left px-4 py-3 text-base font-medium text-white/90 active:bg-white/5 transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+        ))}
+
+        {/* Mobile social */}
+        <div className="flex items-center gap-6 px-4 py-6 border-b border-white/10">
+          {socialLinks.map((s) => (
+            <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
+              className="text-white/60 hover:text-white transition-colors"
+              title={s.label}>
+              {s.icon}
+            </a>
+          ))}
+        </div>
+
+        <p className="px-4 py-5 text-[10px] text-white/30">
+          © 2026 The Potter's House Christian Fellowship Church • Eldorado Park, Soweto
+        </p>
+      </div>
+
+      {/* Desktop footer — horizontal single-plane layout */}
+      <div className="hidden md:block py-14 px-6">
         <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-                hidden: {},
-                visible: {
-                    transition: {
-                        staggerChildren: 0.15
-                    }
-                }
-            }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 text-left"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          className="max-w-6xl mx-auto flex flex-row justify-center items-start gap-16 xl:gap-24"
         >
-          <motion.div variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-          }} className="flex flex-col space-y-2">
-            <h4 className="font-bold text-gray-400 uppercase mb-2">Home</h4>
-            {leftLinks.map((link) => (
-                <button key={link.label} onClick={() => handleFooterClick(link.page, link.label)} className="text-white hover:underline text-left">
+          {sections.map((section) => (
+            <motion.div
+              key={section.heading}
+              variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } } }}
+              className="flex flex-col gap-3"
+            >
+              <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-1">
+                {section.heading}
+              </h4>
+              {section.links.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => handleClick(link.page, (link as any).scrollTarget)}
+                  className="text-sm font-medium text-white/75 hover:text-white transition-colors text-left whitespace-nowrap"
+                >
                   {link.label}
                 </button>
-            ))}
-          </motion.div>
-
-          <motion.div variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-          }} className="flex flex-col space-y-2">
-            <h4 className="font-bold text-gray-400 uppercase mb-2">Ministries</h4>
-            {middleLinks.map((m) => (
-                <button key={m.label} onClick={() => m.page && handleFooterClick(m.page, m.label)} className="text-white hover:underline text-left">
-                  {m.label}
-                </button>
-            ))}
-          </motion.div>
-
-          <motion.div variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-          }} className="flex flex-col space-y-2">
-            <h4 className="font-bold text-gray-400 uppercase mb-2">Believes</h4>
-            {rightLinks.map((r) => (
-                <button key={r.label} onClick={() => handleFooterClick(r.page, r.label)} className="text-white hover:underline text-left">
-                  {r.label}
-                </button>
-            ))}
-          </motion.div>
-
-          <motion.div variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-          }} className="flex flex-col space-y-2 lg:items-end lg:text-right">
-            <h4 className="font-bold text-gray-400 uppercase mb-2">CONTACT US</h4>
-            {contactLinks.map((c) => (
-                c.url ? (
-                  <a key={c.label} href={c.url} target="_blank" rel="noopener noreferrer" className="text-white hover:underline text-left lg:text-right">
-                    {c.label}
-                  </a>
-                ) : (
-                  <button key={c.label} onClick={() => c.page && handleFooterClick(c.page, c.label)} className="text-white hover:underline text-left lg:text-right">
-                    {c.label}
-                  </button>
-                )
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          ))}
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-4 mt-16">
-            {socialLinks.map((social) => (
-            <a
-                key={social.label}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex items-center justify-start h-[60px] w-[60px] hover:w-[180px] px-5 rounded-full text-white hover:text-black bg-white/10 hover:bg-white border border-white/20 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:-translate-y-1"
-                title={social.label}
-            >
-                {social.icon}
-                <span className="whitespace-nowrap ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold uppercase tracking-widest text-sm">
-                    {social.label}
-                </span>
-            </a>
+        {/* Desktop divider */}
+        <div className="max-w-6xl mx-auto border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            {socialLinks.map((s) => (
+              <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
+                className="group flex items-center justify-center h-10 w-10 rounded-full bg-white/8 hover:bg-white border border-white/15 hover:border-white text-white/70 hover:text-black transition-all duration-300"
+                title={s.label}>
+                {s.icon}
+              </a>
             ))}
-        </div>
-        
-        <div className="mt-12 text-center text-[10px] text-gray-500 border-t border-gray-800 pt-6">
-          © 2026 THE POTTER'S HOUSE CHRISTIAN FELLOWSHIP CHURCH ELDORADO PARK, SOWETO • ALL RIGHTS RESERVED
+          </div>
+          <p className="text-[11px] text-white/30 text-center md:text-right">
+            © 2026 THE POTTER'S HOUSE CHRISTIAN FELLOWSHIP CHURCH ELDORADO PARK, SOWETO • ALL RIGHTS RESERVED
+          </p>
         </div>
       </div>
     </footer>

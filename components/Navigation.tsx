@@ -64,7 +64,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
     { id: Page.Home, label: 'Home', type: 'link' as const },
     {
       id: 'about',
-      label: 'About Us',
+      label: 'About',
       type: 'dropdown' as const,
       subItems: [
         { label: 'Our Staff', page: Page.OurStaff },
@@ -104,7 +104,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
     },
     {
       id: 'connect',
-      label: 'Get Connected',
+      label: 'Contact Us',
       type: 'dropdown' as const,
       subItems: [
         { label: 'Contact Us', page: Page.GetConnected },

@@ -658,81 +658,109 @@ const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
 );
 
 const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) => (
-    <div className="bg-gradient-to-br from-[#0D9488] to-[#134E4A] rounded-none md:rounded-2xl border-none md:border md:border-teal-400/20 p-4 px-4 md:p-6 md:hover:border-teal-400/40 transition-all duration-300 md:hover:shadow-lg">
-        <h5 className="text-sm md:text-lg font-bold text-teal-100 uppercase tracking-wider mb-3 md:mb-4 font-heading">{region}</h5>
-        <ul className="space-y-2">
-            {dates.map((d, i) => (
-                <li key={i} className="flex items-center gap-2.5 md:gap-3 text-white/80">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-md bg-teal-400/20 border border-teal-300/20 flex items-center justify-center flex-shrink-0 text-teal-200 text-[9px] md:text-[10px] font-bold">{i + 1}</div>
-                    <span className="text-xs md:text-base">{d}</span>
-                </li>
-            ))}
-        </ul>
+    <div>
+        {/* Mobile: plain text, edge-to-edge */}
+        <div className="md:hidden py-2">
+            <h5 className="text-xs font-bold text-teal-300 uppercase tracking-[0.2em] mb-2 px-0">{region}</h5>
+            <ul className="divide-y divide-white/10">
+                {dates.map((d, i) => (
+                    <li key={i} className="flex items-center gap-3 py-2.5 text-white/80">
+                        <span className="text-[10px] font-black text-teal-400 w-4 shrink-0">{i + 1}</span>
+                        <span className="text-sm">{d}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+        {/* Desktop: premium card */}
+        <div className="hidden md:block bg-white/5 hover:bg-white/8 border border-white/10 hover:border-teal-400/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
+            <h5 className="text-xs font-black text-teal-300 uppercase tracking-[0.2em] mb-4 font-heading">{region}</h5>
+            <ul className="space-y-2.5">
+                {dates.map((d, i) => (
+                    <li key={i} className="flex items-center gap-3 text-white/75 group-hover:text-white/90 transition-colors">
+                        <div className="w-6 h-6 rounded-lg bg-teal-500/15 border border-teal-400/20 flex items-center justify-center flex-shrink-0 text-teal-300 text-[10px] font-black">{i + 1}</div>
+                        <span className="text-sm leading-snug">{d}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
     </div>
 );
 
 type Variant = 'cyan' | 'emerald' | 'amber' | 'rose' | 'purple' | 'orange' | 'teal';
 
-const AnnouncementGroup = ({ 
-  title, 
-  items, 
-  variant = 'cyan', 
-  icon: Icon 
-}: { 
-  title: string; 
-  items: { title: string; desc: string }[]; 
+const AnnouncementGroup = ({
+  title,
+  items,
+  variant = 'cyan',
+  icon: Icon,
+}: {
+  title: string;
+  items: { title: string; desc: string }[];
   variant?: Variant;
   icon?: any;
 }) => {
-  const styles = {
-    cyan: { text: 'text-white', accent: 'text-cyan-300', card: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', border: 'border-cyan-400/30', badge: 'bg-cyan-400/20 text-cyan-200', bar: 'via-cyan-400/60' },
-    emerald: { text: 'text-white', accent: 'text-emerald-300', card: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', border: 'border-emerald-400/30', badge: 'bg-emerald-400/20 text-emerald-200', bar: 'via-emerald-400/60' },
-    amber: { text: 'text-white', accent: 'text-amber-200', card: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', border: 'border-amber-400/30', badge: 'bg-amber-400/20 text-amber-200', bar: 'via-amber-400/60' },
-    rose: { text: 'text-white', accent: 'text-rose-200', card: 'bg-gradient-to-br from-[#BE123C] to-[#881337]', border: 'border-rose-400/30', badge: 'bg-rose-400/20 text-rose-200', bar: 'via-rose-400/60' },
-    purple: { text: 'text-white', accent: 'text-purple-200', card: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', border: 'border-purple-400/30', badge: 'bg-purple-400/20 text-purple-200', bar: 'via-purple-400/60' },
-    orange: { text: 'text-white', accent: 'text-orange-200', card: 'bg-gradient-to-br from-[#C2410C] to-[#7C2D12]', border: 'border-orange-400/30', badge: 'bg-orange-400/20 text-orange-200', bar: 'via-orange-400/60' },
-    teal: { text: 'text-white', accent: 'text-teal-200', card: 'bg-gradient-to-br from-[#0D9488] to-[#134E4A]', border: 'border-teal-400/30', badge: 'bg-teal-400/20 text-teal-200', bar: 'via-teal-400/60' },
+  const accents: Record<Variant, { label: string; bar: string; badge: string; border: string }> = {
+    cyan:    { label: 'text-cyan-300',    bar: 'bg-cyan-400',    badge: 'bg-cyan-400/15 text-cyan-300 border-cyan-400/25',    border: 'hover:border-cyan-400/50' },
+    emerald: { label: 'text-emerald-300', bar: 'bg-emerald-400', badge: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/25', border: 'hover:border-emerald-400/50' },
+    amber:   { label: 'text-amber-300',   bar: 'bg-amber-400',   badge: 'bg-amber-400/15 text-amber-300 border-amber-400/25',   border: 'hover:border-amber-400/50' },
+    rose:    { label: 'text-rose-300',    bar: 'bg-rose-400',    badge: 'bg-rose-400/15 text-rose-300 border-rose-400/25',    border: 'hover:border-rose-400/50' },
+    purple:  { label: 'text-purple-300',  bar: 'bg-purple-400',  badge: 'bg-purple-400/15 text-purple-300 border-purple-400/25',  border: 'hover:border-purple-400/50' },
+    orange:  { label: 'text-orange-300',  bar: 'bg-orange-400',  badge: 'bg-orange-400/15 text-orange-300 border-orange-400/25',  border: 'hover:border-orange-400/50' },
+    teal:    { label: 'text-teal-300',    bar: 'bg-teal-400',    badge: 'bg-teal-400/15 text-teal-300 border-teal-400/25',    border: 'hover:border-teal-400/50' },
   };
-  
-  const style = styles[variant];
+
+  const a = accents[variant];
 
   return (
-    <div className="mb-12 md:mb-16">
-        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-             <div className={`p-2.5 md:p-3 rounded-2xl ${style.card} border ${style.border} shadow-lg ${style.accent}`}>
-                {Icon && <Icon size={20} className="md:w-6 md:h-6" />}
-             </div>
-             <h4 className={`text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest ${style.accent} font-heading`}>{title}</h4>
-             <div className="h-px bg-white/10 flex-grow"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 md:gap-5">
-            {items.map((item, i) => (
-                <div key={i} className={`relative overflow-hidden group rounded-none md:rounded-3xl ${style.card} border-none md:border ${style.border} md:hover:border-white/40 transition-all duration-500 md:hover:-translate-y-2 md:hover:shadow-2xl`}>
-                    {/* Top accent bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                    {/* Decorative circle */}
-                    <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+    <div className="mb-10 md:mb-14">
+      {/* Section header */}
+      <div className="flex items-center gap-3 mb-4 md:mb-6 px-0">
+        {Icon && (
+          <div className={`p-2 rounded-xl bg-white/8 border border-white/10 ${a.label}`}>
+            <Icon size={18} />
+          </div>
+        )}
+        <h4 className={`text-base md:text-xl font-black uppercase tracking-widest ${a.label} font-heading`}>{title}</h4>
+        <div className="h-px bg-white/10 flex-grow" />
+      </div>
 
-                    <div className="p-4 md:p-6 relative z-10">
-                        <div className="flex items-start gap-2.5 md:gap-3 mb-2 md:mb-3">
-                            <div className={`w-8 h-8 md:w-9 md:h-9 rounded-xl ${style.badge} border border-white/15 flex items-center justify-center flex-shrink-0 text-[10px] md:text-xs font-black shadow-sm`}>
-                                {String(i + 1).padStart(2, '0')}
-                            </div>
-                            <h5 className="text-sm md:text-lg font-black text-white leading-snug font-heading">
-                                {item.title}
-                            </h5>
-                        </div>
-                        <p className="text-white/70 text-xs md:text-sm leading-relaxed font-medium pl-[42px] md:pl-12">
-                            {item.desc}
-                        </p>
-                    </div>
-                </div>
-            ))}
-        </div>
+      {/* Mobile: plain text list, edge-to-edge, no card backgrounds */}
+      <div className="md:hidden divide-y divide-white/10">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-start gap-3 py-3">
+            <span className={`text-[10px] font-black w-5 shrink-0 mt-0.5 ${a.label}`}>{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <p className="text-sm font-bold text-white leading-snug">{item.title}</p>
+              <p className="text-xs text-white/55 mt-0.5 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: premium cards — clean with accent left-border */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className={`relative bg-white/5 hover:bg-white/8 border border-white/10 ${a.border} rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group overflow-hidden`}
+          >
+            {/* Colored top accent bar */}
+            <div className={`absolute top-0 left-0 right-0 h-[2px] ${a.bar} opacity-40 group-hover:opacity-80 transition-opacity duration-300`} />
+            <div className="flex items-start gap-3">
+              <span className={`inline-flex items-center justify-center w-7 h-7 rounded-lg text-[10px] font-black border ${a.badge} shrink-0`}>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h5 className="text-sm font-bold text-white leading-snug mb-1 font-heading">{item.title}</h5>
+                <p className="text-white/55 text-xs leading-relaxed group-hover:text-white/70 transition-colors">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 
 

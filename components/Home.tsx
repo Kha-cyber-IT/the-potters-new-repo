@@ -458,7 +458,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                             hidden: { opacity: 0, y: 40 },
                             visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                         }}
-                        className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.3em] font-heading"
+                        className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.3em] font-heading drop-shadow-md"
                     >
                         Broadcasts
                     </motion.h3>
@@ -469,7 +469,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, y: 40 },
                         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl font-medium text-gray-900 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
                 >
                   Missed Church Services? Watch our archived broadcasts!
                 </motion.p>
@@ -485,7 +485,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 transition-all duration-300 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
                     />
                 </motion.div>
             </motion.div>
