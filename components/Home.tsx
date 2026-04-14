@@ -50,7 +50,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
         {/* Main Grid Container */}
-        <div className="w-full px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
+        <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
 
           {/* LEFT SIDE: Flowing Text & Buttons */}
           <div className="flex flex-col gap-8 w-full max-w-6xl mx-auto lg:mx-0">
