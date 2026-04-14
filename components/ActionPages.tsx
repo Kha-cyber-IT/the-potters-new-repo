@@ -764,6 +764,13 @@ const AnnouncementGroup = ({
 
 
 
+const FaithDetail = ({ title, content }: { title: string; content: string }) => (
+  <div className="border-l-4 border-blue-400 pl-6">
+    <h4 className="text-xl font-bold text-gray-900 mb-2 uppercase tracking-wider font-heading">{title}:</h4>
+    <p className="text-lg leading-relaxed text-gray-700">{content}</p>
+  </div>
+);
+
 const MiniCard = ({ title, desc, onClick }: { title: string; desc: string; onClick: () => void }) => (
   <div
     onClick={onClick}
