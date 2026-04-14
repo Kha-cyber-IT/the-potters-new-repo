@@ -34,7 +34,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
       links: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
-        { label: 'Locations', page: Page.GetConnected, scrollTarget: 'global-reach' },
+        { label: 'Locations', page: Page.PlanAVisit },
       ],
     },
   ];

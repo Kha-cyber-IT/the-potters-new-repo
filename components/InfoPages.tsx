@@ -1,26 +1,17 @@
 import React from 'react';
 import { Page, NavigationProps } from '../types';
-import { ArrowLeft } from 'lucide-react';
 
 interface InfoPageProps extends NavigationProps {
   page: Page;
 }
 
 export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
-  const BackButton = ({ label, target }: { label: string; target: Page }) => (
-    <button onClick={() => setPage(target)} className="mb-8 text-blue-300 hover:text-blue-200 transition-colors flex items-center gap-2">
-      <ArrowLeft size={20} /> {label}
-    </button>
-  );
 
   // PAGE 2: ABOUT US (Merged with Ministries)
   if (page === Page.AboutUs) {
     return (
       <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-            <div className="px-4 md:px-0">
-              <BackButton label="Back to Mission" target={Page.Home} />
-            </div>
         
         {/* Cloud Blue Who We Are Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0">
@@ -91,7 +82,6 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-white bg-[#2C5A8B] pb-20 w-full pt-24 md:pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-            <BackButton label="Back to Mission" target={Page.Home} />
         <h3 className="text-3xl font-bold text-white mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
 
         <div className="space-y-16">
@@ -142,10 +132,6 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <section id="new-building-content" className="w-full bg-[#D1D066] pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-            <button onClick={() => setPage(Page.Home)} className="mb-8 text-gray-900 hover:text-gray-700 transition-colors flex items-center gap-2">
-              <ArrowLeft size={20} /> Back to Mission
-            </button>
-            
             {/* Blue Text Highlight */}
             <div className="text-center mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">A Vision Yet to Come</h3>
@@ -225,7 +211,6 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#8D8CCF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-            <BackButton label="Back to Staff" target={Page.OurStaff} />
         <h3 className="text-3xl font-bold text-white mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
 
         <div className="space-y-6 text-lg leading-relaxed mb-10">
@@ -258,7 +243,6 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#00272B]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-            <BackButton label="Back to Conference" target={Page.Conference2025} />
 
         <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/RFYD6g0D/502a78-76d146b4c54b4977a6f70a02c24ec4f3-mv2.jpg" alt="Vision Background" className="absolute inset-0 w-full h-full object-cover opacity-80" />
@@ -286,8 +270,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-gray-900 pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-          <BackButton label="Back to Mission" target={Page.Home} />
-          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest font-heading">Statement of Faith</h3>
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline decoration-black underline-offset-8 font-heading">Statement of Faith</h3>
           <div className="space-y-10 max-w-4xl mx-auto">
             <FaithDetail title="The Bible" content="We believe the Bible is the inspired, infallible Word of God and the supreme authority in all matters of faith and practice (2 Timothy 3:16-17)." />
             <FaithDetail title="God" content="We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit (Matthew 28:19; 2 Corinthians 13:14)." />

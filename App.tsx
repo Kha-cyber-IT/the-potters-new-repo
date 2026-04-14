@@ -29,6 +29,8 @@ export default function App() {
     // Immediately force scroll to top synchronously (before paint)
     if (!target) {
       window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
   }, [currentPage, navTick]);
 
@@ -59,7 +61,7 @@ export default function App() {
       });
 
       // Staggered fallbacks for content that loads/animates after initial paint
-      [50, 150, 300].forEach(delay => {
+      [50, 150, 300, 600].forEach(delay => {
         timeoutIds.push(setTimeout(scrollToTop, delay));
       });
     }

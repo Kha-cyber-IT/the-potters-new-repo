@@ -1,27 +1,21 @@
 import React from 'react';
 import { Page, NavigationProps } from '../types';
 import { ModernButton } from './ModernButton';
-import { ArrowLeft, Mail, Phone, Globe, Map, Building2, RefreshCw, UserPlus, ArrowRight, ArrowRightLeft, Calendar, Users, Star, Compass, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, Globe, Map, Building2, RefreshCw, UserPlus, ArrowRight, ArrowRightLeft, Calendar, Users, Star, Compass, ShieldCheck } from 'lucide-react';
 
 interface ActionPageProps extends NavigationProps {
   page: Page;
 }
 
 export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
-  const BackButton = ({ label, target }: { label: string; target: Page }) => (
-    <button onClick={() => setPage(target)} className="mb-8 pt-4 text-blue-300 hover:text-blue-200 transition-colors flex items-center gap-2">
-      <ArrowLeft size={20} /> {label}
-    </button>
-  );
 
   // Ministries redirects to AboutUs which has the full ministries section
   if (page === Page.Ministries) {
     return (
       <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-          <BackButton label="Back to Mission" target={Page.Home} />
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 uppercase tracking-widest font-heading">Our Ministries</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 uppercase tracking-widest underline decoration-black underline-offset-8 font-heading">Our Ministries</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Explore the ways you and your family can grow and make an impact in your community and the world.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -40,7 +34,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <section className="w-full pt-24 md:pt-32 pb-24 min-h-screen animate-fade-in text-left text-white/90 bg-[#1A2517]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
         
         {/* Top Half: Existing Contact Card */}
         <div className="relative w-full rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl bg-black border-none md:border md:border-white/10">
@@ -123,7 +116,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#F0F7FF]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
             <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1200" 
@@ -215,7 +207,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-indigo-800 to-blue-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
         <div className="text-center mb-10 md:mb-16">
             <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
             <p className="text-base md:text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
@@ -316,10 +307,9 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#C2D8C4]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="text-center mb-10">
-            <h3 className="inline-block px-4 py-1.5 border border-emerald-900/30 rounded-full text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-950 mb-6 font-heading">
+            <h3 className="inline-block px-4 py-1.5 border border-emerald-900/30 rounded-full text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-950 mb-6 font-heading underline decoration-emerald-950 underline-offset-4">
                 Not The Same: Testimonies of Lives Changed
             </h3>
         </div>
@@ -355,7 +345,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 </div>
 
                 <div className="mb-10 bg-transparent px-0 py-0 border-none shadow-none md:bg-teal-600 md:inline-block md:px-10 md:py-3 md:rounded-xl md:shadow-lg md:border md:border-teal-500">
-                    <p className="text-2xl font-black text-teal-800 md:text-white uppercase tracking-widest font-heading">Join us next Saturday at 10:00 AM!</p>
+                    <p className="text-2xl font-black text-teal-800 md:text-white uppercase tracking-widest font-heading underline decoration-current underline-offset-4">Join us next Saturday at 10:00 AM!</p>
                 </div>
 
             </div>
@@ -378,7 +368,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="bg-transparent p-0 border-none shadow-none md:bg-white/50 md:backdrop-blur-md md:border md:border-white/30 md:shadow-xl md:p-8 md:p-12 md:rounded-3xl space-y-10">
             <div className="text-center">
-                <h3 className="inline-block px-4 py-1 border border-emerald-900/30 rounded-full text-[10px] tracking-[0.3em] uppercase text-emerald-900 font-heading">Statement of Faith</h3>
+                <h3 className="inline-block px-4 py-1 border border-emerald-900/30 rounded-full text-[10px] tracking-[0.3em] uppercase text-emerald-900 font-heading underline decoration-emerald-900 underline-offset-4">Statement of Faith</h3>
             </div>
 
             <FaithDetail title="Salvation" content="Salvation is initiated by a prayer of faith in Jesus. Salvation is completed by God's grace. Salvation is maintained by a lifestyle of Biblical righteousness. Salvation is demonstrated by works. Salvation is lost when we sin and do not repent. Salvation is necessary to enter Heaven in eternity." />
