@@ -174,7 +174,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
-          <h3 className="inline-block bg-slate-200 text-[#050f07] text-xl sm:text-2xl md:text-4xl font-black py-4 px-10 sm:py-6 sm:px-16 rounded-full shadow-2xl mb-16 md:mb-24 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading">
+          <h3 className="inline-block bg-slate-200 text-gray-900 text-xl sm:text-2xl md:text-4xl font-black py-4 px-10 sm:py-6 sm:px-16 rounded-full shadow-2xl mb-16 md:mb-24 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading">
               Weekly Services
           </h3>
           
@@ -201,22 +201,22 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 }}
                 className="w-full md:col-span-2 bg-[#FEFACD] rounded-none md:rounded-3xl p-4 px-4 md:p-10"
               >
-                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-[#0B0D0F]"> 
+                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-gray-900"> 
                     <span className="border-l-[6px] md:border-l-[8px] border-[#0B0D0F] pl-4 md:pl-6">Sunday</span>
                   </h4>
                   
                   <div className="flex flex-col space-y-6 md:space-y-8 pl-2 md:pl-8">
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">9:00 AM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Bible Study</span>
                       </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">10:00 AM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Morning Worship</span>
                       </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">5:00 PM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Evening Worship</span>
@@ -335,10 +335,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               }}
               className="flex flex-col text-center md:text-left bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-lg md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4">
+              <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4">
                 New to The Potter's House?
               </h2>
-              <p className="text-sm md:text-xl font-medium text-[#0B0D0F]/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
+              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
@@ -366,10 +366,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               }}
               className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8"
             >
-              <h2 className="text-lg font-black text-[#0B0D0F] uppercase tracking-[0.1em] font-heading mb-2">
+              <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2">
                 Stay Connected
               </h2>
-              <p className="text-sm font-medium text-[#0B0D0F]/80 mb-4 leading-relaxed">
+              <p className="text-sm font-medium text-gray-900/80 mb-4 leading-relaxed">
                 Follow us on WhatsApp for daily devotions and updates.
               </p>
               <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
@@ -398,10 +398,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               }}
               className="hidden md:flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-2xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.2em] font-heading mb-4">
+              <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.2em] font-heading mb-4">
                 Stay Connected
               </h2>
-              <p className="text-lg md:text-xl font-medium text-[#0B0D0F]/80 mb-10 leading-relaxed max-w-md">
+              <p className="text-lg md:text-xl font-medium text-gray-900/80 mb-10 leading-relaxed max-w-md">
                 Follow The Potter's House of Eldorado Park on WhatsApp for daily devotions and updates.
               </p>
 
