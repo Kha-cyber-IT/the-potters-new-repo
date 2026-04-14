@@ -37,6 +37,7 @@ export default function App() {
     const target = consumedTargetRef.current;
     consumedTargetRef.current = null;
     let rafId1: number;
+    let rafId2: number;
     const timeoutIds: ReturnType<typeof setTimeout>[] = [];
 
     const scrollToTop = () => {
@@ -54,7 +55,7 @@ export default function App() {
       // to handle Framer Motion animations, lazy images, and async content
       rafId1 = requestAnimationFrame(() => {
         scrollToTop();
-        requestAnimationFrame(scrollToTop);
+        rafId2 = requestAnimationFrame(scrollToTop);
       });
 
       // Staggered fallbacks for content that loads/animates after initial paint
@@ -65,6 +66,7 @@ export default function App() {
 
     return () => {
       if (rafId1 !== undefined) cancelAnimationFrame(rafId1);
+      if (rafId2 !== undefined) cancelAnimationFrame(rafId2);
       timeoutIds.forEach(clearTimeout);
     };
   }, [currentPage, navTick]);
