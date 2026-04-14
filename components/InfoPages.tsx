@@ -89,10 +89,10 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   // PAGE 5: OUR STAFF
   if (page === Page.OurStaff) {
     return (
-      <div className="animate-fade-in text-left text-gray-900 bg-[#DFDCDA] pb-20 w-full pt-24 md:pt-32">
+      <div className="animate-fade-in text-left text-white bg-[#2C5A8B] pb-20 w-full pt-24 md:pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Mission" target={Page.Home} />
-        <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
+        <h3 className="text-3xl font-bold text-white mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
 
         <div className="space-y-16">
             <StaffMember 
@@ -223,10 +223,10 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   // PAGE 6: CHURCH PLANTING
   if (page === Page.ChurchPlanting) {
     return (
-      <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32">
+      <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#8D8CCF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Staff" target={Page.OurStaff} />
-        <h3 className="text-3xl font-bold text-blue-300 mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
+        <h3 className="text-3xl font-bold text-white mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
 
         <div className="space-y-6 text-lg leading-relaxed mb-10">
             <p><strong className="text-blue-300 font-heading">The Potter's House of Eldorado Park is actively involved in church planting across the globe.</strong></p>
@@ -236,7 +236,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             <p>The Eldorado Park congregation has been instrumental in reaching many nations in our region, and we are constantly striving to extend the reach of the gospel in Southern Africa and beyond!</p>
         </div>
 
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl mb-12 border-2 border-white/10">
+        <div className="relative w-full rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl mb-12 border-none md:border-2 md:border-white/10">
             <img src="https://i.postimg.cc/kXJBBX8g/502a78-3f260f5175d047d2ba1f844398a2e390-mv2.jpg" alt="Global Map" className="w-full h-auto opacity-60" />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                 <h3 className="text-2xl md:text-5xl font-black text-white mb-4 text-shadow-strong uppercase tracking-wider font-heading">3,700 locations and growing!</h3>
@@ -260,14 +260,14 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Conference" target={Page.Conference2025} />
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/RFYD6g0D/502a78-76d146b4c54b4977a6f70a02c24ec4f3-mv2.jpg" alt="Vision Background" className="absolute inset-0 w-full h-full object-cover opacity-80" />
             <div className="absolute inset-0 flex items-center justify-center p-4 bg-black/30">
                 <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong text-center uppercase tracking-widest font-heading">See what drives our church and everything we do.</h3>
             </div>
         </div>
 
-        <div className="glass-card-blue p-8 md:p-12 rounded-3xl space-y-10">
+        <div className="bg-transparent p-0 md:glass-card-blue md:p-8 md:p-12 rounded-none md:rounded-3xl space-y-10">
             <h3 className="text-3xl font-bold text-blue-300 uppercase tracking-widest text-center font-heading">Our Vision</h3>
             <VisionPoint title="Evangelism" content="The Gospel taken outside the four walls is the absolute foundation of our church, in obedience to Mark 16:15 And He said to them, ‘Go into all the world and preach the gospel to every creature'… We emphasize personal evangelism, and a large variety of outreaches to share the Gospel." />
             <VisionPoint title="Conversion" content="We witness, testify and preach for a decision. The Gospel has the power to save and transform lives. 1 Peter 1:23 having been born again... The bulk of our congregation consists of people converted here by the Power of God." />
@@ -285,12 +285,12 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 };
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
-    <div className="bg-transparent p-0 rounded-none border-none md:bg-white/40 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
+    <div className="bg-transparent p-0 rounded-none border-none md:bg-white/15 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
         <img src={img} alt={name} className="w-1/2 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
         <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl md:text-2xl font-bold text-gray-900 uppercase tracking-widest font-heading mb-2">{name}</h4>
-            <p className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-widest font-heading">{role}</p>
-            <p className="text-base md:text-lg leading-relaxed text-gray-900">{bio}</p>
+            <h4 className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest font-heading mb-2">{name}</h4>
+            <p className="text-lg font-bold text-white/80 mb-4 uppercase tracking-widest font-heading">{role}</p>
+            <p className="text-base md:text-lg leading-relaxed text-white/90">{bio}</p>
         </div>
     </div>
 );

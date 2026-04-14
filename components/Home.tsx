@@ -29,7 +29,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   const splitTextEnd = " of Jesus Christ to the world!".split(" ");
 
   return (
-    <div className="animate-fade-in bg-[#0B0D0F] min-h-screen w-full pb-20 overflow-x-hidden pt-24 md:pt-32">
+    <div className="animate-fade-in bg-[#F5F0E8] min-h-screen w-full pb-20 overflow-x-hidden pt-24 md:pt-32">
       
       {/* HERO SECTION: True Side-by-Side Layout */}
       <section className="relative min-h-screen flex items-start w-full mt-8 md:mt-16 pb-12 overflow-hidden">
@@ -326,7 +326,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-4 md:px-6 lg:px-0">
+        <div className="w-full py-16 md:py-20 px-4 md:px-6 lg:px-0">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -453,8 +453,8 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-105 opacity-20 z-0"
               style={{ backgroundImage: "url('https://i.postimg.cc/026T1kg6/1766087333269.jpg')" }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D0F] via-transparent to-[#0B0D0F] z-1 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D0F] via-transparent to-[#0B0D0F] z-1 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#F5F0E8] via-transparent to-[#F5F0E8] z-1 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8] via-transparent to-[#F5F0E8] z-1 pointer-events-none"></div>
             
             {/* Scroll Revealed Content */}
             <motion.div
@@ -486,7 +486,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                             hidden: { opacity: 0, y: 40 },
                             visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                         }}
-                        className="text-3xl md:text-4xl font-black text-white uppercase tracking-[0.3em] font-heading"
+                        className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.3em] font-heading"
                     >
                         Broadcasts
                     </motion.h3>
@@ -497,7 +497,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, y: 40 },
                         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="text-lg md:text-xl font-medium text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
                 >
                   Missed Church Services? Watch our archived broadcasts!
                 </motion.p>

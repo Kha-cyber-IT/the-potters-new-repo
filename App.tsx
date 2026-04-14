@@ -17,6 +17,13 @@ export default function App() {
     scrollTargetRef.current = null;
     let rafId1: number;
     let rafId2: number;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    // Immediately scroll to top before React re-renders
+    if (!target) {
+      window.scrollTo(0, 0);
+    }
+
     if (target) {
       rafId1 = requestAnimationFrame(() => {
         const el = document.getElementById(target);
@@ -29,10 +36,15 @@ export default function App() {
           window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
         });
       });
+      // Fallback: also scroll after a short delay to catch late renders
+      timeoutId = setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+      }, 50);
     }
     return () => {
       cancelAnimationFrame(rafId1);
       if (rafId2 !== undefined) cancelAnimationFrame(rafId2);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
     };
   }, [currentPage, navTick]);
 
@@ -74,7 +86,7 @@ export default function App() {
     }
   };
 
-  const bgColor = currentPage === Page.Home ? 'bg-[#1a1a1a]' : 'bg-[#0f0f0f]';
+  const bgColor = currentPage === Page.Home ? 'bg-[#F5F0E8]' : 'bg-[#0f0f0f]';
 
   return (
     <div className={`min-h-screen w-full relative ${bgColor} transition-colors duration-500`}>

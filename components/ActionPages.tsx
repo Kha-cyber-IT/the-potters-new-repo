@@ -319,7 +319,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         {/* LOCAL IMPACT SECTION */}
         <div className="mb-20">
-            <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-8 shadow-2xl border border-white/10">
+            <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-8 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
                 <img src="https://i.postimg.cc/C5StGR00/ea998c-9e02deae6b1b45fb9bfaa3b321c24d2e-mv2.png" alt="Local Impact" className="absolute inset-0 w-full h-full object-cover brightness-110" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     <h3 className="text-white text-3xl md:text-5xl font-black text-shadow-strong uppercase tracking-widest font-heading">Local Impact</h3>
@@ -340,7 +340,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             </div>
         </div>
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/7ZSqn28Z/1763582310556.jpg" alt="Bible Study" className="absolute inset-0 w-full h-full object-cover opacity-90" />
             <div className="absolute inset-0 flex items-center justify-center p-4 bg-black/20">
                 <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong text-center uppercase tracking-widest font-heading">What we believe and why it matters.</h3>
@@ -402,7 +402,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/c4bLPpd2/1763563363621.jpg" alt="Giving" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center p-4">
                 <h3 className="text-white text-3xl md:text-6xl font-black text-shadow-strong text-center uppercase tracking-tighter font-heading">Faith. Generosity. Impact.</h3>
@@ -421,7 +421,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mb-16">
-             <img src="https://i.postimg.cc/9XL7r8hw/Giving-2022.jpg" alt="Banking Details" className="w-full max-w-3xl rounded-3xl shadow-2xl border border-white/10" />
+             <img src="https://i.postimg.cc/9XL7r8hw/Giving-2022.jpg" alt="Banking Details" className="w-full max-w-3xl rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-white/10" />
         </div>
         
         <div className="text-center mb-16 space-y-6">
@@ -540,8 +540,8 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             
             <div className="pt-12 md:pt-20 border-t border-white/10 text-center">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
-                <div className="glass-card-blue p-1.5 md:p-2 rounded-2xl md:rounded-3xl max-w-4xl mx-auto shadow-2xl border border-white/10 overflow-hidden">
-                    <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-2xl" />
+                <div className="bg-transparent p-0 md:glass-card-blue md:p-2 rounded-none md:rounded-3xl max-w-4xl mx-auto shadow-none md:shadow-2xl border-none md:border md:border-white/10 overflow-hidden">
+                    <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-none md:rounded-2xl" />
                 </div>
             </div>
         </div>
