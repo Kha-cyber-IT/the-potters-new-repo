@@ -18,36 +18,36 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.GetConnected) {
     return (
       <section className="w-full pt-24 md:pt-32 pb-24 min-h-screen animate-fade-in text-left text-white/90 bg-[#1A2517]">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
         {/* Top Half: Existing Contact Card */}
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10">
+        <div className="relative w-full rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl bg-black border-none md:border md:border-white/10">
             <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?q=80&w=1200" 
                  alt="Contact Background" 
                  className="absolute inset-0 w-full h-full object-cover opacity-40" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/95"></div>
             
-            <div className="relative z-10 p-8 md:p-16">
-                <div className="mb-12">
-                    <h3 className="text-4xl font-bold text-white mb-4 uppercase tracking-widest font-heading">We'd like to hear from you.</h3>
-                    <p className="text-xl text-gray-300 font-light">Contact us by phone or email.</p>
+            <div className="relative z-10 p-4 py-8 md:p-16">
+                <div className="mb-8 md:mb-12">
+                    <h3 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4 uppercase tracking-widest font-heading">We'd like to hear from you.</h3>
+                    <p className="text-base md:text-xl text-gray-300 font-light">Contact us by phone or email.</p>
                 </div>
                 
-                <div className="space-y-8 mb-16">
-                    <a href="mailto:joburg@worldcfm.com" className="flex items-center gap-6 group">
-                        <div className="p-4 bg-white/10 rounded-2xl group-hover:bg-blue-600 transition-colors"><Mail size={32} className="text-blue-300 group-hover:text-white" /></div>
-                        <div className="flex flex-col">
-                            <span className="text-sm font-bold text-blue-300 uppercase tracking-widest font-heading">Email Us</span>
-                            <span className="text-xl md:text-3xl font-bold break-all">joburg@worldcfm.com</span>
+                <div className="space-y-6 md:space-y-8 mb-10 md:mb-16">
+                    <a href="mailto:joburg@worldcfm.com" className="flex items-center gap-4 md:gap-6 group">
+                        <div className="p-3 md:p-4 bg-white/10 rounded-2xl group-hover:bg-blue-600 transition-colors flex-shrink-0"><Mail size={24} className="md:hidden text-blue-300 group-hover:text-white" /><Mail size={32} className="hidden md:block text-blue-300 group-hover:text-white" /></div>
+                        <div className="flex flex-col min-w-0">
+                            <span className="text-xs md:text-sm font-bold text-blue-300 uppercase tracking-widest font-heading">Email Us</span>
+                            <span className="text-base md:text-3xl font-bold break-all">joburg@worldcfm.com</span>
                         </div>
                     </a>
                     
-                    <a href="tel:0825166638" className="flex items-center gap-6 group">
-                        <div className="p-4 bg-white/10 rounded-2xl group-hover:bg-green-600 transition-colors"><Phone size={32} className="text-blue-300 group-hover:text-white" /></div>
+                    <a href="tel:0825166638" className="flex items-center gap-4 md:gap-6 group">
+                        <div className="p-3 md:p-4 bg-white/10 rounded-2xl group-hover:bg-green-600 transition-colors flex-shrink-0"><Phone size={24} className="md:hidden text-blue-300 group-hover:text-white" /><Phone size={32} className="hidden md:block text-blue-300 group-hover:text-white" /></div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold text-blue-300 uppercase tracking-widest font-heading">Call or WhatsApp</span>
-                            <span className="text-xl md:text-3xl font-bold">082-516-6638</span>
+                            <span className="text-xs md:text-sm font-bold text-blue-300 uppercase tracking-widest font-heading">Call or WhatsApp</span>
+                            <span className="text-base md:text-3xl font-bold">082-516-6638</span>
                         </div>
                     </a>
                 </div>
@@ -66,30 +66,22 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="border-b border-white/10 mt-16 mb-16 max-w-4xl mx-auto"></div>
 
         {/* Bottom Half: Global Map Section */}
-        <h3 className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading">LOCAL ROOTS. GLOBAL REACH.</h3>
+        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28">LOCAL ROOTS. GLOBAL REACH.</h3>
         <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-12 leading-relaxed">
             While our home is here in Soweto, our family spans the globe. The Potter's House is a worldwide fellowship of over 3,000 churches across 130 nations. Wherever you go, you can always find family.
         </p>
 
-        <div className="aspect-video rounded-[2.5rem] bg-white/5 border border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-8">
-            <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-            
-            {/* Global Hub Pins */}
-            <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full">
-                <div className="w-full h-full bg-white rounded-full animate-ping"></div>
-            </div>
-            <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white rounded-full">
-                <div className="w-full h-full bg-white rounded-full animate-ping"></div>
-            </div>
-            <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-white rounded-full">
-                <div className="w-full h-full bg-white rounded-full animate-ping"></div>
-            </div>
-            <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-white rounded-full">
-                <div className="w-full h-full bg-white rounded-full animate-ping"></div>
-            </div>
-            <div className="absolute top-2/3 left-1/3 w-3 h-3 bg-white rounded-full">
-                <div className="w-full h-full bg-white rounded-full animate-ping"></div>
-            </div>
+        <div className="aspect-video rounded-none md:rounded-[2.5rem] bg-white/5 border-none md:border md:border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-4 md:p-8">
+            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                            className="absolute inset-0 w-full h-full pointer-events-none"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Global Church Map"
+            />
+            <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
             {/* Eldorado Park Highlight */}
             <div className="absolute top-[40%] right-[15%] bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl z-10 hidden md:block">
@@ -105,14 +97,14 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     );
   }
 
-  // PAGE 7: PLAN A VISIT (Stone Gradient)
+  // PAGE 7: PLAN A VISIT (Who We Are color)
   if (page === Page.PlanAVisit) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-stone-700 to-stone-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#F0F7FF]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
             <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1200" 
                  alt="Header" 
                  className="absolute inset-0 w-full h-full object-cover opacity-60" />
@@ -122,7 +114,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="text-center mb-12">
-             <h3 className="inline-block bg-teal-600 text-white text-xl md:text-2xl font-bold py-3 px-10 rounded-full shadow-lg border border-white/20 uppercase tracking-widest font-heading">What You Can Expect</h3>
+             <h3 className="inline-block bg-teal-600 text-white text-xl md:text-2xl font-bold py-3 px-10 rounded-full shadow-lg border border-teal-500 uppercase tracking-widest font-heading">What You Can Expect</h3>
         </div>
 
         <div className="grid grid-cols-1 gap-12 text-center mb-20">
@@ -132,38 +124,60 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="mb-8 text-center">
-            <h3 className="inline-flex items-center justify-center gap-4 bg-white text-black text-xl md:text-2xl font-bold py-4 px-10 rounded-full shadow-lg border border-white/20 uppercase tracking-widest font-heading">
+            <h3 className="inline-flex items-center justify-center gap-4 bg-gray-900 text-white text-xl md:text-2xl font-bold py-4 px-10 rounded-full shadow-lg border border-gray-700 uppercase tracking-widest font-heading">
                 <span>Visit Us</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
             </h3>
         </div>
 
         <div className="text-center space-y-12">
-            <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/Q9CmxXAhxE1ypid59', '_blank')}>
-                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200" alt="Map" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform" />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-4">
-                    <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong font-heading">Get Directions</h3>
-                    <p className="text-gray-800 mt-2 font-medium">Click to open in Google Maps</p>
+                {/* Local Church Map */}
+                <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl border-none md:border md:border-gray-200 group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/JgER99H8Lh5eDmQ77', '_blank')}>
+                    <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                                            className="absolute inset-0 w-full h-full pointer-events-none"
+                                            style={{ border: 0 }}
+                                            allowFullScreen
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title="Local Church Map"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center p-4 group-hover:bg-black/20 transition-colors">
+                        <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong font-heading">Get Directions</h3>
+                        <p className="text-white/70 mt-2 font-medium">Click to open in Google Maps</p>
+                    </div>
                 </div>
-            </div>
 
-            <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8 text-center">
-                <div className="col-span-4 md:col-span-8 2xl:col-span-4"><TimeCard day="Sunday" times={[
+                {/* Global Church Finder (cfmmap) */}
+                <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
+                    <iframe
+                                            src="https://www.cfmmap.org/"
+                                            className="absolute inset-0 w-full h-full"
+                                            style={{ border: 0 }}
+                                            allowFullScreen
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title="Global Church Finder — CFM"
+                    />
+                </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
+                <div><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
                     "Morning Worship Service | 10:00 AM",
                     "Evening Worship Service | 5:00 PM"
                 ]} /></div>
-                <div className="col-span-4 md:col-span-4 2xl:col-span-4"><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
-                <div className="col-span-4 md:col-span-4 2xl:col-span-4"><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
+                <div><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
+                <div><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
             </div>
             
-            <div className="pt-10 border-t border-white/10">
-                 <h4 className="text-2xl font-bold text-blue-300 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
+            <div className="pt-10 border-t border-gray-300">
+                 <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
                  <button
                     onClick={() => window.open('https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA', '_blank')}
-                    className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase py-4 px-12 rounded-full flex items-center justify-center gap-4 mx-auto font-heading"
+                    className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase py-3 px-8 rounded-full flex items-center justify-center gap-4 mx-auto font-heading text-sm md:text-base"
                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.226-11.63-.226-15.234 0C.486 3.407 0 4.888 0 7.5v9c0 2.612.486 4.093 4.381 4.316 3.604.226 11.63.226 15.234 0 3.896-.223 4.381-1.704 4.381-4.316v-9c0-2.612-.486-4.093-4.381-4.316zM9 16.5v-9L16 12l-7 4.5z"/></svg>
                     Stream Now
@@ -179,11 +193,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Conference2025) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-indigo-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
-        <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
-            <p className="text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
+        <div className="text-center mb-10 md:mb-16">
+            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
+            <p className="text-base md:text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
         </div>
         
         <div className="space-y-4">
@@ -280,7 +294,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Stories) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#C2D8C4]">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
 
         <div className="text-center mb-10">
@@ -295,9 +309,9 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="flex justify-center mt-8">
                 <button
                   onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                  className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-4 px-6 md:px-10 rounded-full flex items-center gap-4 font-heading text-sm md:text-base"
+                  className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                     Play on Spotify
                 </button>
             </div>
@@ -305,7 +319,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         {/* LOCAL IMPACT SECTION */}
         <div className="mb-20">
-            <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-8 shadow-2xl border border-white/10">
+            <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-8 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
                 <img src="https://i.postimg.cc/C5StGR00/ea998c-9e02deae6b1b45fb9bfaa3b321c24d2e-mv2.png" alt="Local Impact" className="absolute inset-0 w-full h-full object-cover brightness-110" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     <h3 className="text-white text-3xl md:text-5xl font-black text-shadow-strong uppercase tracking-widest font-heading">Local Impact</h3>
@@ -315,7 +329,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="text-center px-4">
                 <h4 className="text-3xl font-bold text-blue-300 mb-6 uppercase tracking-wider font-heading">Your life can make impact!</h4>
                 
-                <div className="bg-white/50 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/30 max-w-2xl mx-auto mb-10">
+                <div className="bg-white/50 md:backdrop-blur-md p-4 px-4 md:p-8 rounded-none md:rounded-2xl shadow-none md:shadow-xl border-none md:border md:border-white/30 max-w-2xl mx-auto mb-10">
                     <p className="text-xl text-gray-900 font-medium">Every Saturday, we send groups into the city to share the gospel to people in apartment complexes, neighborhoods, and shopping centers.</p>
                 </div>
 
@@ -326,7 +340,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             </div>
         </div>
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/7ZSqn28Z/1763582310556.jpg" alt="Bible Study" className="absolute inset-0 w-full h-full object-cover opacity-90" />
             <div className="absolute inset-0 flex items-center justify-center p-4 bg-black/20">
                 <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong text-center uppercase tracking-widest font-heading">What we believe and why it matters.</h3>
@@ -334,7 +348,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mb-12 px-4">
-            <div className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30 max-w-3xl text-center">
+            <div className="bg-white/60 md:backdrop-blur-md rounded-none md:rounded-3xl p-4 px-4 md:p-8 shadow-none md:shadow-xl border-none md:border md:border-white/30 max-w-3xl text-center">
                 <p className="text-lg leading-relaxed text-gray-900 font-medium">
                     In a world full of opinions and so much uncertainty, it is so important to be grounded in Truth. God's Word is the solid foundation on which we can build our lives and make the best decision for our future.
                 </p>
@@ -355,20 +369,20 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div>
                 <h4 className="text-2xl font-bold text-teal-800 mb-4 uppercase tracking-wider font-heading">Our Responsibility</h4>
                 <p className="mb-6 italic">As believers, there are four primary responsibilities we are called to uphold: Prayer, Outreach, Reading the Bible, and Fellowship.</p>
-                <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8">
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Daily Prayer:</h5>
                         <p>Seeking God in prayer is a fundamental necessity of maintaining our relationship with Him.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Outreach:</h5>
                         <p>Sharing the Gospel of Jesus Christ with others.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Reading The Bible:</h5>
                         <p>Feeding our spirit with the Word of God, and living thereby.</p>
                     </div>
-                    <div className="col-span-4 md:col-span-4 2xl:col-span-6 bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
+                    <div className="bg-transparent p-0 border-l-2 border-emerald-800/30 pl-4 md:border-none md:pl-0 md:bg-white md:shadow-sm md:rounded-2xl md:p-6 text-gray-900">
                         <h5 className="font-bold text-teal-800 font-heading text-lg">Fellowship:</h5>
                         <p>Gathering together in a local assembly of believers for worship and admonition.</p>
                     </div>
@@ -385,10 +399,10 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Give) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-emerald-800 to-teal-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
         
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/c4bLPpd2/1763563363621.jpg" alt="Giving" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center p-4">
                 <h3 className="text-white text-3xl md:text-6xl font-black text-shadow-strong text-center uppercase tracking-tighter font-heading">Faith. Generosity. Impact.</h3>
@@ -397,7 +411,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         
         <div className="text-center max-w-2xl mx-auto mb-16">
             <h4 className="text-3xl font-bold text-blue-400 mb-8 uppercase tracking-widest font-heading">Your generosity is changing the world!</h4>
-            <div className="glass-card-blue p-8 rounded-3xl">
+            <div className="bg-transparent p-0 md:glass-card-blue md:p-8 rounded-none md:rounded-3xl">
                 <p className="text-xl leading-relaxed text-white">When we live our lives driven by obedience and generosity, we are able to reach our local community and the nations beyond</p>
             </div>
         </div>
@@ -407,7 +421,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mb-16">
-             <img src="https://i.postimg.cc/9XL7r8hw/Giving-2022.jpg" alt="Banking Details" className="w-full max-w-3xl rounded-3xl shadow-2xl border border-white/10" />
+             <img src="https://i.postimg.cc/9XL7r8hw/Giving-2022.jpg" alt="Banking Details" className="w-full max-w-3xl rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-white/10" />
         </div>
         
         <div className="text-center mb-16 space-y-6">
@@ -437,11 +451,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.Events2026) {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-cyan-800 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <BackButton label="Back to Mission" target={Page.Home} />
-        <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-5xl font-black text-blue-300 mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
-            <p className="text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
+        <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
+            <p className="text-base md:text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
         </div>
 
         <div className="space-y-12">
@@ -459,16 +473,16 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             />
 
             {/* DISCIPLESHIPS SECTION */}
-            <div className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-teal-400">
-                        <Users size={24} />
+            <div className="mb-12 md:mb-16">
+                <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                    <div className="p-2.5 md:p-3 rounded-xl bg-white/10 border border-white/15 text-teal-200">
+                        <Users size={20} className="md:w-6 md:h-6" />
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-black uppercase tracking-widest text-teal-400 font-heading">Regional Discipleship Schedules 2026</h4>
+                    <h4 className="text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest text-teal-200 font-heading">Regional Discipleship Schedules 2026</h4>
                     <div className="h-px bg-white/10 flex-grow"></div>
                 </div>
 
-                <div className="space-y-10">
+                <div className="space-y-4 md:space-y-10">
                     <ScheduleList region="JOHANNESBURG MEN’S DISCIPLESHIPS" dates={[
                         "April 6 - Jonathan Heimberg",
                         "May 11 - Vickash Juggai",
@@ -524,10 +538,10 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 ]} 
             />
             
-            <div className="pt-20 border-t border-white/10 text-center">
-                <h4 className="text-2xl font-bold text-white mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
-                <div className="glass-card-blue p-2 rounded-3xl max-w-4xl mx-auto shadow-2xl border border-white/10 overflow-hidden">
-                    <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-2xl" />
+            <div className="pt-12 md:pt-20 border-t border-white/10 text-center">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
+                <div className="bg-transparent p-0 md:glass-card-blue md:p-2 rounded-none md:rounded-3xl max-w-4xl mx-auto shadow-none md:shadow-2xl border-none md:border md:border-white/10 overflow-hidden">
+                    <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-none md:rounded-2xl" />
                 </div>
             </div>
         </div>
@@ -540,7 +554,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   if (page === Page.ChildrensMinistry || page === Page.Recovery) {
     return (
       <div className="w-full min-h-screen animate-fade-in text-left text-white/90 bg-[#A85D5C] pt-24 md:pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-0 md:px-4 md:px-12 2xl:px-32">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
             <div className="px-4 md:px-0 mb-6">
                 <BackButton label="Back to About Us" target={Page.AboutUs} />
             </div>
@@ -587,7 +601,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     <div className="flex justify-center md:justify-start">
                         <button
                           onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                          className="liquid-glass-purple text-white border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:px-12 2xl:px-32 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                          className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                             Play Testimony Pod
@@ -607,29 +621,29 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 const ExpectCard = ({ title, content }: { title: string; content: string }) => (
     <div className="max-w-2xl mx-auto">
         <h4 className="text-2xl font-bold text-blue-300 mb-3 uppercase tracking-wider font-heading">{title}</h4>
-        <p className="text-lg leading-relaxed text-gray-800">
+        <p className="text-lg leading-relaxed text-gray-700">
             {content}
         </p>
     </div>
 );
 
 const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
-    <div className="glass-card-blue p-6 rounded-2xl">
-        <h4 className="text-2xl font-bold text-blue-300 mb-4 uppercase font-heading">{day}</h4>
-        <div className="space-y-3 text-lg text-gray-800">
+    <div className="bg-white/60 md:backdrop-blur-sm border-none md:border md:border-gray-200 p-4 px-4 md:p-6 rounded-none md:rounded-2xl shadow-none md:shadow-sm">
+        <h4 className="text-2xl font-bold text-gray-900 mb-4 uppercase font-heading">{day}</h4>
+        <div className="space-y-3 text-lg text-gray-700">
             {times.map((t, i) => <p key={i}>{t}</p>)}
         </div>
     </div>
 );
 
 const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) => (
-    <div className="glass-card-blue rounded-2xl p-6 border-l-4 border-l-teal-500">
-        <h5 className="text-xl font-bold text-teal-400 mb-4 font-heading">{region}</h5>
+    <div className="bg-gradient-to-br from-[#0D9488] to-[#134E4A] rounded-none md:rounded-2xl border-none md:border md:border-teal-400/20 p-4 px-4 md:p-6 md:hover:border-teal-400/40 transition-all duration-300 md:hover:shadow-lg">
+        <h5 className="text-sm md:text-lg font-bold text-teal-100 uppercase tracking-wider mb-3 md:mb-4 font-heading">{region}</h5>
         <ul className="space-y-2">
             {dates.map((d, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/90">
-                    <div className="h-1.5 w-1.5 rounded-full bg-teal-500"></div>
-                    {d}
+                <li key={i} className="flex items-center gap-2.5 md:gap-3 text-white/80">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-md bg-teal-400/20 border border-teal-300/20 flex items-center justify-center flex-shrink-0 text-teal-200 text-[9px] md:text-[10px] font-bold">{i + 1}</div>
+                    <span className="text-xs md:text-base">{d}</span>
                 </li>
             ))}
         </ul>
@@ -650,40 +664,45 @@ const AnnouncementGroup = ({
   icon?: any;
 }) => {
   const styles = {
-    cyan: { text: 'text-cyan-400', bg: 'from-cyan-500/20' },
-    emerald: { text: 'text-emerald-400', bg: 'from-emerald-500/20' },
-    amber: { text: 'text-amber-400', bg: 'from-amber-500/20' },
-    rose: { text: 'text-rose-400', bg: 'from-rose-500/20' },
-    purple: { text: 'text-purple-400', bg: 'from-purple-500/20' },
-    orange: { text: 'text-orange-400', bg: 'from-orange-500/20' },
-    teal: { text: 'text-teal-400', bg: 'from-teal-600/25' },
+    cyan: { text: 'text-white', accent: 'text-cyan-300', card: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', border: 'border-cyan-400/30', badge: 'bg-cyan-400/20 text-cyan-200', bar: 'via-cyan-400/60' },
+    emerald: { text: 'text-white', accent: 'text-emerald-300', card: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', border: 'border-emerald-400/30', badge: 'bg-emerald-400/20 text-emerald-200', bar: 'via-emerald-400/60' },
+    amber: { text: 'text-white', accent: 'text-amber-200', card: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', border: 'border-amber-400/30', badge: 'bg-amber-400/20 text-amber-200', bar: 'via-amber-400/60' },
+    rose: { text: 'text-white', accent: 'text-rose-200', card: 'bg-gradient-to-br from-[#BE123C] to-[#881337]', border: 'border-rose-400/30', badge: 'bg-rose-400/20 text-rose-200', bar: 'via-rose-400/60' },
+    purple: { text: 'text-white', accent: 'text-purple-200', card: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', border: 'border-purple-400/30', badge: 'bg-purple-400/20 text-purple-200', bar: 'via-purple-400/60' },
+    orange: { text: 'text-white', accent: 'text-orange-200', card: 'bg-gradient-to-br from-[#C2410C] to-[#7C2D12]', border: 'border-orange-400/30', badge: 'bg-orange-400/20 text-orange-200', bar: 'via-orange-400/60' },
+    teal: { text: 'text-white', accent: 'text-teal-200', card: 'bg-gradient-to-br from-[#0D9488] to-[#134E4A]', border: 'border-teal-400/30', badge: 'bg-teal-400/20 text-teal-200', bar: 'via-teal-400/60' },
   };
   
   const style = styles[variant];
 
   return (
-    <div className="mb-16">
-        <div className="flex items-center gap-4 mb-8">
-             <div className={`p-3 rounded-xl bg-white/5 border border-white/10 ${style.text}`}>
-                {Icon && <Icon size={24} />}
+    <div className="mb-12 md:mb-16">
+        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+             <div className={`p-2.5 md:p-3 rounded-2xl ${style.card} border ${style.border} shadow-lg ${style.accent}`}>
+                {Icon && <Icon size={20} className="md:w-6 md:h-6" />}
              </div>
-             <h4 className={`text-2xl md:text-3xl font-black uppercase tracking-widest ${style.text} font-heading`}>{title}</h4>
+             <h4 className={`text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest ${style.accent} font-heading`}>{title}</h4>
              <div className="h-px bg-white/10 flex-grow"></div>
         </div>
         
-        <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 md:gap-5">
             {items.map((item, i) => (
-                <div key={i} className={`col-span-4 md:col-span-4 2xl:col-span-4 relative overflow-hidden group rounded-2xl bg-[#121212] border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${style.bg} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
-                    <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${style.bg.replace('from-', 'from-').replace('/20', '').replace('/25', '')} to-transparent`}></div>
+                <div key={i} className={`relative overflow-hidden group rounded-none md:rounded-3xl ${style.card} border-none md:border ${style.border} md:hover:border-white/40 transition-all duration-500 md:hover:-translate-y-2 md:hover:shadow-2xl`}>
+                    {/* Top accent bar */}
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent ${style.bar} to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    {/* Decorative circle */}
+                    <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
 
-                    <div className="p-6 relative z-10">
-                        <h5 className="text-xl font-bold text-white mb-3 flex flex-col font-heading">
-                            <span className="text-xs font-bold uppercase opacity-50 mb-1 tracking-wider text-white/60">Announcement</span>
-                            <span className="leading-tight">{item.title}</span>
-                        </h5>
-                        <div className="w-8 h-0.5 bg-white/20 mb-4 group-hover:w-full group-hover:bg-white/40 transition-all duration-500"></div>
-                        <p className="text-gray-400 text-sm leading-relaxed font-medium">
+                    <div className="p-4 md:p-6 relative z-10">
+                        <div className="flex items-start gap-2.5 md:gap-3 mb-2 md:mb-3">
+                            <div className={`w-8 h-8 md:w-9 md:h-9 rounded-xl ${style.badge} border border-white/15 flex items-center justify-center flex-shrink-0 text-[10px] md:text-xs font-black shadow-sm`}>
+                                {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h5 className="text-sm md:text-lg font-black text-white leading-snug font-heading">
+                                {item.title}
+                            </h5>
+                        </div>
+                        <p className="text-white/70 text-xs md:text-sm leading-relaxed font-medium pl-[42px] md:pl-12">
                             {item.desc}
                         </p>
                     </div>

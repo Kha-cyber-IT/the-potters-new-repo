@@ -29,31 +29,16 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   const splitTextEnd = " of Jesus Christ to the world!".split(" ");
 
   return (
-    <div className="animate-fade-in bg-[#0B0D0F] min-h-screen w-full pb-20 overflow-x-hidden pt-24 md:pt-32">
+    <div className="animate-fade-in bg-[#F5F0E8] min-h-screen w-full pb-20 overflow-x-hidden pt-24 md:pt-32">
       
       {/* HERO SECTION: True Side-by-Side Layout */}
       <section className="relative min-h-screen flex items-start w-full mt-8 md:mt-16 pb-12 overflow-hidden">
-        {/* Optimized Outline Map Background */}
-        <img
-          src="https://i.postimg.cc/wvZqBrKP/d6c65989f73d6dc2b44f1d29c43ef8d6.jpg"
-          alt="World Map Outline"
-          loading="eager"
-          fetchPriority="high"
-          className="absolute inset-0 z-0 w-full h-full object-cover object-center pointer-events-none opacity-5 md:opacity-10"
-          style={{
-            maskImage: 'radial-gradient(ellipse at center, transparent 0%, black 70%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 0%, black 70%)'
-          }}
-        />
-
-        {/* Background Glow */}
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
         {/* Main Grid Container */}
-        <div className="w-full px-4 md:px-12 2xl:px-32 relative z-10 grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8 items-center">
+        <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
 
           {/* LEFT SIDE: Flowing Text & Buttons */}
-          <div className="col-span-4 md:col-span-8 2xl:col-span-6 flex flex-col gap-8 w-full max-w-6xl mx-auto 2xl:mx-0">
+          <div className="flex flex-col gap-8 w-full max-w-6xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -72,7 +57,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               variants={sentence}
               initial="hidden"
               animate="show"
-              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter flex flex-wrap gap-x-3 gap-y-2 lg:max-w-4xl"
+              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-gray-900 leading-[1.1] tracking-tighter flex flex-wrap gap-x-3 gap-y-2 lg:max-w-4xl"
             >
               {splitText.map((txt, i) => (
                 <motion.span key={`start-${i}`} variants={word} className="inline-block">
@@ -96,7 +81,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed font-light lg:max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light lg:max-w-2xl"
             >
               We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span> This is the single greatest hope we have of true life and true transformation!
             </motion.p>
@@ -106,11 +91,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-start items-center w-full sm:w-auto"
+              className="flex flex-row gap-3 sm:gap-6 justify-start items-center w-full sm:w-auto"
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="flex-1 sm:flex-none w-full sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-4 px-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="flex-1 sm:flex-none sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-3 px-4 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,20 +107,20 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none w-full sm:w-auto justify-center py-4 px-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
               />
             </motion.div>
           </div>
 
           {/* RIGHT SIDE: The Cards (Stats & Banner) */}
-          <div className="col-span-4 md:col-span-8 2xl:col-span-6 flex flex-col gap-8 w-full justify-self-end mt-12 2xl:mt-0">
+          <div className="flex flex-col gap-8 w-full justify-self-end mt-12 lg:mt-0">
             
             {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="bg-[#121519] border border-white/5 rounded-3xl md:rounded-[3rem] p-10 md:p-14 relative overflow-hidden shadow-2xl w-full"
+              className="bg-[#121519] border-none md:border md:border-white/5 rounded-none md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-none md:shadow-2xl w-full"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -166,7 +151,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && setPage(Page.NewBuilding)}
-                className="block relative rounded-3xl md:rounded-[3rem] overflow-hidden border border-white/5 cursor-pointer h-[250px] md:h-[300px] shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="block relative rounded-none md:rounded-[3rem] overflow-hidden border-none md:border md:border-white/5 cursor-pointer h-[200px] md:h-[300px] shadow-none md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110"
@@ -185,11 +170,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       </section>
 
       {/* LOWER SECTION: Classic Silver & White Theme */}
-      <div className="w-full text-center px-4 md:px-12 2xl:px-32 mt-20 md:mt-40">
+      <div className="w-full text-center px-4 md:px-6 lg:px-0 mt-20 md:mt-40">
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
-          <h3 className="inline-block bg-slate-200 text-[#050f07] text-xl sm:text-2xl md:text-4xl font-black py-4 px-10 sm:py-6 sm:px-16 rounded-full shadow-2xl mb-16 md:mb-24 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading">
+          <h3 className="inline-block bg-slate-200 text-gray-900 text-xl sm:text-2xl md:text-4xl font-black py-4 px-10 sm:py-6 sm:px-16 rounded-full shadow-2xl mb-16 md:mb-24 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading">
               Weekly Services
           </h3>
           
@@ -214,24 +199,24 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     hidden: { opacity: 0, scale: 0.95, y: 40 },
                     visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                 }}
-                className="w-full md:col-span-2 bg-[#FEFACD] rounded-3xl p-6 md:p-10"
+                className="w-full md:col-span-2 bg-[#FEFACD] rounded-none md:rounded-3xl p-4 px-4 md:p-10"
               >
-                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-[#0B0D0F]"> 
+                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-gray-900"> 
                     <span className="border-l-[6px] md:border-l-[8px] border-[#0B0D0F] pl-4 md:pl-6">Sunday</span>
                   </h4>
                   
                   <div className="flex flex-col space-y-6 md:space-y-8 pl-2 md:pl-8">
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">9:00 AM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Bible Study</span>
                       </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">10:00 AM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Morning Worship</span>
                       </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-[#0B0D0F]">
+                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">5:00 PM</span>
                           <span className="hidden md:inline mx-4">—</span>
                           <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Evening Worship</span>
@@ -247,14 +232,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 flex-1"
-                  >
-                      <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                        <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
-                      </h4>
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                    >
+                                        <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
+                                          <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
+                                        </h4>
                       
-                      <div className="flex flex-col pl-2 md:pl-8">
-                          <div className="flex flex-col md:flex-row md:items-center text-white">
+                                        <div className="flex flex-col pl-2 md:pl-8">
+                                            <div className="flex flex-col md:flex-row md:items-center text-white">
                               <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
                               <span className="hidden md:inline mx-4">—</span>
                               <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Weekly Worship</span>
@@ -268,14 +253,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 flex-1"
-                  >
-                      <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                        <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
-                      </h4>
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                    >
+                                        <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
+                                          <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
+                                        </h4>
                       
-                      <div className="flex flex-col pl-2 md:pl-8">
-                          <div className="flex flex-col md:flex-row md:items-center text-white">
+                                        <div className="flex flex-col pl-2 md:pl-8">
+                                            <div className="flex flex-col md:flex-row md:items-center text-white">
                               <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
                               <span className="hidden md:inline mx-4">—</span>
                               <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">One80 Content</span>
@@ -286,8 +271,47 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
+        {/* TYMEBANK-STYLE FEATURE HIGHLIGHTS — desktop only */}
+        <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0 hidden md:block">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.12 } }
+            }}
+            className="max-w-[1400px] mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          >
+            {[
+              { bg: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', label: 'Events 2026', desc: 'Fellowship dates & regional schedules', page: Page.Events2026 },
+              { bg: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', label: 'Conference', desc: 'Bible Conference announcements', page: Page.Conference2025 },
+              { bg: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', label: 'Give', desc: 'Support the mission & building fund', page: Page.Give },
+              { bg: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', label: 'Plan a Visit', desc: 'Find us & plan your first visit', page: Page.PlanAVisit },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+                }}
+                onClick={() => setPage(item.page)}
+                className={`${item.bg} rounded-2xl md:rounded-3xl p-5 md:p-8 cursor-pointer group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden`}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
+                <h4 className="text-lg md:text-xl font-black text-white uppercase tracking-wider mb-2 font-heading">{item.label}</h4>
+                <p className="text-white/70 text-xs md:text-sm font-medium leading-relaxed">{item.desc}</p>
+                <div className="mt-4 md:mt-6 flex items-center gap-2 text-white/50 group-hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+                  <span>Explore</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full bg-[#0B0D0F] py-16 md:py-20 px-0 md:px-4 md:px-12 2xl:px-32">
+        <div className="w-full py-16 md:py-20 px-4 md:px-6 lg:px-0">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -303,49 +327,82 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 md:gap-8 items-stretch"
           >
             {/* Left Side: New to the Church Bento Card */}
+            {/* Mobile: edge-to-edge plain text section, Desktop: side-by-side card */}
             <motion.div
               variants={{
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center md:text-left bg-[#789A99] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="flex flex-col text-center md:text-left bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-2xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.2em] font-heading mb-4">
+              <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4">
                 New to The Potter's House?
               </h2>
-              <p className="text-lg md:text-xl font-medium text-[#0B0D0F]/80 mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
+              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-col md:flex-row justify-center md:justify-start items-stretch gap-3 w-full mt-2 md:mt-0">
+              <div className="flex flex-row justify-center md:justify-start items-stretch gap-3 w-full flex-wrap">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-12 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
                   <ModernButton
                     text="Plan Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
-                    className="w-full justify-center md:w-auto h-12 md:h-auto text-xs md:text-sm tracking-[0.15em] md:tracking-widest"
+                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
               </div>
             </motion.div>
 
-            {/* Right Side: Stay Connected Bento Card */}
+            {/* Mobile-only: QR WhatsApp section — separate edge-to-edge block */}
             <motion.div
               variants={{
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl mt-0 md:mt-0"
+              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8"
             >
-              <h2 className="text-2xl md:text-4xl font-black text-[#0B0D0F] uppercase tracking-[0.2em] font-heading mb-4">
+              <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2">
                 Stay Connected
               </h2>
-              <p className="text-lg md:text-xl font-medium text-[#0B0D0F]/80 mb-10 leading-relaxed max-w-md">
-                Follow The Potter’s House of Eldorado Park on WhatsApp for daily devotions and updates.
+              <p className="text-sm font-medium text-gray-900/80 mb-4 leading-relaxed">
+                Follow us on WhatsApp for daily devotions and updates.
+              </p>
+              <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
+                <div className="w-28 h-28 bg-white flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                    alt="WhatsApp Channel QR Code"
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+              <ModernButton
+                text="Join Channel"
+                href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
+                variant="dark"
+                className="w-full justify-center h-10 text-xs tracking-[0.15em]"
+              />
+            </motion.div>
+
+            {/* Right Side: Stay Connected Bento Card (Desktop only split, mobile merged above) */}
+            <motion.div
+              variants={{
+                  hidden: { opacity: 0, scale: 0.95, y: 40 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+              }}
+              className="hidden md:flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+            >
+              <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.2em] font-heading mb-4">
+                Stay Connected
+              </h2>
+              <p className="text-lg md:text-xl font-medium text-gray-900/80 mb-10 leading-relaxed max-w-md">
+                Follow The Potter's House of Eldorado Park on WhatsApp for daily devotions and updates.
               </p>
 
               <div className="bg-white p-4 rounded-2xl mb-10 inline-block shadow-sm">
@@ -368,21 +425,8 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
-        {/* Cinematic Floating Broadcasts Section */}
-        <div className="relative w-full overflow-hidden min-h-[50vh] flex flex-col justify-center py-20 mb-20 md:mb-40 group border-none">
-
-            {/* Soft Ambient Purple Glow */}
-            <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-                <div className="w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"></div>
-            </div>
-
-            {/* Seamless Merging Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-105 opacity-20 z-0"
-              style={{ backgroundImage: "url('https://i.postimg.cc/026T1kg6/1766087333269.jpg')" }}
-            ></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D0F] via-transparent to-[#0B0D0F] z-1 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D0F] via-transparent to-[#0B0D0F] z-1 pointer-events-none"></div>
+        {/* Broadcasts Section — clean on cream */}
+        <div className="relative w-full flex flex-col justify-center py-20 mb-20 md:mb-40 border-none">
             
             {/* Scroll Revealed Content */}
             <motion.div
@@ -397,7 +441,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         }
                     }
                 }}
-                className="relative z-10 px-4 md:px-12 2xl:px-32 w-full max-w-4xl mx-auto text-center"
+                className="relative z-10 px-0 w-full max-w-4xl mx-auto text-center"
             >
                 <div className="flex flex-col items-center justify-center gap-6 mb-12">
                     <motion.div
@@ -414,7 +458,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                             hidden: { opacity: 0, y: 40 },
                             visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                         }}
-                        className="text-3xl md:text-4xl font-black text-white uppercase tracking-[0.3em] font-heading"
+                        className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.3em] font-heading"
                     >
                         Broadcasts
                     </motion.h3>
@@ -425,7 +469,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, y: 40 },
                         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="text-lg md:text-xl font-medium text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
                 >
                   Missed Church Services? Watch our archived broadcasts!
                 </motion.p>
@@ -441,7 +485,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#000000] border-2 border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.5)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)] hover:scale-105 transition-all duration-300 text-white font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-4 px-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                      className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
                     />
                 </motion.div>
             </motion.div>

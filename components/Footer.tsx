@@ -24,7 +24,16 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   const contactLinks: { page?: Page; url?: string; label: string; }[] = [
     { page: Page.GetConnected, label: "Get Connected" },
     { page: Page.PlanAVisit, label: "Visit Us" },
+    { page: Page.GetConnected, label: "Locations" },
   ];
+
+  const handleFooterClick = (page: Page, label: string) => {
+    if (label === 'Locations') {
+      (setPage as (page: Page, scrollTarget?: string) => void)(page, 'global-reach');
+    } else {
+      (setPage as (page: Page, scrollTarget?: string) => void)(page);
+    }
+  };
 
   const socialLinks = [
     { 
@@ -45,7 +54,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   ];
 
   return (
-    <footer className="bg-black text-white w-full py-12 px-4 md:px-12 2xl:px-32">
+    <footer className="bg-black text-white w-full py-10 md:py-12 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
             initial="hidden"
@@ -67,7 +76,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
           }} className="flex flex-col space-y-2">
             <h4 className="font-bold text-gray-400 uppercase mb-2">Home</h4>
             {leftLinks.map((link) => (
-                <button key={link.label} onClick={() => setPage(link.page)} className="text-white hover:underline text-left">
+                <button key={link.label} onClick={() => handleFooterClick(link.page, link.label)} className="text-white hover:underline text-left">
                   {link.label}
                 </button>
             ))}
@@ -79,7 +88,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
           }} className="flex flex-col space-y-2">
             <h4 className="font-bold text-gray-400 uppercase mb-2">Ministries</h4>
             {middleLinks.map((m) => (
-                <button key={m.label} onClick={() => m.page && setPage(m.page)} className="text-white hover:underline text-left">
+                <button key={m.label} onClick={() => m.page && handleFooterClick(m.page, m.label)} className="text-white hover:underline text-left">
                   {m.label}
                 </button>
             ))}
@@ -91,7 +100,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
           }} className="flex flex-col space-y-2">
             <h4 className="font-bold text-gray-400 uppercase mb-2">Believes</h4>
             {rightLinks.map((r) => (
-                <button key={r.label} onClick={() => setPage(r.page)} className="text-white hover:underline text-left">
+                <button key={r.label} onClick={() => handleFooterClick(r.page, r.label)} className="text-white hover:underline text-left">
                   {r.label}
                 </button>
             ))}
@@ -108,7 +117,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
                     {c.label}
                   </a>
                 ) : (
-                  <button key={c.label} onClick={() => c.page && setPage(c.page)} className="text-white hover:underline text-left lg:text-right">
+                  <button key={c.label} onClick={() => c.page && handleFooterClick(c.page, c.label)} className="text-white hover:underline text-left lg:text-right">
                     {c.label}
                   </button>
                 )

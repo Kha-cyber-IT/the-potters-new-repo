@@ -17,7 +17,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.AboutUs) {
     return (
       <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-0 md:px-4 md:px-12 2xl:px-32 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <div className="px-4 md:px-0">
               <BackButton label="Back to Mission" target={Page.Home} />
             </div>
@@ -29,13 +29,13 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             <p className="mb-8 text-lg font-medium">How do we do that? Through evangelism, discipleship, and church planting.</p>
             
             <div className="space-y-6 mb-12">
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Evangelism:</strong> Because the world is full of lost souls who need to hear the truth of Jesus Christ.</p>
                 </div>
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Discipleship:</strong> Because every believer needs to be trained for the ministry of the Gospel.</p>
                 </div>
-                <div className="bg-white/30 p-6 rounded-2xl border border-white/20 shadow-sm">
+                <div className="bg-transparent p-0 border-l-2 border-gray-400 pl-4 md:border-none md:pl-0 md:bg-white/30 md:p-6 md:rounded-2xl md:border md:border-white/20 md:shadow-sm">
                     <p><strong className="font-bold text-gray-900 uppercase tracking-wider font-heading">Church Planting:</strong> Because our greatest impact will be in the cities and nations outside our own that we can reach.</p>
                 </div>
             </div>
@@ -52,12 +52,12 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 
         {/* Cloud Blue Ministries Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0 mt-0">
-            <div className="max-w-4xl mx-auto text-center mb-8">
-                 <h2 className="text-3xl font-bold mb-4 uppercase tracking-widest font-heading text-gray-900">Explore our ministries.</h2>
-                 <p className="mb-8 text-xl font-medium">Find ways you and your family can grow and make impact.</p>
+            <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
+                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900">Explore our ministries.</h2>
+                 <p className="mb-4 md:mb-8 text-sm md:text-xl font-medium">Find ways you and your family can grow and make impact.</p>
             </div>
             
-            <div className="grid grid-cols-4 md:grid-cols-8 2xl:grid-cols-12 gap-4 md:gap-6 2xl:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                  <MinistryCard 
                     img="https://i.postimg.cc/Wbqw12rC/1763585178432.jpg" 
                     title="Live music Drama & Testimonials" 
@@ -89,10 +89,10 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   // PAGE 5: OUR STAFF
   if (page === Page.OurStaff) {
     return (
-      <div className="animate-fade-in text-left text-gray-900 bg-[#DFDCDA] pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-12 2xl:px-32 pt-8">
+      <div className="animate-fade-in text-left text-white bg-[#2C5A8B] pb-20 w-full pt-24 md:pt-32">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Mission" target={Page.Home} />
-        <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
+        <h3 className="text-3xl font-bold text-white mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
 
         <div className="space-y-16">
             <StaffMember 
@@ -141,7 +141,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.NewBuilding) {
     return (
       <section id="new-building-content" className="w-full bg-[#D1D066] pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-32 pt-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <button onClick={() => setPage(Page.Home)} className="mb-8 text-gray-900 hover:text-gray-700 transition-colors flex items-center gap-2">
               <ArrowLeft size={20} /> Back to Mission
             </button>
@@ -184,13 +184,13 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             {/* VIMEO EMBEDS */}
             <div className="mt-6 mb-16 space-y-8">
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>
             
@@ -223,10 +223,10 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   // PAGE 6: CHURCH PLANTING
   if (page === Page.ChurchPlanting) {
     return (
-      <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-12 2xl:px-32 pt-8">
+      <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#8D8CCF]">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Staff" target={Page.OurStaff} />
-        <h3 className="text-3xl font-bold text-blue-300 mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
+        <h3 className="text-3xl font-bold text-white mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
 
         <div className="space-y-6 text-lg leading-relaxed mb-10">
             <p><strong className="text-blue-300 font-heading">The Potter's House of Eldorado Park is actively involved in church planting across the globe.</strong></p>
@@ -236,7 +236,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             <p>The Eldorado Park congregation has been instrumental in reaching many nations in our region, and we are constantly striving to extend the reach of the gospel in Southern Africa and beyond!</p>
         </div>
 
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl mb-12 border-2 border-white/10">
+        <div className="relative w-full rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl mb-12 border-none md:border-2 md:border-white/10">
             <img src="https://i.postimg.cc/kXJBBX8g/502a78-3f260f5175d047d2ba1f844398a2e390-mv2.jpg" alt="Global Map" className="w-full h-auto opacity-60" />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                 <h3 className="text-2xl md:text-5xl font-black text-white mb-4 text-shadow-strong uppercase tracking-wider font-heading">3,700 locations and growing!</h3>
@@ -257,17 +257,17 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   if (page === Page.OurVision) {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#00272B]">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-12 2xl:px-32 pt-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
             <BackButton label="Back to Conference" target={Page.Conference2025} />
 
-        <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-12 shadow-2xl border border-white/10">
+        <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/RFYD6g0D/502a78-76d146b4c54b4977a6f70a02c24ec4f3-mv2.jpg" alt="Vision Background" className="absolute inset-0 w-full h-full object-cover opacity-80" />
             <div className="absolute inset-0 flex items-center justify-center p-4 bg-black/30">
                 <h3 className="text-white text-2xl md:text-4xl font-bold text-shadow-strong text-center uppercase tracking-widest font-heading">See what drives our church and everything we do.</h3>
             </div>
         </div>
 
-        <div className="glass-card-blue p-8 md:p-12 rounded-3xl space-y-10">
+        <div className="bg-transparent p-0 md:glass-card-blue md:p-8 md:p-12 rounded-none md:rounded-3xl space-y-10">
             <h3 className="text-3xl font-bold text-blue-300 uppercase tracking-widest text-center font-heading">Our Vision</h3>
             <VisionPoint title="Evangelism" content="The Gospel taken outside the four walls is the absolute foundation of our church, in obedience to Mark 16:15 And He said to them, ‘Go into all the world and preach the gospel to every creature'… We emphasize personal evangelism, and a large variety of outreaches to share the Gospel." />
             <VisionPoint title="Conversion" content="We witness, testify and preach for a decision. The Gospel has the power to save and transform lives. 1 Peter 1:23 having been born again... The bulk of our congregation consists of people converted here by the Power of God." />
@@ -285,12 +285,12 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 };
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
-    <div className="bg-transparent p-0 rounded-none border-none md:bg-white/40 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
-        <img src={img} alt={name} className="w-3/4 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
+    <div className="bg-transparent p-0 rounded-none border-none md:bg-white/15 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
+        <img src={img} alt={name} className="w-1/2 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
         <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl md:text-2xl font-bold text-gray-900 uppercase tracking-widest font-heading mb-2">{name}</h4>
-            <p className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-widest font-heading">{role}</p>
-            <p className="text-base md:text-lg leading-relaxed text-gray-900">{bio}</p>
+            <h4 className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest font-heading mb-2">{name}</h4>
+            <p className="text-lg font-bold text-white/80 mb-4 uppercase tracking-widest font-heading">{role}</p>
+            <p className="text-base md:text-lg leading-relaxed text-white/90">{bio}</p>
         </div>
     </div>
 );
@@ -304,12 +304,12 @@ const VisionPoint = ({ title, content }: { title: string; content: string }) => 
     </div>
 );
 const MinistryCard = ({ img, title, sub, label, clickable }: { img: string; title: string; sub: string; label?: string; clickable?: () => void }) => (
-    <div className={`relative w-full aspect-[2.5/1] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group ${clickable ? 'cursor-pointer' : ''}`} onClick={clickable}>
+    <div className={`relative w-full aspect-[2/1] md:aspect-[2.5/1] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10 group ${clickable ? 'cursor-pointer' : ''}`} onClick={clickable}>
         <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black/40">
-            {label && <span className="bg-white text-black px-4 py-1 rounded-full font-bold text-sm mb-3 uppercase tracking-widest font-heading">{label}</span>}
-            <h3 className="text-white text-xl md:text-3xl font-black text-shadow-strong text-center uppercase tracking-widest font-heading">{title}</h3>
-            <h4 className="text-blue-300 text-lg md:text-2xl font-bold text-shadow-strong text-center uppercase mt-2 font-heading">{sub}</h4>
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-3 md:p-4 bg-black/40">
+            {label && <span className="bg-white text-black px-3 py-0.5 md:px-4 md:py-1 rounded-full font-bold text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-widest font-heading">{label}</span>}
+            <h3 className="text-white text-base md:text-3xl font-black text-shadow-strong text-center uppercase tracking-wider md:tracking-widest font-heading">{title}</h3>
+            <h4 className="text-blue-300 text-sm md:text-2xl font-bold text-shadow-strong text-center uppercase mt-1 md:mt-2 font-heading">{sub}</h4>
         </div>
     </div>
 );
