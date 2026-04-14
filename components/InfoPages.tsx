@@ -281,8 +281,36 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     );
   }
 
+  // PAGE 14: STATEMENT OF FAITH
+  if (page === Page.StatementOfFaith) {
+    return (
+      <div className="animate-fade-in text-left text-gray-900 pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
+          <BackButton label="Back to Mission" target={Page.Home} />
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest font-heading">Statement of Faith</h3>
+          <div className="space-y-10 max-w-4xl mx-auto">
+            <FaithDetail title="The Bible" content="We believe the Bible is the inspired, infallible Word of God and the supreme authority in all matters of faith and practice (2 Timothy 3:16-17)." />
+            <FaithDetail title="God" content="We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit (Matthew 28:19; 2 Corinthians 13:14)." />
+            <FaithDetail title="Jesus Christ" content="We believe in the deity of Jesus Christ, His virgin birth, sinless life, miracles, atoning death, bodily resurrection, ascension, and His personal return in power and glory (John 1:1, 14; Acts 1:11)." />
+            <FaithDetail title="Salvation" content="We believe that salvation is by grace alone through faith alone in Christ alone. All who repent and believe in Jesus Christ are born again and receive eternal life (Ephesians 2:8-9; John 3:16)." />
+            <FaithDetail title="The Holy Spirit" content="We believe in the present ministry of the Holy Spirit, by whose indwelling the Christian is enabled to live a godly life (John 14:16-17; Romans 8:11)." />
+            <FaithDetail title="The Church" content="We believe in the universal church, the Body of Christ, made up of all believers, and in the importance of the local church as the expression of God's kingdom on earth (Ephesians 1:22-23; Matthew 16:18)." />
+            <FaithDetail title="Resurrection" content="We believe in the resurrection of both the saved and the lost — the saved unto the resurrection of life and the lost unto the resurrection of damnation (John 5:28-29; 1 Corinthians 15:51-57)." />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return null;
 };
+
+const FaithDetail = ({ title, content }: { title: string; content: string }) => (
+  <div className="border-l-4 border-blue-400 pl-6">
+    <h4 className="text-xl font-bold text-gray-900 mb-2 uppercase tracking-wider font-heading">{title}:</h4>
+    <p className="text-lg leading-relaxed text-gray-700">{content}</p>
+  </div>
+);
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
     <div className="bg-transparent p-0 rounded-none border-none md:bg-white/15 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">

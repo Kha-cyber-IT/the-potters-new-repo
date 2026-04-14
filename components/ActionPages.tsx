@@ -14,6 +14,27 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     </button>
   );
 
+  // Ministries redirects to AboutUs which has the full ministries section
+  if (page === Page.Ministries) {
+    return (
+      <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
+          <BackButton label="Back to Mission" target={Page.Home} />
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 uppercase tracking-widest font-heading">Our Ministries</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Explore the ways you and your family can grow and make an impact in your community and the world.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <MiniCard title="Children's Ministry" desc="Kingdom Kids Programs — Sunday School every Sunday at 9:00 AM." onClick={() => setPage(Page.ChildrensMinistry)} />
+            <MiniCard title="Choose to Change" desc="Faith-based addiction recovery ministry helping people transform their lives." onClick={() => setPage(Page.Recovery)} />
+            <MiniCard title="Church Planting" desc="Raising and releasing disciples to pioneer new congregations across the globe." onClick={() => setPage(Page.ChurchPlanting)} />
+            <MiniCard title="New Building" desc="Announcing the enlarged Eldorado Park Conference Center." onClick={() => setPage(Page.NewBuilding)} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // PAGE 3: GET CONNECTED (Unified Deep Olive Section)
   if (page === Page.GetConnected) {
     return (
@@ -715,9 +736,12 @@ const AnnouncementGroup = ({
 
 
 
-const FaithDetail = ({ title, content }: { title: string; content: string }) => (
-    <div>
-        <h4 className="text-2xl font-bold text-teal-800 mb-3 uppercase tracking-wider font-heading">{title}:</h4>
-        <p className="text-lg leading-relaxed text-gray-800">{content}</p>
-    </div>
+const MiniCard = ({ title, desc, onClick }: { title: string; desc: string; onClick: () => void }) => (
+  <div
+    onClick={onClick}
+    className="cursor-pointer bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-6 text-left group"
+  >
+    <h4 className="text-xl font-bold text-gray-900 mb-2 uppercase tracking-wider font-heading group-hover:text-blue-600 transition-colors">{title}</h4>
+    <p className="text-gray-600 leading-relaxed">{desc}</p>
+  </div>
 );

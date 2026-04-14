@@ -1,3 +1,7 @@
+export interface NavigationProps {
+  setPage: (page: Page, scrollTarget?: string) => void;
+}
+
 export enum Page {
   Home = 'Home',
   AboutUs = 'AboutUs',
