@@ -118,7 +118,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mt-16">
-            <button onClick={() => setPage(Page.ChurchPlanting)} className="bg-blue-600 text-white font-bold py-3 px-10 rounded-full shadow-lg hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">
+            <button onClick={() => setPage(Page.ChurchPlanting)} className="bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full shadow-lg hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">
                 Church Planting
             </button>
         </div>
@@ -164,7 +164,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="mt-6 mb-10 text-center">
-                <button className="text-sm md:text-base uppercase tracking-[0.2em] px-6 py-3 border border-current rounded-full inline-block font-bold text-gray-900 mb-6 font-heading bg-[#C5E0FA] hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">View 3D Simulation</button>
+                <button className="text-xl uppercase tracking-[0.2em] w-full max-w-[280px] py-4 px-8 border border-current rounded-full font-bold text-gray-900 font-heading bg-[#C5E0FA] hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">View 3D Simulation</button>
             </div>
             
             {/* VIMEO EMBEDS */}
@@ -229,9 +229,9 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             </div>
         </div>
 
-        <div className="text-center">
+        <div className="text-center flex flex-col items-center">
             <p className="text-xl font-semibold mb-6">Learn how you can be a part of the worldwide impact</p>
-            <button onClick={() => setPage(Page.Give)} className="bg-blue-600 text-white font-bold py-4 px-12 rounded-full shadow-2xl hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">Online Giving</button>
+            <button onClick={() => setPage(Page.Give)} className="bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full shadow-2xl hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">Online Giving</button>
         </div>
         </div>
       </div>

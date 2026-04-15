@@ -68,7 +68,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
                 <div className="pt-10 border-t border-white/20">
                     <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-wider font-heading">Subscribe for updates</h3>
-                    <a href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" target="_blank" className="inline-flex items-center justify-center gap-4 bg-green-600 text-white font-bold py-4 px-10 rounded-2xl hover:bg-green-500 transition-all active:scale-95 shadow-xl font-heading">
+                    <a href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" target="_blank" className="inline-flex items-center justify-center gap-4 bg-green-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full hover:bg-green-500 transition-all active:scale-95 shadow-xl font-heading">
                         <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         Subscribe via WhatsApp
                     </a>
@@ -179,7 +179,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                  <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
                  <button
                     onClick={() => window.open('https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA', '_blank')}
-                    className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase py-3 px-8 rounded-full flex items-center justify-center gap-4 mx-auto font-heading text-sm md:text-base"
+                    className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full max-w-[280px] text-xl py-4 px-8 rounded-full flex items-center justify-center gap-4 mx-auto font-heading"
                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.226-11.63-.226-15.234 0C.486 3.407 0 4.888 0 7.5v9c0 2.612.486 4.093 4.381 4.316 3.604.226 11.63.226 15.234 0 3.896-.223 4.381-1.704 4.381-4.316v-9c0-2.612-.486-4.093-4.381-4.316zM9 16.5v-9L16 12l-7 4.5z"/></svg>
                     Stream Now
@@ -309,7 +309,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="flex justify-center mt-8">
                 <button
                   onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                  className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                  className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full flex items-center justify-center gap-4 font-heading uppercase tracking-widest mx-auto"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                     Play on Spotify
@@ -437,7 +437,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="flex justify-center">
-            <button onClick={() => setPage(Page.ChurchPlanting)} className="bg-blue-600 text-white font-bold py-4 px-12 rounded-full shadow-xl hover:bg-blue-500 active:scale-95 border-2 border-blue-400 transition-all uppercase tracking-widest font-heading">
+            <button onClick={() => setPage(Page.ChurchPlanting)} className="bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full shadow-xl hover:bg-blue-500 active:scale-95 border-2 border-blue-400 transition-all uppercase tracking-widest font-heading">
                 Church Planting
             </button>
         </div>
@@ -596,7 +596,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     <div className="flex justify-center md:justify-start">
                         <button
                           onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                          className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 w-full justify-center md:w-auto font-bold py-3 px-4 md:py-4 md:px-10 rounded-full flex items-center gap-4 font-heading uppercase tracking-widest text-sm md:text-base"
+                          className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full flex items-center justify-center gap-4 font-heading uppercase tracking-widest mx-auto"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                             Play Testimony Pod

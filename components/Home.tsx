@@ -91,14 +91,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-row gap-3 sm:gap-6 justify-start items-center w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-start items-start w-full"
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="flex-1 sm:flex-none sm:w-auto justify-center bg-blue-600 text-white font-black text-xs md:text-sm py-3 px-4 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="w-full max-w-[280px] justify-center bg-blue-600 text-white font-black text-xl py-4 px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
@@ -107,7 +107,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase flex-1 sm:flex-none sm:w-auto justify-center py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
               />
             </motion.div>
           </div>
@@ -342,18 +342,16 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-row justify-center md:justify-start items-stretch gap-3 w-full">
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 w-full">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
-                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
                   <ModernButton
                     text="Plan Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
-                    className="flex-1 min-w-0 justify-center md:flex-none md:w-auto h-10 md:h-auto text-[10px] md:text-sm tracking-[0.1em] md:tracking-widest"
                   />
               </div>
             </motion.div>
@@ -386,7 +384,6 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Join Channel"
                 href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
                 variant="dark"
-                className="w-full justify-center h-10 text-xs tracking-[0.15em]"
               />
             </motion.div>
 
@@ -485,7 +482,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 transition-all duration-300 font-bold tracking-[0.2em] uppercase w-full justify-center md:w-auto py-3 px-4 md:py-4 md:px-8 rounded-full font-heading text-xs md:text-sm"
+                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 transition-all duration-300 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
                     />
                 </motion.div>
             </motion.div>
