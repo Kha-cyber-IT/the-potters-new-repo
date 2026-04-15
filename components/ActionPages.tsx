@@ -85,25 +85,14 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             While our home is here in Soweto, our family spans the globe. The Potter's House is a worldwide fellowship of over 3,000 churches across 130 nations. Wherever you go, you can always find family.
         </p>
 
-        <div className="aspect-video rounded-none md:rounded-[2.5rem] bg-white/5 border-none md:border md:border-white/10 relative overflow-hidden flex flex-col items-center justify-end p-4 md:p-8">
+        <div className="w-full rounded-none md:rounded-[2.5rem] overflow-hidden border-none md:border md:border-white/10 shadow-none md:shadow-2xl" style={{ height: '520px' }}>
             <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
-                            className="absolute inset-0 w-full h-full pointer-events-none"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Global Church Map"
+                src="https://www.cfmmap.org/"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                title="Global Church Finder"
+                loading="lazy"
             />
-            <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
-
-            {/* Eldorado Park Highlight */}
-            <div className="absolute top-[40%] right-[15%] bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl z-10 hidden md:block">
-                <p className="text-white font-bold text-sm">The Potter's House of</p>
-                <p className="text-blue-300 font-bold text-lg">Eldorado Park, Soweto</p>
-            </div>
-
-            <ModernButton text="EXPLORE GLOBAL MAP" href="https://www.cfmmap.org/" variant="ghost" className="relative z-10 mt-auto" />
         </div>
 
       </div>
@@ -411,7 +400,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-emerald-800 to-teal-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
         
         <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-white/10">
             <img src="https://i.postimg.cc/c4bLPpd2/1763563363621.jpg" alt="Giving" className="absolute inset-0 w-full h-full object-cover" />
@@ -463,7 +451,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-gradient-to-br from-cyan-800 to-blue-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-        <BackButton label="Back to Mission" target={Page.Home} />
         <div className="text-center mb-8 md:mb-12">
             <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
             <p className="text-base md:text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
@@ -566,9 +553,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
     return (
       <div className="w-full min-h-screen animate-fade-in text-left text-white/90 bg-[#A85D5C] pt-24 md:pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
-            <div className="px-4 md:px-0 mb-6">
-                <BackButton label="Back to About Us" target={Page.AboutUs} />
-            </div>
 
             {/* Images side-by-side, full-width, edge-to-edge layout */}
             <div className="flex flex-col md:flex-row w-full mb-12">

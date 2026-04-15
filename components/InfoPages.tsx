@@ -10,7 +10,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
   // PAGE 2: ABOUT US (Merged with Ministries)
   if (page === Page.AboutUs) {
     return (
-      <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32">
+      <div className="animate-fade-in text-left pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
         
         {/* Cloud Blue Who We Are Section */}
@@ -170,13 +170,13 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             {/* VIMEO EMBEDS */}
             <div className="mt-6 mb-16 space-y-8">
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268450?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;logo=0&amp;dnt=1" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268799?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;logo=0&amp;dnt=1" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-900/10">
-                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1139268892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;logo=0&amp;dnt=1" className="absolute inset-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>
             

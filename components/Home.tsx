@@ -81,7 +81,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-light lg:max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-gray-800 leading-relaxed font-normal lg:max-w-2xl"
             >
               We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span> This is the single greatest hope we have of true life and true transformation!
             </motion.p>
@@ -120,7 +120,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="bg-[#121519] border-none md:border md:border-white/5 rounded-none md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-none md:shadow-2xl w-full"
+              className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-md md:shadow-2xl w-full"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -151,7 +151,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && setPage(Page.NewBuilding)}
-                className="block relative rounded-none md:rounded-[3rem] overflow-hidden border-none md:border md:border-white/5 cursor-pointer h-[200px] md:h-[300px] shadow-none md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="block relative rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 cursor-pointer h-[200px] md:h-[300px] shadow-md md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110"
@@ -311,7 +311,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full py-16 md:py-20 px-4 md:px-6 lg:px-0">
+        <div className="w-full py-16 md:py-20 px-0 md:px-6 lg:px-0">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -342,7 +342,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-row justify-center md:justify-start items-stretch gap-3 w-full flex-wrap">
+              <div className="flex flex-row justify-center md:justify-start items-stretch gap-3 w-full">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
