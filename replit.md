@@ -14,7 +14,7 @@ A React + TypeScript church website for "The Potter's House" organization.
 
 ```
 .
-├── App.tsx              # Main app with custom state-based routing
+├── App.tsx              # Main app with URL-backed custom routing/history
 ├── index.tsx            # React entry point
 ├── index.html           # HTML template
 ├── index.css            # Global styles
@@ -32,7 +32,7 @@ A React + TypeScript church website for "The Potter's House" organization.
 
 ## Routing
 
-Uses a custom state-based routing system (no react-router). The `Page` enum in `types.ts` defines all pages. Navigation is handled via `setPage` callbacks passed down from `App.tsx`.
+Uses a custom URL-backed routing system (no react-router). The `Page` enum in `types.ts` defines all pages, and `App.tsx` maps each page to a unique path. Navigation is handled via `setPage` callbacks passed down from `App.tsx`, with `history.pushState` and `popstate` support so the browser back button moves between in-site pages.
 
 ## Development
 

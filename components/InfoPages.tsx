@@ -118,7 +118,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="flex justify-center mt-16">
-            <button onClick={() => setPage(Page.ChurchPlanting)} className="bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full shadow-lg hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">
+            <button onClick={() => setPage(Page.ChurchPlanting)} className="btn bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl rounded-full shadow-lg hover:bg-blue-500 active:scale-95 uppercase tracking-widest font-heading">
                 Church Planting
             </button>
         </div>
@@ -231,7 +231,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
 
         <div className="text-center flex flex-col items-center">
             <p className="text-xl font-semibold mb-6">Learn how you can be a part of the worldwide impact</p>
-            <button onClick={() => setPage(Page.Give)} className="bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl py-4 px-8 rounded-full shadow-2xl hover:bg-blue-500 active:scale-95 transition-all uppercase tracking-widest font-heading">Online Giving</button>
+            <button onClick={() => setPage(Page.Give)} className="btn bg-blue-600 text-white font-bold w-full max-w-[280px] text-xl rounded-full shadow-2xl hover:bg-blue-500 active:scale-95 uppercase tracking-widest font-heading">Online Giving</button>
         </div>
         </div>
       </div>

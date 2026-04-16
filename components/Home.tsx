@@ -29,10 +29,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   const splitTextEnd = " of Jesus Christ to the world!".split(" ");
 
   return (
-    <div className="animate-fade-in bg-[#F5F0E8] min-h-screen w-full pb-20 overflow-x-hidden pt-24 md:pt-32">
+    <div className="animate-fade-in bg-[#F5F0E8] min-h-screen w-full pb-20 overflow-x-hidden">
       
       {/* HERO SECTION: True Side-by-Side Layout */}
-      <section className="relative min-h-screen flex items-start w-full mt-8 md:mt-16 pb-12 overflow-hidden">
+      <section className="hero relative min-h-screen flex items-center w-full pb-12 overflow-hidden">
 
         {/* Main Grid Container */}
         <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
@@ -95,7 +95,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="w-full max-w-[280px] justify-center bg-blue-600 text-white font-black text-xl py-4 px-8 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="btn w-full max-w-[280px] justify-center bg-blue-600 text-white font-black text-xl rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,7 +107,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Watch Live"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
+                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
               />
             </motion.div>
           </div>
@@ -482,7 +482,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 transition-all duration-300 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
+                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
                     />
                 </motion.div>
             </motion.div>

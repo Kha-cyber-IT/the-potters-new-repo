@@ -1,0 +1,306 @@
+Here’s a **full, clean, AI-ready global prompt** you can paste into your AI/dev assistant so it fixes *everything from your PDF feedback*, including your **back button issue (the main problem)** and all UI inconsistencies.
+
+---
+
+## 🔧 FULL GLOBAL FIX PROMPT
+
+You are a senior frontend engineer. Apply the following fixes globally across the entire website. Detect the framework automatically (React, Next.js, Vue, plain HTML/JS, etc.) and adapt the implementation accordingly.
+
+========================
+🚨 CRITICAL FIX: BACK BUTTON / NAVIGATION ISSUE
+===============================================
+
+Problem:
+
+* On mobile and desktop, when users click the browser back button, they are taken OFF the website instead of to the previous page/section.
+* This is happening across ALL pages and menus.
+
+Root Cause (likely):
+
+* Navigation is using `window.location.href` or full page reloads instead of SPA routing.
+* History stack is not being preserved properly.
+
+Global Fix (apply framework-specific solution):
+
+1. If React / Next.js:
+
+* Replace ALL navigation logic with router-based navigation:
+
+  * React Router: `useNavigate()`
+  * Next.js: `useRouter()`
+
+Example:
+
+```js
+// ❌ WRONG
+window.location.href = "/about";
+
+// ✅ CORRECT
+const navigate = useNavigate();
+navigate("/about");
+```
+
+Next.js:
+
+```js
+import { useRouter } from 'next/router';
+const router = useRouter();
+router.push('/about');
+```
+
+2. Ensure ALL links use:
+
+* `<Link>` components instead of `<a>` where applicable
+
+3. DO NOT use:
+
+* `window.location`
+* `location.replace()`
+* Full page reload navigation
+
+4. Preserve browser history:
+
+* Always use `push`, NOT `replace`, unless explicitly needed
+
+5. If sections use scroll navigation:
+
+* Use `history.pushState()` to store state
+
+Example:
+
+```js
+window.history.pushState({ section: "home" }, "", "#home");
+```
+
+6. Add fallback handler:
+
+```js
+window.onpopstate = function (event) {
+  if (event.state?.section) {
+    scrollToSection(event.state.section);
+  }
+};
+```
+
+========================
+🎯 GLOBAL BUTTON FIXES
+======================
+
+Problem:
+
+* Buttons have inconsistent heights due to long text.
+
+Fix:
+
+* Apply consistent sizing globally:
+
+```css
+.btn {
+  min-height: 48px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+```
+
+* Limit text wrapping:
+
+```css
+.btn {
+  white-space: nowrap;
+}
+```
+
+* Standardize hover animation:
+
+```css
+transition: all 0.5s ease; /* Tailwind: duration-500 */
+```
+
+========================
+📱 HERO SECTION FIX
+===================
+
+Problem:
+
+* Too much top padding
+* No side padding
+* Poor mobile fit
+
+Fix:
+
+Desktop:
+
+```css
+.hero {
+  min-height: 100vh;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+```
+
+Mobile:
+
+```css
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 16px;
+  }
+}
+```
+
+Ensure:
+
+* Heading + description + buttons fit in viewport
+
+========================
+📐 TEXT ALIGNMENT FIX (CARDS)
+=============================
+
+Problem:
+
+* Text inside cards touches edges (no spacing)
+
+Fix:
+
+```css
+.card-content {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+```
+
+========================
+🔠 HEADING HIERARCHY FIX
+========================
+
+Problem:
+
+* Heading sizes inconsistent
+
+Fix:
+
+* Enforce hierarchy:
+
+```css
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.5rem; font-weight: 600; }
+```
+
+Ensure:
+
+* Only ONE h1 per page
+* Sections use h2, h3 correctly
+
+========================
+🔗 ROUTING BUG FIX (MINISTRIES)
+===============================
+
+Problem:
+
+* “Recovery” and “Children’s Ministry” route to same page
+
+Fix:
+
+* Audit all routes
+* Ensure unique paths:
+
+```js
+/recovery
+/children-ministry
+```
+
+* Update navigation mapping accordingly
+
+========================
+🧭 FOOTER ICON FIX
+==================
+
+Problem:
+
+* Icons are unclear/unofficial
+
+Fix:
+
+* Replace with official icon libraries:
+
+  * Font Awesome
+  * Heroicons
+  * Lucide
+
+Example:
+
+```jsx
+import { Facebook, Instagram, Youtube } from "lucide-react";
+```
+
+========================
+📱 GLOBAL MOBILE UX FIX
+=======================
+
+Problem:
+
+* Clicking menu/footer links lands correctly BUT user must scroll up manually
+
+Fix:
+
+* Force scroll-to-top on navigation:
+
+React:
+
+```js
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, [location.pathname]);
+```
+
+Next.js:
+
+```js
+router.events.on('routeChangeComplete', () => {
+  window.scrollTo(0, 0);
+});
+```
+
+========================
+✅ FINAL REQUIREMENTS
+====================
+
+* Apply ALL fixes globally (not per component)
+* Maintain responsiveness
+* Do NOT break existing design system
+* Follow Tailwind if already used
+* Optimize for performance
+* Ensure smooth UX on mobile first
+
+========================
+
+After implementing, verify:
+✔ Back button works correctly
+✔ Navigation stays inside site
+✔ No forced scrolling after navigation
+✔ Buttons consistent
+✔ Layout clean on mobile
+
+========================
+
+---
+
+## 💡 Quick Reality Check
+
+Your main issue is **not a UI bug — it’s a routing architecture problem**.
+If you don’t fix navigation globally (as above), you’ll keep fighting symptoms forever.
+
+---
+
+If you want, I can:
+
+* Audit your actual code (paste it here)
+* Or tailor this specifically for your framework (React / Next.js / plain HTML)
+
+That would make this fix **100% bulletproof** instead of “AI guessing.”

@@ -6,8 +6,39 @@ import { InfoPages } from './components/InfoPages';
 import { ActionPages } from './components/ActionPages';
 import { Footer } from './components/Footer';
 
+const PAGE_PATHS: Record<Page, string> = {
+  [Page.Home]: '/',
+  [Page.AboutUs]: '/about',
+  [Page.NewBuilding]: '/new-building',
+  [Page.OurStaff]: '/our-staff',
+  [Page.ChurchPlanting]: '/church-planting',
+  [Page.OurVision]: '/our-vision',
+  [Page.StatementOfFaith]: '/statement-of-faith',
+  [Page.GetConnected]: '/get-connected',
+  [Page.PlanAVisit]: '/plan-a-visit',
+  [Page.Conference2025]: '/conference-2025',
+  [Page.Events2026]: '/events-2026',
+  [Page.Stories]: '/stories',
+  [Page.Give]: '/give',
+  [Page.Ministries]: '/ministries',
+  [Page.ChildrensMinistry]: '/children-ministry',
+  [Page.Recovery]: '/recovery',
+};
+
+const PATH_PAGES = Object.entries(PAGE_PATHS).reduce<Record<string, Page>>((acc, [page, path]) => {
+  acc[path] = page as Page;
+  return acc;
+}, {});
+
+const getPageFromLocation = () => PATH_PAGES[window.location.pathname] ?? Page.Home;
+
+const buildUrl = (page: Page, scrollTarget?: string) => {
+  const path = PAGE_PATHS[page] ?? PAGE_PATHS[Page.Home];
+  return scrollTarget ? `${path}#${scrollTarget}` : path;
+};
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
+  const [currentPage, setCurrentPage] = useState<Page>(() => getPageFromLocation());
   const scrollTargetRef = useRef<string | null>(null);
   const consumedTargetRef = useRef<string | null>(null);
   const navCounterRef = useRef(0);
@@ -18,6 +49,24 @@ export default function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+  }, []);
+
+  useEffect(() => {
+    const initialPage = getPageFromLocation();
+    const initialTarget = window.location.hash.replace('#', '') || undefined;
+    window.history.replaceState({ page: initialPage, scrollTarget: initialTarget }, '', buildUrl(initialPage, initialTarget));
+
+    const handlePopState = (event: PopStateEvent) => {
+      const page = (event.state?.page as Page | undefined) ?? getPageFromLocation();
+      const scrollTarget = (event.state?.scrollTarget as string | undefined) ?? (window.location.hash.replace('#', '') || undefined);
+      scrollTargetRef.current = scrollTarget ?? null;
+      navCounterRef.current += 1;
+      setNavTick(navCounterRef.current);
+      setCurrentPage(page);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   // useLayoutEffect runs BEFORE the browser paints, preventing flash of wrong scroll position
@@ -77,6 +126,7 @@ export default function App() {
     scrollTargetRef.current = scrollTarget ?? null;
     navCounterRef.current += 1;
     setNavTick(navCounterRef.current);
+    window.history.pushState({ page, scrollTarget }, '', buildUrl(page, scrollTarget));
     setCurrentPage(page);
   }, []);
 

@@ -20,7 +20,7 @@ export const ModernButton: React.FC<ModernButtonProps> = ({
   variant = 'ocean',
   className = ''
 }) => {
-  const baseClasses = "flex items-center justify-center gap-4 rounded-full font-bold uppercase tracking-wider whitespace-nowrap transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 font-heading text-xl px-8 py-4 w-full max-w-[280px]";
+  const baseClasses = "btn flex items-center justify-center gap-4 rounded-full font-bold uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 font-heading text-xl w-full max-w-[280px]";
 
   const styles: Record<Variant, string> = {
     ocean: "bg-[#2872A1] text-white hover:bg-[#1f5b82]",
