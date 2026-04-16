@@ -20,22 +20,22 @@ export const ModernButton: React.FC<ModernButtonProps> = ({
   variant = 'ocean',
   className = ''
 }) => {
-  const baseClasses = "btn flex items-center justify-center gap-4 rounded-full font-bold uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 font-heading text-xl w-full max-w-[280px]";
+  const baseClasses = "btn flex items-center justify-center gap-3 md:gap-4 rounded-full font-bold uppercase tracking-[0.18em] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 font-heading text-sm md:text-xl w-full max-w-[150px] md:max-w-[280px]";
 
   const styles: Record<Variant, string> = {
-    ocean: "bg-[#2872A1] text-white hover:bg-[#1f5b82]",
-    purple: "bg-[#5F4A8B] text-white hover:bg-[#49396b]",
-    teal: "bg-teal-600 text-white hover:bg-teal-500",
-    ghost: "bg-transparent text-white border border-white/20 hover:bg-white/10",
-    dark: "bg-[#0B0D0F] text-white hover:bg-black"
+    ocean: "bg-[#090909] text-white hover:opacity-90",
+    purple: "bg-[#090909] text-white hover:opacity-90",
+    teal: "bg-[#090909] text-white hover:opacity-90",
+    ghost: "bg-[#090909] text-white hover:opacity-90",
+    dark: "bg-[#090909] text-white hover:opacity-90"
   };
 
   const glows: Record<Variant, string> = {
-    ocean: "rgba(40,114,161,0.6)",
-    purple: "rgba(95,74,139,0.6)",
-    teal: "rgba(13,148,136,0.6)",
-    ghost: "rgba(255,255,255,0.2)",
-    dark: "rgba(11,13,15,0.6)"
+    ocean: "rgba(147,51,234,0.72)",
+    purple: "rgba(147,51,234,0.72)",
+    teal: "rgba(147,51,234,0.72)",
+    ghost: "rgba(147,51,234,0.72)",
+    dark: "rgba(147,51,234,0.72)"
   };
 
   const selectedStyle = styles[variant];

@@ -79,18 +79,17 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         {/* Divider */}
         <div className="border-b border-white/10 mt-16 mb-16 max-w-4xl mx-auto"></div>
 
-        {/* Bottom Half: Global Map Section */}
-        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28">LOCAL ROOTS. GLOBAL REACH.</h3>
+        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28">ELDOPARK LOCATION</h3>
         <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-12 leading-relaxed">
-            While our home is here in Soweto, our family spans the globe. The Potter's House is a worldwide fellowship of over 3,000 churches across 130 nations. Wherever you go, you can always find family.
+            Our home is here in Eldorado Park, Soweto.
         </p>
 
         <div className="w-full rounded-none md:rounded-[2.5rem] overflow-hidden border-none md:border md:border-white/10 shadow-none md:shadow-2xl" style={{ height: '520px' }}>
             <iframe
-                src="https://www.cfmmap.org/"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d27.8833!3d-26.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a77f1e96719d%3A0x564720acc15ba9c5!2sThe%20Potter's%20House%20of%20Eldorado%20Park!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
                 className="w-full h-full"
                 style={{ border: 0 }}
-                title="Global Church Finder"
+                title="Eldopark Location Map"
                 loading="lazy"
             />
         </div>
@@ -152,19 +151,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     </div>
                 </div>
 
-                {/* Global Church Finder (cfmmap) */}
-                <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
-                    <iframe
-                                            src="https://www.cfmmap.org/"
-                                            className="absolute inset-0 w-full h-full"
-                                            style={{ border: 0 }}
-                                            allowFullScreen
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                            title="Global Church Finder — CFM"
-                    />
-                </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
                 <div><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
@@ -179,7 +165,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                  <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
                  <button
                     onClick={() => window.open('https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA', '_blank')}
-                    className="btn bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase w-full max-w-[280px] text-xl rounded-full flex items-center justify-center gap-4 mx-auto font-heading"
+                    className="btn text-white border-none hover:scale-105 active:scale-95 font-bold tracking-[0.18em] md:tracking-[0.2em] uppercase w-full max-w-[150px] md:max-w-[280px] text-sm md:text-xl rounded-full flex items-center justify-center gap-2 md:gap-4 mx-auto font-heading"
                  >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.226-11.63-.226-15.234 0C.486 3.407 0 4.888 0 7.5v9c0 2.612.486 4.093 4.381 4.316 3.604.226 11.63.226 15.234 0 3.896-.223 4.381-1.704 4.381-4.316v-9c0-2.612-.486-4.093-4.381-4.316zM9 16.5v-9L16 12l-7 4.5z"/></svg>
                     Stream Now
@@ -309,7 +295,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             <div className="flex justify-center mt-8">
                 <button
                   onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                  className="btn bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] hover:scale-105 active:scale-95 font-bold w-full max-w-[280px] text-xl rounded-full flex items-center justify-center gap-4 font-heading uppercase tracking-widest mx-auto"
+                  className="btn text-white border-none hover:scale-105 active:scale-95 font-bold w-full max-w-[150px] md:max-w-[280px] text-sm md:text-xl rounded-full flex items-center justify-center gap-2 md:gap-4 font-heading uppercase tracking-[0.18em] md:tracking-widest mx-auto"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
                     Play on Spotify
@@ -592,15 +578,6 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     If you or someone you love needs help, <button onClick={() => setPage(Page.GetConnected)} className="text-white font-bold underline decoration-white/50 underline-offset-4 font-heading hover:text-white/80">contact us</button> today.
                 </p>
 
-                <div className="flex justify-center md:justify-start">
-                    <button
-                      onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
-                      className="btn bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] hover:scale-105 active:scale-95 font-bold w-full max-w-[280px] text-xl rounded-full flex items-center justify-center gap-4 font-heading uppercase tracking-widest mx-auto"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
-                        Play Testimony Pod
-                    </button>
-                </div>
             </div>
         </div>
       </div>

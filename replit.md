@@ -1,6 +1,6 @@
 # The Potter's House
 
-A React + TypeScript church website for "The Potter's House" organization.
+A React + TypeScript church website for "The Potter's House" organization in Eldorado Park, Soweto, South Africa.
 
 ## Tech Stack
 
@@ -33,6 +33,14 @@ A React + TypeScript church website for "The Potter's House" organization.
 ## Routing
 
 Uses a custom URL-backed routing system (no react-router). The `Page` enum in `types.ts` defines all pages, and `App.tsx` maps each page to a unique path. Navigation is handled via `setPage` callbacks passed down from `App.tsx`, with `history.pushState` and `popstate` support so the browser back button moves between in-site pages.
+
+## UI Notes
+
+- Primary `.btn` buttons and `ModernButton` variants use a near-black `#090909` background with a purple `#9333EA` glow.
+- Hero action buttons stay side-by-side on mobile with smaller widths.
+- Media CTA labels use "Stream Now" for live/YouTube stream actions and "Watch Now" for archived broadcasts.
+- Get Connected and Plan a Visit maps focus on the Eldorado Park location only.
+- The New Building image strip auto-scrolls horizontally while preserving the section color scheme.
 
 ## Development
 

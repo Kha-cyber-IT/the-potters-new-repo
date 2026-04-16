@@ -102,7 +102,15 @@
     justify-content: center;
     text-align: center;
     white-space: nowrap;
+    background: #090909 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 18px rgba(147, 51, 234, 0.6), 0 0 34px rgba(147, 51, 234, 0.35) !important;
     transition: all 0.5s ease;
+  }
+
+  .btn:hover {
+    opacity: 0.88;
+    box-shadow: 0 0 22px rgba(147, 51, 234, 0.85), 0 0 44px rgba(147, 51, 234, 0.48) !important;
   }
 
   .hero {
@@ -114,12 +122,26 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  .auto-scroll-x {
+    width: max-content;
+    animation: autoScrollX 38s linear infinite;
+  }
+
+  .auto-scroll-x:hover {
+    animation-play-state: paused;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
     padding: 72px 16px 32px;
+  }
+
+  .btn {
+    min-height: 40px;
+    padding: 0 10px;
   }
 }
 
@@ -132,6 +154,11 @@
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes autoScrollX {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .animate-fade-in {

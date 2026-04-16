@@ -97,7 +97,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Broadcast',
       type: 'dropdown' as const,
       subItems: [
-        { label: 'Watch Live', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Stream Now', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
         { label: 'Stories & Podcasts', page: Page.Stories },
         { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
       ]
@@ -145,7 +145,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Broadcast',
       label: 'Broadcast',
       subItems: [
-        { label: 'Watch Live', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Stream Now', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
         { label: 'Stories & Podcasts', page: Page.Stories },
         { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' }
       ]
@@ -224,19 +224,18 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               ))}
             </div>
 
-            {/* Right side CTA buttons — TymeBank style */}
             <div className="flex-shrink-0 flex items-center gap-3">
               <button
                 onClick={() => handleNavClick(Page.Give)}
-                className="text-sm font-medium text-white/80 hover:text-white px-4 py-2 rounded-full border border-white/20 hover:border-white/40 transition-all"
+                className="text-sm font-semibold text-white px-4 py-2 rounded-full bg-[#090909] shadow-[0_0_18px_rgba(147,51,234,0.45)] hover:opacity-90 transition-all border border-purple-400/20"
               >
                 Give
               </button>
               <a
-                href="https://www.cfmmap.org/"
+                href="https://maps.app.goo.gl/JgER99H8Lh5eDmQ77"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-5 py-2 rounded-full transition-colors shadow-md"
+                className="text-sm font-semibold text-white bg-[#090909] px-5 py-2 rounded-full transition-all shadow-[0_0_18px_rgba(147,51,234,0.55)] hover:opacity-90 border border-purple-400/20"
               >
                 Find Church
               </a>

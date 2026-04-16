@@ -1,0 +1,73 @@
+UI / Styling & Functionality Update Instructions
+1. Button Styling (Global Change)
+Remove all default button colors across the site.
+
+Apply the following custom button style consistently:
+
+Outer glow: purple (#9333EA) with blur and hover opacity effect.
+Button background: near-black (#090909).
+Text: white, bold, uppercase, with wide letter spacing.
+Use this exact structure and styling as the standard for all primary buttons:
+
+“Watch Now”
+“Watch Live”
+“Play on Spotify”
+stream now
+2. Hero Section Updates
+Change the “Watch Live” button text to:
+
+“Stream Now”
+Apply the same purple glow button styling described above.
+
+Fix the hero background image:
+
+Ensure it is clearly visible against the cream-colored background.
+Adjust contrast, overlay, or layering so the image does not fade or disappear.
+3. “Watch Now” Section (YouTube Area)
+Ensure all background images in this section:
+
+Are clearly visible against the cream/light background.
+Do not appear washed out or hidden.
+Maintain proper contrast and visibility.
+4. Mobile Layout Improvements
+Apply full edge-to-edge display on mobile for sections, similar to how it is already implemented in the yellow-themed section.
+
+Extend this full-width layout to:
+
+“New to The Potter’s House?”
+“Stay Connected”
+Keep the existing color scheme for the “New Building” section unchanged.
+
+5. Auto-Scroll Feature
+Add auto-scroll (carousel behavior) to photo/image sections where applicable.
+6. Mobile Button Layout
+On mobile devices:
+
+Align buttons side-by-side (horizontal layout) where applicable.
+
+Reduce button sizes to a smaller, consistent size.
+
+Ensure all buttons are uniform in size across sections:
+
+Hero section
+“New to The Potter’s House?” section
+7. Remove Unwanted Elements
+Completely remove the following:
+
+“Play Testimony Pod” button (entirely delete it)
+8. “Plan a Visit” Section Fix
+There are currently two iframes:
+
+Remove the iframe related to Global Church.
+Keep only the relevant iframe.
+9. Locations Section Update
+In the Locations section:
+
+Remove all locations except:
+
+Eldopark
+Only the Eldopark location should remain visible.
+
+Important Note
+Do not change anything else outside of the instructions listed above.
+All other styles, layouts, and functionality should remain exactly as they are.

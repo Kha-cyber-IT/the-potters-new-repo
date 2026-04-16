@@ -151,16 +151,25 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
                 <img src="https://i.postimg.cc/kgYf78NP/Exterior-Arrival.jpg" alt="New building rendering" className="w-full h-auto" />
             </div>
             
-            <div className="mt-6 overflow-x-auto flex space-x-4 pb-8 scrollbar-hide mb-10">
-                {/* Reordered: Exterior-Arrival first, Entrance-Arrival second */}
-                <img src="https://i.postimg.cc/kgYf78NP/Exterior-Arrival.jpg" alt="New building 1" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/WbwXdxVj/Entrance-Arrival.jpg" alt="New building 2" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/9QgJcTdK/Exterior-2.jpg" alt="New building 3" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/sfPmvb9d/Exterior.jpg" alt="New building 4" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/C1kNCQ3w/Interior-Lumen.jpg" alt="New building 5" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/dtB5SgL3/Int-to-pulpit-lumen.jpg" alt="New building 6" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/RVRgb2NZ/Foyer-lumen.jpg" alt="New building 7" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
-                <img src="https://i.postimg.cc/SNyr8VV3/Foyer.jpg" alt="New building 8" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+            <div className="mt-6 overflow-hidden scrollbar-hide mb-10">
+                <div className="flex space-x-4 pb-8 auto-scroll-x">
+                    <img src="https://i.postimg.cc/kgYf78NP/Exterior-Arrival.jpg" alt="New building 1" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/WbwXdxVj/Entrance-Arrival.jpg" alt="New building 2" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/9QgJcTdK/Exterior-2.jpg" alt="New building 3" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/sfPmvb9d/Exterior.jpg" alt="New building 4" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/C1kNCQ3w/Interior-Lumen.jpg" alt="New building 5" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/dtB5SgL3/Int-to-pulpit-lumen.jpg" alt="New building 6" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/RVRgb2NZ/Foyer-lumen.jpg" alt="New building 7" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/SNyr8VV3/Foyer.jpg" alt="New building 8" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" />
+                    <img src="https://i.postimg.cc/kgYf78NP/Exterior-Arrival.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/WbwXdxVj/Entrance-Arrival.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/9QgJcTdK/Exterior-2.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/sfPmvb9d/Exterior.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/C1kNCQ3w/Interior-Lumen.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/dtB5SgL3/Int-to-pulpit-lumen.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/RVRgb2NZ/Foyer-lumen.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                    <img src="https://i.postimg.cc/SNyr8VV3/Foyer.jpg" alt="" className="h-64 w-auto rounded-lg shadow-lg flex-shrink-0 border border-gray-900/10" aria-hidden="true" />
+                </div>
             </div>
             
             <div className="mt-6 mb-10 text-center">

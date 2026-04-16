@@ -91,11 +91,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-start items-start w-full"
+              className="flex flex-row flex-wrap gap-3 md:gap-4 justify-start items-start w-full"
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="btn w-full max-w-[280px] justify-center bg-blue-600 text-white font-black text-xl rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 active:scale-95 uppercase tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="btn w-full max-w-[150px] md:max-w-[280px] justify-center text-white font-black text-sm md:text-xl rounded-full hover:scale-105 active:scale-95 uppercase tracking-[0.18em] md:tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,10 +104,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               </button>
 
               <ModernButton
-                text="Watch Live"
+                text="Stream Now"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="bg-[#4C1D95] text-white border-none shadow-[0_0_20px_rgba(76,29,149,0.6)] hover:shadow-[0_0_30px_rgba(76,29,149,0.8)] hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
+                className="border-none hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
               />
             </motion.div>
           </div>
@@ -123,7 +123,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-md md:shadow-2xl w-full"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-20"
+                className="absolute inset-0 bg-cover bg-center opacity-45 contrast-125 saturate-125"
                 style={{ backgroundImage: "url('https://i.postimg.cc/ZnFQpcTf/502a78-db9fe996869248f6800cc779e84bf461-mv2.jpg')" }}
               />
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-12 md:gap-20 text-center">
@@ -154,7 +154,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 className="block relative rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 cursor-pointer h-[200px] md:h-[300px] shadow-md md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110 contrast-125 saturate-125"
                   style={{ backgroundImage: "url('https://i.postimg.cc/MGM1hpjw/ea998c-0f1c76517790470ea0fd9d89718a5005-mv2.jpg')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050f07] via-[#050f07]/50 to-transparent" />
@@ -311,7 +311,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* UNIFIED CONNECT HUB (Bento Grid) */}
-        <div className="w-full py-16 md:py-20 px-0 md:px-6 lg:px-0">
+        <div className="w-full py-16 md:py-20 px-0 md:px-6 lg:px-0 -mx-4 md:mx-0">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -342,7 +342,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 w-full">
+              <div className="flex flex-row justify-center md:justify-start gap-3 md:gap-4 w-full">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
@@ -362,7 +362,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8"
+              className="md:hidden flex flex-col items-center text-center bg-[#FFD2C2] px-4 py-8"
             >
               <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2">
                 Stay Connected
@@ -482,7 +482,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="bg-[#4C1D95] text-white border-none shadow-lg shadow-purple-900/50 hover:shadow-xl hover:shadow-purple-900/60 hover:scale-105 active:scale-95 font-bold tracking-[0.2em] uppercase rounded-full font-heading"
+                      className="border-none hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
                     />
                 </motion.div>
             </motion.div>
