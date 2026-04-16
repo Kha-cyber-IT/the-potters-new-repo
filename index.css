@@ -102,15 +102,24 @@
     justify-content: center;
     text-align: center;
     white-space: nowrap;
-    background: #090909 !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 18px rgba(147, 51, 234, 0.6), 0 0 34px rgba(147, 51, 234, 0.35) !important;
     transition: all 0.5s ease;
   }
 
   .btn:hover {
     opacity: 0.88;
-    box-shadow: 0 0 22px rgba(147, 51, 234, 0.85), 0 0 44px rgba(147, 51, 234, 0.48) !important;
+  }
+
+  .media-glass-btn {
+    color: #ffffff !important;
+    background: rgba(128, 0, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .media-glass-btn:hover {
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.75) !important;
   }
 
   .hero {
@@ -131,6 +140,25 @@
   .auto-scroll-x:hover {
     animation-play-state: paused;
   }
+
+  .typing-hero-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    border-right: 0.08em solid rgba(255, 255, 255, 0.85);
+    animation: typing 6s steps(40, end), blink 1s infinite;
+  }
+
+  .section-soft-fade {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+
+  .animate-fade-in > *:not(.hero) {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
 }
 
 @media (max-width: 768px) {
@@ -142,6 +170,12 @@
   .btn {
     min-height: 40px;
     padding: 0 10px;
+  }
+
+  .typing-hero-text {
+    white-space: normal;
+    border-right: 0;
+    animation: fadeIn 1s ease-out forwards;
   }
 }
 
@@ -159,6 +193,16 @@
 @keyframes autoScrollX {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: rgba(255, 255, 255, 0.85); }
+  51%, 100% { border-color: transparent; }
 }
 
 .animate-fade-in {

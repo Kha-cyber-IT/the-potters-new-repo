@@ -1,0 +1,250 @@
+Got it — you’re essentially giving a **global UI/UX override spec** for your AI/dev to implement. I’ll convert this into a **clean, structured master prompt** your AI can follow across the entire project without breaking anything.
+
+---
+
+## 🔧 FULL GLOBAL IMPLEMENTATION PROMPT
+
+Use this exactly:
+
+---
+
+### 🎨 GLOBAL COLOR SYSTEM
+
+#### Conference 2025 Section
+
+* Section background: `#040011`
+* All cards background: `#FDFEAD`
+
+#### Events 2026 Section
+
+* Section background: `#040011`
+* All cards background: `#D4C4A0`
+
+---
+
+### 🏠 HOME PAGE BACKGROUND
+
+* Replace cream/white background with: `#0D1B2A` (corrected typo from #0DIB2A)
+
+---
+
+### 🔘 BUTTON RULES
+
+#### Keep ORIGINAL colors for ALL buttons EXCEPT:
+
+* Watch Now
+* Stream Now
+* Play on Spotify
+
+#### For these 3 buttons:
+
+* Keep **purple glow design**
+* Remove black background
+* Add **liquid/glass effect enhancement**
+
+  * Suggested:
+
+    ```css
+    backdrop-filter: blur(10px);
+    background: rgba(128, 0, 255, 0.15);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    ```
+
+---
+
+### 🔗 FIND CHURCH BUTTON
+
+* Link: `https://cfmmap.org/`
+* Apply globally
+
+#### Desktop:
+
+* Remove **"Give" button** next to Find Church
+
+#### Mobile Footer:
+
+* Replace **"Locations"** with **"Find Church"**
+* Link it to: `https://cfmmap.org/`
+* Keep all other location systems unchanged
+
+---
+
+### 📍 FOOTER ADDITION
+
+Add below footer buttons:
+
+```
+11 ALBERTA STR, ELDORADO PARK, SOWETO | The Potter's House Christian Fellowship Ministries ©  
+Mailing Address: PO Box X1510, Glenvista, 2058
+```
+
+---
+
+### 👥 OUR STAFF SECTION
+
+#### Remove:
+
+* Sanele
+
+#### Add:
+
+**Title:** Choose to Change Director
+**Name:** Albert
+
+**Description:**
+
+> Albert oversees the Choose to Change addiction recovery ministry. This vital need in Eldorado Park simply reflects the larger need in our society. Its mission is to shepherd addicts through their conversion and rehabilitation into a productive life and a fruitful future in the Kingdom of God.
+
+**Image:**
+
+```
+https://i.postimg.cc/d3KyXR5p/Albert-Khoza.jpg
+```
+
+#### Desktop Only:
+
+* Staff cards background: `#C8C0E8` (Lavender)
+
+---
+
+### 🎥 MISSED CHURCH SERVICES
+
+#### Background Image:
+
+```
+https://i.postimg.cc/G2LTr3Fp/1776346065556.png
+```
+
+#### Requirements:
+
+* Ensure strong contrast with overlay
+* Add overlay if needed:
+
+```css
+background: linear-gradient(rgba(4,0,17,0.7), rgba(4,0,17,0.7)), url(...)
+background-size: cover;
+background-position: center;
+```
+
+---
+
+### 🦸 HERO SECTION
+
+#### Background Image:
+
+```
+https://i.postimg.cc/tTGQV7St/1776346333530.png
+```
+
+#### Requirements:
+
+* Must be visible on both desktop & mobile
+* Use overlay if needed for readability
+
+---
+
+### 📱 MOBILE LAYOUT FIXES
+
+#### Hero Buttons:
+
+* Side-by-side (horizontal)
+* Equal width
+
+```css
+display: flex;
+gap: 10px;
+flex: 1;
+```
+
+#### "New to The Potter’s House?" Buttons:
+
+* Side-by-side
+* Equal sizing
+
+---
+
+### 🎨 COLOR ADJUSTMENT RULE
+
+* Any color that is too bright → reduce brightness by **30%**
+
+  * Use:
+
+```css
+filter: brightness(70%);
+```
+
+---
+
+### 📝 HEADINGS / SUBTOPICS
+
+#### Apply globally:
+
+* Remove pill shapes
+* Add underline instead
+* Underline color: **white**
+
+```css
+text-decoration: underline;
+text-decoration-color: white;
+```
+
+---
+
+### 📅 WEEKLY SERVICES (DESKTOP ONLY)
+
+* Remove excessive spacing
+* Combine into **one compact section**
+* Maintain existing color scheme
+
+---
+
+### ✨ TEXT EFFECTS
+
+#### All sections (except hero):
+
+* Apply fade effect:
+
+```css
+opacity: 0.85;
+transition: opacity 0.3s ease;
+```
+
+---
+
+### ⌨️ HERO TEXT ANIMATION
+
+Apply **typing animation**:
+
+Text:
+
+> “We are completely… Till transformation”
+
+#### Requirements:
+
+* Slow typing speed
+* Smooth effect
+
+Example:
+
+```css
+animation: typing 6s steps(40, end), blink 1s infinite;
+```
+
+---
+
+### ⚠️ STRICT RULE
+
+* DO NOT change anything else
+* DO NOT alter layout structure unless specified
+* DO NOT modify existing working components
+
+---
+
+If you want, I can convert this into:
+
+* Tailwind-specific code
+* React component overrides
+* Or a direct “paste into your AI builder” version depending on your framework
+
+Just tell me what you're using (Next.js, plain HTML, Webflow, etc.)

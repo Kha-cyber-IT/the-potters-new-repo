@@ -25,14 +25,15 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
     },
   };
 
-  const splitText = "Our mission is simple. To bring the ".split(" ");
-  const splitTextEnd = " of Jesus Christ to the world!".split(" ");
-
   return (
-    <div className="animate-fade-in bg-[#F5F0E8] min-h-screen w-full pb-20 overflow-x-hidden">
+    <div className="animate-fade-in bg-[#0D1B2A] min-h-screen w-full pb-20 overflow-x-hidden">
       
       {/* HERO SECTION: True Side-by-Side Layout */}
       <section className="hero relative min-h-screen flex items-center w-full pb-12 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.78)), url('https://i.postimg.cc/tTGQV7St/1776346333530.png')" }}
+        />
 
         {/* Main Grid Container */}
         <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
@@ -57,23 +58,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               variants={sentence}
               initial="hidden"
               animate="show"
-              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-gray-900 leading-[1.1] tracking-tighter flex flex-wrap gap-x-3 gap-y-2 lg:max-w-4xl"
+              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter lg:max-w-4xl"
             >
-              {splitText.map((txt, i) => (
-                <motion.span key={`start-${i}`} variants={word} className="inline-block">
-                  {txt}
-                </motion.span>
-              ))}
-
-              <motion.span variants={word} className="inline-block text-blue-500 italic pr-2">
-                Truth
+              <motion.span variants={word} className="typing-hero-text">
+                We are completely… Till transformation
               </motion.span>
-
-              {splitTextEnd.map((txt, i) => (
-                <motion.span key={`end-${i}`} variants={word} className="inline-block">
-                  {txt}
-                </motion.span>
-              ))}
             </motion.h1>
 
             {/* Subtext */}
@@ -81,7 +70,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-800 leading-relaxed font-normal lg:max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed font-normal lg:max-w-2xl"
             >
               We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span> This is the single greatest hope we have of true life and true transformation!
             </motion.p>
@@ -91,11 +80,11 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-row flex-wrap gap-3 md:gap-4 justify-start items-start w-full"
+              className="flex flex-row gap-2.5 md:gap-4 justify-start items-stretch w-full max-w-[330px] md:max-w-none"
             >
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="btn w-full max-w-[150px] md:max-w-[280px] justify-center text-white font-black text-sm md:text-xl rounded-full hover:scale-105 active:scale-95 uppercase tracking-[0.18em] md:tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                className="btn flex-1 md:flex-none w-full max-w-none md:max-w-[280px] justify-center bg-blue-600 text-white font-black text-sm md:text-xl rounded-full hover:bg-blue-500 hover:scale-105 active:scale-95 uppercase tracking-[0.18em] md:tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               >
                 Who We Are
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,7 +96,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Stream Now"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                 variant="purple"
-                className="border-none hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
+                className="flex-1 md:flex-none max-w-none md:max-w-[280px] hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
               />
             </motion.div>
           </div>
@@ -174,13 +163,13 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
-          <h3 className="inline-block bg-slate-200 text-gray-900 text-xl sm:text-2xl md:text-4xl font-black py-4 px-10 sm:py-6 sm:px-16 rounded-full shadow-2xl mb-16 md:mb-24 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading">
+          <h3 className="inline-block text-white text-xl sm:text-2xl md:text-4xl font-black mb-10 md:mb-12 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading underline decoration-white underline-offset-8">
               Weekly Services
           </h3>
           
           {/* Bento Grid layout for Services */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6 max-w-[1400px] mx-auto text-left"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1400px] mx-auto text-left"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -199,13 +188,13 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     hidden: { opacity: 0, scale: 0.95, y: 40 },
                     visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                 }}
-                className="w-full md:col-span-2 bg-[#FEFACD] rounded-none md:rounded-3xl p-4 px-4 md:p-10"
+                className="w-full bg-[#FEFACD] rounded-none md:rounded-3xl p-4 px-4 md:p-6"
               >
                   <h4 className="text-2xl md:text-3xl font-black mb-6 text-gray-900"> 
                     <span className="border-l-[6px] md:border-l-[8px] border-[#0B0D0F] pl-4 md:pl-6">Sunday</span>
                   </h4>
                   
-                  <div className="flex flex-col space-y-6 md:space-y-8 pl-2 md:pl-8">
+                  <div className="flex flex-col space-y-4 md:space-y-3 pl-2 md:pl-4">
                       <div className="flex flex-col md:flex-row md:items-center text-gray-900">
                           <span className="font-bold text-lg md:text-xl w-32">9:00 AM</span>
                           <span className="hidden md:inline mx-4">—</span>
@@ -225,14 +214,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               </motion.div>
 
               {/* WEDNESDAY & FRIDAY SERVICES */}
-              <div className="flex flex-col gap-4 md:gap-6">
+              <div className="contents">
                   {/* WEDNESDAY */}
                   <motion.div
                     variants={{
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-6 flex-1"
                                     >
                                         <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
                                           <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
@@ -253,7 +242,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, scale: 0.95, y: 40 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-10 flex-1"
+                                      className="w-full bg-[#2C3E50] md:backdrop-blur-md border-none md:border md:border-white/10 rounded-none md:rounded-3xl p-4 px-4 md:p-6 flex-1"
                                     >
                                         <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
                                           <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
@@ -342,7 +331,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-row justify-center md:justify-start gap-3 md:gap-4 w-full">
+              <div className="flex flex-row justify-center md:justify-start gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto md:mx-0">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
@@ -423,7 +412,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         {/* Broadcasts Section — clean on cream */}
-        <div className="relative w-full flex flex-col justify-center py-20 mb-20 md:mb-40 border-none">
+        <div className="relative w-full flex flex-col justify-center py-20 mb-20 md:mb-40 border-none overflow-hidden bg-cover bg-center" style={{ backgroundImage: "linear-gradient(rgba(4,0,17,0.7), rgba(4,0,17,0.7)), url('https://i.postimg.cc/G2LTr3Fp/1776346065556.png')" }}>
             
             {/* Scroll Revealed Content */}
             <motion.div
@@ -455,7 +444,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                             hidden: { opacity: 0, y: 40 },
                             visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                         }}
-                        className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.3em] font-heading drop-shadow-md"
+                        className="text-3xl md:text-4xl font-black text-white uppercase tracking-[0.3em] font-heading drop-shadow-md"
                     >
                         Broadcasts
                     </motion.h3>
@@ -466,7 +455,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                         hidden: { opacity: 0, y: 40 },
                         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
                     }}
-                    className="text-lg md:text-xl font-medium text-gray-900 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
+                    className="text-lg md:text-xl font-medium text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
                 >
                   Missed Church Services? Watch our archived broadcasts!
                 </motion.p>
@@ -482,7 +471,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                       text="Watch Now"
                       href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
                       variant="purple"
-                      className="border-none hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
+                      className="hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
                     />
                 </motion.div>
             </motion.div>

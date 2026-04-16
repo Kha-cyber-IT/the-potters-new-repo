@@ -104,10 +104,10 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
                 bio="Edward and Vuyiswa Mphaga are serving the Eldorado Park congregation with their children. Ed oversees the follow-up and visitation ministry, and also assists in counseling, preaching, and ministering to the congregation. Ed and Vee both experienced life-changing conversions and have served in ministry for several years."
             />
             <StaffMember 
-                img="https://i.postimg.cc/SsgnkBsf/Sanele-and-Cathleen-Mofokeng.jpg"
-                name="Sanele Mofokeng"
+                img="https://i.postimg.cc/d3KyXR5p/Albert-Khoza.jpg"
+                name="Albert"
                 role="Choose to Change Director"
-                bio="Sanele oversees the Choose to Change addiction recovery ministry. He was saved through the Choose to Change ministry, and his wife, Cathleen was saved as a teenager in the Eldorado Park church. This vital need in Eldorado Park simply reflects the larger need in our society. Their mission is to shepherd addicts through their conversion and rehabilitation into a productive life and a fruitful future in the Kingdom of God. Sanele and Cathleen are both evidence of the power of Jesus Christ to transform lives!"
+                bio="Albert oversees the Choose to Change addiction recovery ministry. This vital need in Eldorado Park simply reflects the larger need in our society. Its mission is to shepherd addicts through their conversion and rehabilitation into a productive life and a fruitful future in the Kingdom of God."
             />
             <StaffMember 
                 img="https://i.postimg.cc/44KcX36d/STAFF-PHOTOS-6.jpg"
@@ -138,7 +138,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="text-center mb-8">
-                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] px-4 py-1.5 border border-gray-900 rounded-full inline-block font-bold text-gray-900 mb-6 font-heading">TIME TO ENLARGE</h3>
+                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] inline-block font-bold text-gray-900 mb-6 font-heading underline decoration-white underline-offset-8">TIME TO ENLARGE</h3>
             </div>
             
             <div className="space-y-4 text-base md:text-lg text-center mb-10">
@@ -305,12 +305,12 @@ const FaithDetail = ({ title, content }: { title: string; content: string }) => 
 );
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
-    <div className="bg-transparent p-0 rounded-none border-none md:bg-white/15 md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
+    <div className="bg-transparent p-0 rounded-none border-none md:bg-[#C8C0E8] md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
         <img src={img} alt={name} className="w-1/2 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
         <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest font-heading mb-2">{name}</h4>
-            <p className="text-lg font-bold text-white/80 mb-4 uppercase tracking-widest font-heading">{role}</p>
-            <p className="text-base md:text-lg leading-relaxed text-white/90">{bio}</p>
+            <h4 className="text-xl md:text-2xl font-bold text-white md:text-gray-900 uppercase tracking-widest font-heading mb-2">{name}</h4>
+            <p className="text-lg font-bold text-white/80 md:text-gray-800 mb-4 uppercase tracking-widest font-heading">{role}</p>
+            <p className="text-base md:text-lg leading-relaxed text-white/90 md:text-gray-900">{bio}</p>
         </div>
     </div>
 );
@@ -327,7 +327,7 @@ const MinistryCard = ({ img, title, sub, label, clickable }: { img: string; titl
     <div className={`relative w-full aspect-[2/1] md:aspect-[2.5/1] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10 group ${clickable ? 'cursor-pointer' : ''}`} onClick={clickable}>
         <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" />
         <div className="absolute inset-0 flex flex-col items-center justify-center p-3 md:p-4 bg-black/40">
-            {label && <span className="bg-white text-black px-3 py-0.5 md:px-4 md:py-1 rounded-full font-bold text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-widest font-heading">{label}</span>}
+            {label && <span className="text-white underline decoration-white underline-offset-4 font-bold text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-widest font-heading">{label}</span>}
             <h3 className="text-white text-base md:text-3xl font-black text-shadow-strong text-center uppercase tracking-wider md:tracking-widest font-heading">{title}</h3>
             <h4 className="text-blue-300 text-sm md:text-2xl font-bold text-shadow-strong text-center uppercase mt-1 md:mt-2 font-heading">{sub}</h4>
         </div>

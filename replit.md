@@ -36,10 +36,12 @@ Uses a custom URL-backed routing system (no react-router). The `Page` enum in `t
 
 ## UI Notes
 
-- Primary `.btn` buttons and `ModernButton` variants use a near-black `#090909` background with a purple `#9333EA` glow.
-- Hero action buttons stay side-by-side on mobile with smaller widths.
-- Media CTA labels use "Stream Now" for live/YouTube stream actions and "Watch Now" for archived broadcasts.
-- Get Connected and Plan a Visit maps focus on the Eldorado Park location only.
+- Home uses the dark `#0D1B2A` background with the supplied hero image and typing headline animation.
+- Most buttons keep their original colors. Only `Watch Now`, `Stream Now`, and `Play on Spotify` use the purple liquid/glass style.
+- Conference 2025 uses `#040011` with `#FDFEAD` desktop cards; Events 2026 uses `#040011` with `#D4C4A0` desktop cards.
+- Desktop navigation has only the `Find Church` CTA, linking to `https://cfmmap.org/`.
+- Footer includes the Alberta Street location and PO Box mailing address.
+- Staff includes Albert as Choose to Change Director with lavender desktop staff cards.
 - The New Building image strip auto-scrolls horizontally while preserving the section color scheme.
 
 ## Development

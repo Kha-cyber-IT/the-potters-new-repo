@@ -225,17 +225,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
             </div>
 
             <div className="flex-shrink-0 flex items-center gap-3">
-              <button
-                onClick={() => handleNavClick(Page.Give)}
-                className="text-sm font-semibold text-white px-4 py-2 rounded-full bg-[#090909] shadow-[0_0_18px_rgba(147,51,234,0.45)] hover:opacity-90 transition-all border border-purple-400/20"
-              >
-                Give
-              </button>
               <a
-                href="https://maps.app.goo.gl/JgER99H8Lh5eDmQ77"
+                href="https://cfmmap.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-white bg-[#090909] px-5 py-2 rounded-full transition-all shadow-[0_0_18px_rgba(147,51,234,0.55)] hover:opacity-90 border border-purple-400/20"
+                className="text-sm font-semibold text-[#0B0D0F] bg-[#FFD700] hover:bg-[#FFC000] px-5 py-2 rounded-full transition-colors shadow-md"
               >
                 Find Church
               </a>

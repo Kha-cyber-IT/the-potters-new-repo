@@ -34,13 +34,21 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
       links: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
-        { label: 'Locations', page: Page.PlanAVisit },
+        { label: 'Find Church', url: 'https://cfmmap.org/' },
       ],
     },
   ];
 
   const handleClick = (page: Page, scrollTarget?: string) => {
     (setPage as (page: Page, scrollTarget?: string) => void)(page, scrollTarget);
+  };
+
+  const handleFooterLink = (link: any) => {
+    if (link.url) {
+      window.open(link.url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    handleClick(link.page, link.scrollTarget);
   };
 
   const socialLinks = [
@@ -62,7 +70,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
             {section.links.map((link) => (
               <button
                 key={link.label}
-                onClick={() => handleClick(link.page, (link as any).scrollTarget)}
+                onClick={() => handleFooterLink(link)}
                 className="w-full text-left px-4 py-3 text-base font-medium text-white/90 active:bg-white/5 transition-colors"
               >
                 {link.label}
@@ -83,7 +91,8 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
         </div>
 
         <p className="px-4 py-5 text-[10px] text-white/30">
-          © 2026 The Potter's House Christian Fellowship Church • Eldorado Park, Soweto
+          11 ALBERTA STR, ELDORADO PARK, SOWETO | The Potter's House Christian Fellowship Ministries ©<br />
+          Mailing Address: PO Box X1510, Glenvista, 2058
         </p>
       </div>
 
@@ -108,7 +117,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
               {section.links.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleClick(link.page, (link as any).scrollTarget)}
+                  onClick={() => handleFooterLink(link)}
                   className="text-sm font-medium text-white/75 hover:text-white transition-colors text-left whitespace-nowrap"
                 >
                   {link.label}
@@ -129,8 +138,9 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
               </a>
             ))}
           </div>
-          <p className="text-[11px] text-white/30 text-center md:text-right">
-            © 2026 THE POTTER'S HOUSE CHRISTIAN FELLOWSHIP CHURCH ELDORADO PARK, SOWETO • ALL RIGHTS RESERVED
+          <p className="text-[11px] text-white/30 text-center md:text-right leading-relaxed">
+            11 ALBERTA STR, ELDORADO PARK, SOWETO | The Potter's House Christian Fellowship Ministries ©<br />
+            Mailing Address: PO Box X1510, Glenvista, 2058
           </p>
         </div>
       </div>
