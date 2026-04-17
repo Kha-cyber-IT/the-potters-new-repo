@@ -126,7 +126,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         
         <div className="mb-8 text-center">
             <h3 className="inline-flex items-center justify-center gap-4 text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-black underline-offset-8">
-                <span>Visit Us</span>
+                <span className="auto-type-section">Visit Us</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
@@ -162,7 +162,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="pt-10 border-t border-gray-300">
-                 <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading">Stream online anytime</h4>
+                 <h4 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-widest font-heading auto-type-section">Stream online anytime</h4>
                  <button
                     onClick={() => window.open('https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA', '_blank')}
                     className="btn media-glass-btn hover:scale-105 active:scale-95 font-bold tracking-[0.18em] md:tracking-[0.2em] uppercase w-full max-w-[150px] md:max-w-[280px] text-sm md:text-xl rounded-full flex items-center justify-center gap-2 md:gap-4 mx-auto font-heading"
@@ -183,7 +183,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
       <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#BAD797]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <div className="text-center mb-10 md:mb-16">
-            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 uppercase tracking-tighter font-heading auto-type-section">Bible Conference 2025</h3>
             <p className="text-base md:text-xl text-gray-900/70 uppercase tracking-widest font-bold font-heading">New Announcements</p>
         </div>
         

@@ -31,7 +31,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
                 </div>
             </div>
 
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest underline decoration-black underline-offset-8">Our History</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest underline decoration-black underline-offset-8 auto-type-section">Our History</h3>
             <div className="space-y-6 text-lg leading-relaxed font-medium">
                 <p>The Potter's House Christian Church of Eldorado Park was founded in 1997, and has served this community and eventually, all of Southern Africa since. We are part of Christian Fellowship Ministries. Our churches go by the names: The Door, The Potter's House, Victory Chapel and others.</p>
                 <p>Started in Prescott, AZ in the early 1970's during the Jesus People movement, we have been focused on reaching those that have been rejected by the religious world.</p>
@@ -44,7 +44,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         {/* Cloud Blue Ministries Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0 mt-0">
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900 underline decoration-black underline-offset-8">Explore our ministries.</h2>
+                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900 underline decoration-black underline-offset-8 auto-type-section">Explore our ministries.</h2>
                  <p className="mb-4 md:mb-8 text-sm md:text-xl font-medium">Find ways you and your family can grow and make impact.</p>
             </div>
             
@@ -82,7 +82,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-white bg-[#2C5A8B] pb-20 w-full pt-24 md:pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-        <h3 className="text-3xl font-bold text-white mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading">Leadership Staff</h3>
+        <h3 className="text-3xl font-bold text-white mb-10 text-center uppercase tracking-widest underline underline-offset-8 font-heading auto-type-section">Leadership Staff</h3>
 
         <div className="space-y-16">
             <StaffMember 
@@ -220,7 +220,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-white/90 pb-20 w-full pt-24 md:pt-32 bg-[#8D8CCF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-        <h3 className="text-3xl font-bold text-white mb-8 uppercase text-center underline underline-offset-8 font-heading">Church Planting</h3>
+        <h3 className="text-3xl font-bold text-white mb-8 uppercase text-center underline underline-offset-8 font-heading auto-type-section">Church Planting</h3>
 
         <div className="space-y-6 text-lg leading-relaxed mb-10">
             <p><strong className="text-blue-300 font-heading">The Potter's House of Eldorado Park is actively involved in church planting across the globe.</strong></p>
@@ -261,7 +261,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="bg-transparent p-0 md:glass-card-blue md:p-8 md:p-12 rounded-none md:rounded-3xl space-y-10">
-            <h3 className="text-3xl font-bold text-blue-300 uppercase tracking-widest text-center font-heading">Our Vision</h3>
+            <h3 className="text-3xl font-bold text-blue-300 uppercase tracking-widest text-center font-heading auto-type-section">Our Vision</h3>
             <VisionPoint title="Evangelism" content="The Gospel taken outside the four walls is the absolute foundation of our church, in obedience to Mark 16:15 And He said to them, ‘Go into all the world and preach the gospel to every creature'… We emphasize personal evangelism, and a large variety of outreaches to share the Gospel." />
             <VisionPoint title="Conversion" content="We witness, testify and preach for a decision. The Gospel has the power to save and transform lives. 1 Peter 1:23 having been born again... The bulk of our congregation consists of people converted here by the Power of God." />
             <VisionPoint title="The Local Church" content="God has placed everything necessary to accomplish His will in the setting of the local church. Ephesians 1:22-23 …the church. Which is his body, the fullness of him who fills everything in every way." />
@@ -279,7 +279,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
     return (
       <div className="animate-fade-in text-left text-gray-900 pb-20 w-full pt-24 md:pt-32 bg-[#F0F7FF]">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-0 pt-8">
-          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline decoration-black underline-offset-8 font-heading">Statement of Faith</h3>
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center uppercase tracking-widest underline decoration-black underline-offset-8 font-heading auto-type-section">Statement of Faith</h3>
           <div className="space-y-10 max-w-4xl mx-auto">
             <FaithDetail title="The Bible" content="We believe the Bible is the inspired, infallible Word of God and the supreme authority in all matters of faith and practice (2 Timothy 3:16-17)." />
             <FaithDetail title="God" content="We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit (Matthew 28:19; 2 Corinthians 13:14)." />

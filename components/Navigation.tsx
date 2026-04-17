@@ -82,7 +82,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Ministries',
       type: 'dropdown' as const,
       subItems: [
-        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -98,6 +97,15 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       ]
     },
     {
+      id: 'media',
+      label: 'Media Archive',
+      type: 'dropdown' as const,
+      subItems: [
+        { label: 'YouTube', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Spotify', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
+      ]
+    },
+    {
       id: 'connect',
       label: 'Contact Us',
       type: 'dropdown' as const,
@@ -105,6 +113,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
         { label: 'Contact Us', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
         { label: 'Give', page: Page.Give },
+        { label: 'New Building', page: Page.NewBuilding },
       ]
     },
   ];
@@ -123,7 +132,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Ministries',
       label: 'Ministries',
       subItems: [
-        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -138,12 +146,21 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       ]
     },
     {
+      id: 'Media Archive',
+      label: 'Media Archive',
+      subItems: [
+        { label: 'YouTube', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+        { label: 'Spotify', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
+      ]
+    },
+    {
       id: 'Contact',
       label: 'Contact',
       subItems: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
         { label: 'Give', page: Page.Give },
+        { label: 'New Building', page: Page.NewBuilding },
       ]
     }
   ];

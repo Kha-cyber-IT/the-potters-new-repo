@@ -5,9 +5,9 @@ import { ModernButton } from './ModernButton';
 
 export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   const carouselImages = [
-    'https://i.postimg.cc/ZYc6mcbJ/IMG-20260413-WA0002.jpg',
-    'https://i.postimg.cc/qMFhBDWj/IMG-20260407-WA0024.jpg',
-    'https://i.postimg.cc/L8ZqJBp2/IMG-20260403-WA0001.jpg',
+    'https://i.postimg.cc/ht0v1qLN/IMG-20260330-WA0038.jpg',
+    'https://i.postimg.cc/HkmjMLy8/IMG-20260330-WA0039.jpg',
+    'https://i.postimg.cc/NLqqW5cX/IMG-20260403-WA0001.jpg',
   ];
   const [activeSlide, setActiveSlide] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
@@ -315,7 +315,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   key={src}
                   src={src}
                   alt={`Church carousel ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
                 />
               ))}
               <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between bg-gradient-to-t from-black/65 to-transparent">
