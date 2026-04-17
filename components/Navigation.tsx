@@ -133,6 +133,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Ministries',
       label: 'Ministries',
       subItems: [
+        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -161,6 +162,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       subItems: [
         { label: 'Get in Touch', page: Page.GetConnected },
         { label: 'Plan a Visit', page: Page.PlanAVisit },
+        { label: 'Give', page: Page.Give },
       ]
     }
   ];
@@ -272,7 +274,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       {/* MOBILE MENU — TymeBank style: dark slide-in panel */}
       <div 
         className={`fixed inset-0 z-[105] bg-black/60 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
-        onClick={() => setIsOpen(false)}
+        onClick={() => { setIsOpen(false); setActiveSubMenu(null); }}
         aria-hidden="true"
       />
       <div 
