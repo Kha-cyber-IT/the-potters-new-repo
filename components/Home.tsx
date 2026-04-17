@@ -301,12 +301,21 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             }}
             className="max-w-[1400px] mx-auto"
           >
+            <motion.h3
+              variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+              }}
+              className="text-white text-2xl font-black uppercase tracking-widest font-heading underline decoration-white underline-offset-8 mb-8 text-center"
+            >
+              Upcoming Event
+            </motion.h3>
             <motion.div
               variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="relative w-full max-w-[1200px] mx-auto aspect-[16/8] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
+              className="relative w-full max-w-[1200px] mx-auto aspect-[16/6] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
               onMouseEnter={() => setIsCarouselPaused(true)}
               onMouseLeave={() => setIsCarouselPaused(false)}
             >

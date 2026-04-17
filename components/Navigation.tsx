@@ -50,6 +50,18 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
     }
   }, [desktopDropdown]);
 
+  // Close mobile menu when viewport resizes to desktop width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+        setActiveSubMenu(null);
+      }
+    };
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleNavClick = (page: Page) => {
     setIsOpen(false);
     setActiveSubMenu(null);
@@ -271,13 +283,13 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
       {/* MOBILE MENU — TymeBank style: dark slide-in panel */}
       <div 
-        className={`fixed inset-0 z-[105] bg-black/60 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+        className={`md:hidden fixed inset-0 z-[105] bg-black/60 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
         onClick={() => { setIsOpen(false); setActiveSubMenu(null); }}
         aria-hidden="true"
       />
       <div 
         id="mobile-menu"
-        className={`fixed top-0 right-0 h-screen w-[80%] max-w-sm z-[110] bg-[#0B0D0F] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`md:hidden fixed top-0 right-0 h-screen w-[80%] max-w-sm z-[110] bg-[#0B0D0F] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >

@@ -80,8 +80,19 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="border-b border-white/10 mt-16 mb-16 max-w-4xl mx-auto"></div>
 
         <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28 underline decoration-black underline-offset-8">ELDOPARK LOCATION</h3>
-        <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-12 leading-relaxed">
+        <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-4 leading-relaxed">
             Our home is here in Eldorado Park, Soweto.
+        </p>
+        <p className="text-white/80 max-w-2xl mx-auto text-center mb-12 leading-relaxed">
+            Looking for a nearby Church? Locate over 4,000 Churches by clicking{' '}
+            <a
+              href="https://cfmmap.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FFD700] font-bold underline underline-offset-4 hover:text-yellow-300 transition-colors"
+            >
+              Find Church
+            </a>
         </p>
 
         <div className="w-full rounded-none md:rounded-[2.5rem] overflow-hidden border-none md:border md:border-white/10 shadow-none md:shadow-2xl" style={{ height: '520px' }}>
@@ -280,7 +291,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   // PAGE 9: STORIES (Matcha Mist)
   if (page === Page.Stories) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#C2D8C4]">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#849753]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
 
         <div className="text-center mb-10">
@@ -291,7 +302,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="space-y-8 text-center px-4 max-w-3xl mx-auto mb-16">
             <p className="text-xl text-gray-800 leading-relaxed">Jesus isn't just about church, He's about changing lives. The Potter's House is a family of believers built out of lives that used to be broken, but have been changed by the power of Jesus Christ. We are Not the Same.</p>
-            <p className="text-xl text-gray-800 leading-relaxed font-bold text-blue-300">Follow Not The Same to hear a new testimony each Wednesday.</p>
+            <p className="text-xl font-bold text-white leading-relaxed">Follow Not The Same to hear a new testimony each Wednesday.</p>
             <div className="flex justify-center mt-8">
                 <button
                   onClick={() => window.open('https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc', '_blank')}
@@ -313,7 +324,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="text-center px-4">
-                <h4 className="text-3xl font-bold text-blue-300 mb-6 uppercase tracking-wider font-heading">Your life can make impact!</h4>
+                <h4 className="text-3xl font-bold text-white mb-6 uppercase tracking-wider font-heading">Your life can make impact!</h4>
                 
                 <div className="bg-white/50 md:backdrop-blur-md p-4 px-4 md:p-8 rounded-none md:rounded-2xl shadow-none md:shadow-xl border-none md:border md:border-white/30 max-w-2xl mx-auto mb-10">
                     <p className="text-xl text-gray-900 font-medium">Every Saturday, we send groups into the city to share the gospel to people in apartment complexes, neighborhoods, and shopping centers.</p>
