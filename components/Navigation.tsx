@@ -82,6 +82,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Ministries',
       type: 'dropdown' as const,
       subItems: [
+        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -92,6 +93,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Events',
       type: 'dropdown' as const,
       subItems: [
+        { label: 'Conference 2025', page: Page.Conference2025 },
         { label: 'Events 2026', page: Page.Events2026 },
       ]
     },
@@ -121,6 +123,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Ministries',
       label: 'Ministries',
       subItems: [
+        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -130,6 +133,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Events',
       label: 'Events',
       subItems: [
+        { label: 'Conference 2025', page: Page.Conference2025 },
         { label: '2026 Calendar', page: Page.Events2026 },
       ]
     },
