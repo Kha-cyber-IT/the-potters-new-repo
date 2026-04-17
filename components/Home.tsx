@@ -371,7 +371,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center bg-[#789A99] p-4 px-4 md:p-10 justify-center h-full rounded-none md:rounded-3xl w-full md:w-auto"
+              className="flex flex-col items-center text-center bg-[#789A99] p-4 px-4 md:p-10 justify-center h-full rounded-none md:rounded-3xl w-full md:w-auto"
             >
               <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4 underline decoration-black underline-offset-8">
                 New to The Potter's House?
