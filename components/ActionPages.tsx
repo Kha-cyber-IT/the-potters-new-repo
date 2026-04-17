@@ -79,7 +79,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         {/* Divider */}
         <div className="border-b border-white/10 mt-16 mb-16 max-w-4xl mx-auto"></div>
 
-        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28 underline decoration-white underline-offset-8">ELDOPARK LOCATION</h3>
+        <h3 id="global-reach" className="text-3xl md:text-5xl font-bold tracking-[0.3em] text-white text-center font-heading scroll-mt-28 underline decoration-black underline-offset-8">ELDOPARK LOCATION</h3>
         <p className="text-white/70 max-w-2xl mx-auto text-center mt-4 mb-12 leading-relaxed">
             Our home is here in Eldorado Park, Soweto.
         </p>
@@ -115,7 +115,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="text-center mb-12">
-             <h3 className="inline-block text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-white underline-offset-8">What You Can Expect</h3>
+             <h3 className="inline-block text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-black underline-offset-8">What You Can Expect</h3>
         </div>
 
         <div className="grid grid-cols-1 gap-12 text-center mb-20">
@@ -125,7 +125,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="mb-8 text-center">
-            <h3 className="inline-flex items-center justify-center gap-4 text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-white underline-offset-8">
+            <h3 className="inline-flex items-center justify-center gap-4 text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-black underline-offset-8">
                 <span>Visit Us</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -180,11 +180,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   // PAGE 8: CONFERENCE 2025 (Indigo/Blue Gradient)
   if (page === Page.Conference2025) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-[#040011]">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#BAD797]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <div className="text-center mb-10 md:mb-16">
-            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
-            <p className="text-base md:text-xl text-white/60 uppercase tracking-widest font-bold font-heading">New Announcements</p>
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 uppercase tracking-tighter font-heading">Bible Conference 2025</h3>
+            <p className="text-base md:text-xl text-gray-900/70 uppercase tracking-widest font-bold font-heading">New Announcements</p>
         </div>
         
         <div className="space-y-4">
@@ -284,7 +284,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
 
         <div className="text-center mb-10">
-            <h3 className="inline-block text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-950 mb-6 font-heading underline decoration-white underline-offset-8">
+            <h3 className="inline-block text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-950 mb-6 font-heading underline decoration-black underline-offset-8">
                 Not The Same: Testimonies of Lives Changed
             </h3>
         </div>
@@ -298,7 +298,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                   className="btn media-glass-btn hover:scale-105 active:scale-95 font-bold w-full max-w-[150px] md:max-w-[280px] text-sm md:text-xl rounded-full flex items-center justify-center gap-2 md:gap-4 font-heading uppercase tracking-[0.18em] md:tracking-widest mx-auto"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.54 8.46 9.059 8.22 5.28 9.361c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.4-1.02 15.66 1.44.539.3.66 1.02.3 1.56-.3.539-1.02.659-1.56.3z"/></svg>
-                    Play on Spotify
+                    Play Now
                 </button>
             </div>
         </div>
@@ -343,7 +343,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 
         <div className="bg-transparent p-0 border-none shadow-none md:bg-white/50 md:backdrop-blur-md md:border md:border-white/30 md:shadow-xl md:p-8 md:p-12 md:rounded-3xl space-y-10">
             <div className="text-center">
-                <h3 className="inline-block text-[10px] tracking-[0.3em] uppercase text-emerald-900 font-heading underline decoration-white underline-offset-8">Statement of Faith</h3>
+                <h3 className="inline-block text-[10px] tracking-[0.3em] uppercase text-emerald-900 font-heading underline decoration-black underline-offset-8">Statement of Faith</h3>
             </div>
 
             <FaithDetail title="Salvation" content="Salvation is initiated by a prayer of faith in Jesus. Salvation is completed by God's grace. Salvation is maintained by a lifestyle of Biblical righteousness. Salvation is demonstrated by works. Salvation is lost when we sin and do not repent. Salvation is necessary to enter Heaven in eternity." />
@@ -402,7 +402,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
 
         <div className="text-center mb-10">
-            <span className="inline-block text-white font-bold text-xl uppercase tracking-widest font-heading underline decoration-white underline-offset-8">Electronic Giving</span>
+            <span className="inline-block text-white font-bold text-xl uppercase tracking-widest font-heading underline decoration-black underline-offset-8">Electronic Giving</span>
         </div>
 
         <div className="flex justify-center mb-16">
@@ -435,11 +435,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   // PAGE 11: EVENTS 2026 (Cyan/Blue Gradient)
   if (page === Page.Events2026) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-white/90 bg-[#040011]">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#BAD797]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-2xl md:text-5xl font-black text-blue-300 mb-3 md:mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
-            <p className="text-base md:text-xl text-white/60 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 uppercase tracking-tighter font-heading">South Africa Fellowship Dates 2026</h3>
+            <p className="text-base md:text-xl text-gray-900/70 font-medium italic">(Eldorado Park yearly calendar at the bottom)</p>
         </div>
 
         <div className="space-y-12">
@@ -448,7 +448,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 title="Area-Wide Pioneer Rallies 2026" 
                 variant="teal"
                 icon={Compass}
-                cardBg="bg-[#D4C4A0]"
+                cardBg="bg-[#D8D8B6]"
                 items={[
                     { title: "Eastern Cape", desc: "January 30 & 31" },
                     { title: "Cape Town", desc: "March 27 & 28" },
@@ -460,11 +460,11 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
             {/* DISCIPLESHIPS SECTION */}
             <div className="mb-12 md:mb-16">
                 <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-                    <div className="p-2.5 md:p-3 rounded-xl bg-white/10 border border-white/15 text-teal-200">
+                    <div className="p-2.5 md:p-3 rounded-xl bg-black/10 border border-black/15 text-gray-900">
                         <Users size={20} className="md:w-6 md:h-6" />
                     </div>
-                    <h4 className="text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest text-teal-200 font-heading">Regional Discipleship Schedules 2026</h4>
-                    <div className="h-px bg-white/10 flex-grow"></div>
+                    <h4 className="text-lg md:text-3xl font-black uppercase tracking-wider md:tracking-widest text-gray-900 font-heading">Regional Discipleship Schedules 2026</h4>
+                    <div className="h-px bg-black/10 flex-grow"></div>
                 </div>
 
                 <div className="space-y-4 md:space-y-10">
@@ -515,7 +515,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 title="National & International Events" 
                 variant="teal"
                 icon={Star}
-                cardBg="bg-[#D4C4A0]"
+                cardBg="bg-[#D8D8B6]"
                 items={[
                     { title: "National Men's Rally", desc: "June 19 & 20" },
                     { title: "SA Bible Conference 2026", desc: "August 24 - August 28" },
@@ -524,9 +524,9 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 ]} 
             />
             
-            <div className="pt-12 md:pt-20 border-t border-white/10 text-center">
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
-                <div className="bg-transparent p-0 md:glass-card-blue md:p-2 rounded-none md:rounded-3xl max-w-4xl mx-auto shadow-none md:shadow-2xl border-none md:border md:border-white/10 overflow-hidden">
+            <div className="pt-12 md:pt-20 border-t border-black/10 text-center">
+                <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 uppercase tracking-widest font-heading">Eldorado Park Church Calendar</h4>
+                <div className="bg-transparent p-0 md:bg-[#D8D8B6] md:p-2 rounded-none md:rounded-3xl max-w-4xl mx-auto shadow-none md:shadow-2xl border-none md:border md:border-black/10 overflow-hidden">
                     <img src="https://i.postimg.cc/PrtsLf78/2026-Year-Schedule-SM.jpg" alt="Eldorado Park Church Calendar 2026" className="w-full h-auto rounded-none md:rounded-2xl" />
                 </div>
             </div>
@@ -611,23 +611,23 @@ const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) =>
     <div>
         {/* Mobile: plain text, edge-to-edge */}
         <div className="md:hidden py-2">
-            <h5 className="text-xs font-bold text-teal-300 uppercase tracking-[0.2em] mb-2 px-0">{region}</h5>
-            <ul className="divide-y divide-white/10">
+            <h5 className="text-xs font-bold text-gray-900 uppercase tracking-[0.2em] mb-2 px-0">{region}</h5>
+            <ul className="divide-y divide-black/10">
                 {dates.map((d, i) => (
-                    <li key={i} className="flex items-center gap-3 py-2.5 text-white/80">
-                        <span className="text-[10px] font-black text-teal-400 w-4 shrink-0">{i + 1}</span>
+                    <li key={i} className="flex items-center gap-3 py-2.5 text-gray-900/80">
+                        <span className="text-[10px] font-black text-gray-900 w-4 shrink-0">{i + 1}</span>
                         <span className="text-sm">{d}</span>
                     </li>
                 ))}
             </ul>
         </div>
         {/* Desktop: premium card */}
-        <div className="hidden md:block bg-[#D4C4A0] border border-white/10 hover:border-teal-400/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
-            <h5 className="text-xs font-black text-teal-300 uppercase tracking-[0.2em] mb-4 font-heading">{region}</h5>
+        <div className="hidden md:block bg-[#D8D8B6] border border-black/10 hover:border-black/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
+            <h5 className="text-xs font-black text-gray-900 uppercase tracking-[0.2em] mb-4 font-heading">{region}</h5>
             <ul className="space-y-2.5">
                 {dates.map((d, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-900/75 group-hover:text-gray-900 transition-colors">
-                        <div className="w-6 h-6 rounded-lg bg-teal-500/15 border border-teal-400/20 flex items-center justify-center flex-shrink-0 text-teal-300 text-[10px] font-black">{i + 1}</div>
+                        <div className="w-6 h-6 rounded-lg bg-black/10 border border-black/15 flex items-center justify-center flex-shrink-0 text-gray-900 text-[10px] font-black">{i + 1}</div>
                         <span className="text-sm leading-snug">{d}</span>
                     </li>
                 ))}
@@ -643,7 +643,7 @@ const AnnouncementGroup = ({
   items,
   variant = 'cyan',
   icon: Icon,
-  cardBg = 'bg-[#FDFEAD]',
+  cardBg = 'bg-[#D8D8B6]',
 }: {
   title: string;
   items: { title: string; desc: string }[];
@@ -652,13 +652,13 @@ const AnnouncementGroup = ({
   cardBg?: string;
 }) => {
   const accents: Record<Variant, { label: string; bar: string; badge: string; border: string }> = {
-    cyan:    { label: 'text-white', bar: 'bg-cyan-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    emerald: { label: 'text-white', bar: 'bg-emerald-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    amber:   { label: 'text-white', bar: 'bg-amber-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    rose:    { label: 'text-white', bar: 'bg-rose-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    purple:  { label: 'text-white', bar: 'bg-purple-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    orange:  { label: 'text-white', bar: 'bg-orange-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
-    teal:    { label: 'text-white', bar: 'bg-teal-400', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-white/50' },
+    cyan:    { label: 'text-gray-900', bar: 'bg-cyan-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    emerald: { label: 'text-gray-900', bar: 'bg-emerald-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    amber:   { label: 'text-gray-900', bar: 'bg-amber-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    rose:    { label: 'text-gray-900', bar: 'bg-rose-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    purple:  { label: 'text-gray-900', bar: 'bg-purple-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    orange:  { label: 'text-gray-900', bar: 'bg-orange-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
+    teal:    { label: 'text-gray-900', bar: 'bg-teal-700', badge: 'bg-black/10 text-gray-900 border-black/15', border: 'hover:border-black/30' },
   };
 
   const a = accents[variant];
@@ -668,22 +668,22 @@ const AnnouncementGroup = ({
       {/* Section header */}
       <div className="flex items-center gap-3 mb-4 md:mb-6 px-0">
         {Icon && (
-          <div className={`p-2 rounded-xl bg-white/8 border border-white/10 ${a.label}`}>
+          <div className={`p-2 rounded-xl bg-black/10 border border-black/10 ${a.label}`}>
             <Icon size={18} />
           </div>
         )}
         <h4 className={`text-base md:text-xl font-black uppercase tracking-widest ${a.label} font-heading`}>{title}</h4>
-        <div className="h-px bg-white/10 flex-grow" />
+        <div className="h-px bg-black/10 flex-grow" />
       </div>
 
       {/* Mobile: plain text list, edge-to-edge, no card backgrounds */}
-      <div className="md:hidden divide-y divide-white/10">
+      <div className="md:hidden divide-y divide-black/10">
         {items.map((item, i) => (
           <div key={i} className="flex items-start gap-3 py-3">
             <span className={`text-[10px] font-black w-5 shrink-0 mt-0.5 ${a.label}`}>{String(i + 1).padStart(2, '0')}</span>
             <div>
-              <p className="text-sm font-bold text-white leading-snug">{item.title}</p>
-              <p className="text-xs text-white/55 mt-0.5 leading-relaxed">{item.desc}</p>
+              <p className="text-sm font-bold text-gray-900 leading-snug">{item.title}</p>
+              <p className="text-xs text-gray-900/65 mt-0.5 leading-relaxed">{item.desc}</p>
             </div>
           </div>
         ))}
@@ -694,7 +694,7 @@ const AnnouncementGroup = ({
         {items.map((item, i) => (
           <div
             key={i}
-            className={`relative ${cardBg} border border-white/10 ${a.border} rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group overflow-hidden`}
+            className={`relative ${cardBg} border border-black/10 ${a.border} rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group overflow-hidden`}
           >
             {/* Colored top accent bar */}
             <div className={`absolute top-0 left-0 right-0 h-[2px] ${a.bar} opacity-40 group-hover:opacity-80 transition-opacity duration-300`} />

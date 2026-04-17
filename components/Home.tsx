@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Page, NavigationProps } from '../types';
 import { ModernButton } from './ModernButton';
 
 export const Home: React.FC<NavigationProps> = ({ setPage }) => {
+  const carouselImages = [
+    'https://i.postimg.cc/ZYc6mcbJ/IMG-20260413-WA0002.jpg',
+    'https://i.postimg.cc/qMFhBDWj/IMG-20260407-WA0024.jpg',
+    'https://i.postimg.cc/L8ZqJBp2/IMG-20260403-WA0001.jpg',
+    'https://i.postimg.cc/bvcZkDyg/IMG-20260330-WA0038.jpg',
+    'https://i.postimg.cc/xCg8w6Kb/IMG-20260330-WA0039.jpg',
+  ];
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+
+  useEffect(() => {
+    if (isCarouselPaused) return;
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % carouselImages.length);
+    }, 5500);
+    return () => window.clearInterval(interval);
+  }, [isCarouselPaused, carouselImages.length]);
+
   const sentence = {
     hidden: { opacity: 0 },
     show: {
@@ -26,13 +44,18 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   };
 
   return (
-    <div className="animate-fade-in bg-[#0D1B2A] min-h-screen w-full pb-20 overflow-x-hidden">
+    <div className="animate-fade-in bg-[#0D1B2A] min-h-screen w-full pb-0 overflow-x-hidden">
       
       {/* HERO SECTION: True Side-by-Side Layout */}
       <section className="hero relative min-h-screen flex items-center w-full pb-12 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.78)), url('https://i.postimg.cc/tTGQV7St/1776346333530.png')" }}
+          style={{
+            backgroundImage: "linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.78)), url('https://i.postimg.cc/tTGQV7St/1776346333530.png')",
+            backgroundSize: 'min(92vw, 1180px) auto',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center 54px',
+          }}
         />
 
         {/* Main Grid Container */}
@@ -58,10 +81,10 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               variants={sentence}
               initial="hidden"
               animate="show"
-              className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter lg:max-w-4xl"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-black text-white leading-[1.12] tracking-tighter lg:max-w-4xl"
             >
               <motion.span variants={word} className="typing-hero-text">
-                We are completely… Till transformation
+                Our mission is simple. To bring the Truth of Jesus Christ to the world!
               </motion.span>
             </motion.h1>
 
@@ -163,7 +186,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
         
         <div className="mb-24 md:mb-48">
           {/* Silver Badge for Church Services: Adjusted for mobile */}
-          <h3 className="inline-block text-white text-xl sm:text-2xl md:text-4xl font-black mb-10 md:mb-12 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading underline decoration-white underline-offset-8">
+          <h3 className="inline-block text-white text-xl sm:text-2xl md:text-4xl font-black mb-10 md:mb-12 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading underline decoration-black underline-offset-8">
               Weekly Services
           </h3>
           
@@ -260,7 +283,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </motion.div>
         </div>
 
-        {/* TYMEBANK-STYLE FEATURE HIGHLIGHTS — desktop only */}
+        {/* Desktop-only home carousel */}
         <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0 hidden md:block">
           <motion.div
             initial="hidden"
@@ -270,32 +293,43 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 hidden: {},
                 visible: { transition: { staggerChildren: 0.12 } }
             }}
-            className="max-w-[1400px] mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            className="max-w-[1400px] mx-auto"
           >
-            {[
-              { bg: 'bg-gradient-to-br from-[#0E7490] to-[#155E75]', label: 'Events 2026', desc: 'Fellowship dates & regional schedules', page: Page.Events2026 },
-              { bg: 'bg-gradient-to-br from-[#7E22CE] to-[#581C87]', label: 'Conference', desc: 'Bible Conference announcements', page: Page.Conference2025 },
-              { bg: 'bg-gradient-to-br from-[#047857] to-[#064E3B]', label: 'Give', desc: 'Support the mission & building fund', page: Page.Give },
-              { bg: 'bg-gradient-to-br from-[#B45309] to-[#78350F]', label: 'Plan a Visit', desc: 'Find us & plan your first visit', page: Page.PlanAVisit },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-                }}
-                onClick={() => setPage(item.page)}
-                className={`${item.bg} rounded-2xl md:rounded-3xl p-5 md:p-8 cursor-pointer group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden`}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
-                <h4 className="text-lg md:text-xl font-black text-white uppercase tracking-wider mb-2 font-heading">{item.label}</h4>
-                <p className="text-white/70 text-xs md:text-sm font-medium leading-relaxed">{item.desc}</p>
-                <div className="mt-4 md:mt-6 flex items-center gap-2 text-white/50 group-hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
-                  <span>Explore</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            <motion.div
+              variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
+              }}
+              className="relative w-full aspect-[16/7] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
+              onMouseEnter={() => setIsCarouselPaused(true)}
+              onMouseLeave={() => setIsCarouselPaused(false)}
+            >
+              {carouselImages.map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`Church carousel ${i + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
+                />
+              ))}
+              <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between bg-gradient-to-t from-black/65 to-transparent">
+                <div className="flex items-center gap-2">
+                  {carouselImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveSlide(i)}
+                      aria-label={`Show slide ${i + 1}`}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${activeSlide === i ? 'w-8 bg-white' : 'w-2.5 bg-white/50'}`}
+                    />
+                  ))}
                 </div>
-              </motion.div>
-            ))}
+                <div className="flex items-center gap-3">
+                  <button onClick={() => setActiveSlide((activeSlide - 1 + carouselImages.length) % carouselImages.length)} className="btn h-10 min-h-10 w-10 p-0 rounded-full bg-white/85 text-gray-900 font-black" aria-label="Previous slide">‹</button>
+                  <button onClick={() => setIsCarouselPaused(!isCarouselPaused)} className="btn h-10 min-h-10 px-5 rounded-full bg-white/85 text-gray-900 text-xs font-black uppercase tracking-widest">{isCarouselPaused ? 'Play' : 'Pause'}</button>
+                  <button onClick={() => setActiveSlide((activeSlide + 1) % carouselImages.length)} className="btn h-10 min-h-10 w-10 p-0 rounded-full bg-white/85 text-gray-900 font-black" aria-label="Next slide">›</button>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -322,9 +356,9 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center md:text-left bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="flex flex-col text-center md:text-left bg-transparent md:bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4">
+              <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4 underline decoration-black underline-offset-8">
                 New to The Potter's House?
               </h2>
               <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
@@ -336,11 +370,13 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
+                    className="bg-[#1C3935] hover:bg-[#142b28]"
                   />
                   <ModernButton
                     text="Plan Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
+                    className="bg-[#1C3935] hover:bg-[#142b28]"
                   />
               </div>
             </motion.div>
@@ -351,15 +387,15 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="md:hidden flex flex-col items-center text-center bg-[#FFD2C2] px-4 py-8"
+              className="md:hidden flex flex-col items-center text-center bg-transparent px-4 py-8"
             >
-              <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2">
+              <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2 underline decoration-black underline-offset-8">
                 Stay Connected
               </h2>
               <p className="text-sm font-medium text-gray-900/80 mb-4 leading-relaxed">
                 Follow us on WhatsApp for daily devotions and updates.
               </p>
-              <div className="bg-white p-3 rounded-2xl mb-4 inline-block shadow-sm">
+              <div className="bg-transparent p-0 rounded-none mb-4 inline-block shadow-none">
                 <div className="w-28 h-28 bg-white flex items-center justify-center overflow-hidden">
                   <img
                     src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
@@ -373,6 +409,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Join Channel"
                 href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
                 variant="dark"
+                className="bg-[#1C3935] hover:bg-[#142b28]"
               />
             </motion.div>
 
@@ -384,7 +421,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               }}
               className="hidden md:flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
-              <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.2em] font-heading mb-4">
+              <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.2em] font-heading mb-4 underline decoration-black underline-offset-8">
                 Stay Connected
               </h2>
               <p className="text-lg md:text-xl font-medium text-gray-900/80 mb-10 leading-relaxed max-w-md">
@@ -406,13 +443,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 text="Join Channel"
                 href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
                 variant="dark"
+                className="bg-[#1C3935] hover:bg-[#142b28]"
               />
             </motion.div>
           </motion.div>
         </div>
 
         {/* Broadcasts Section — clean on cream */}
-        <div className="relative w-full flex flex-col justify-center py-20 mb-20 md:mb-40 border-none overflow-hidden bg-cover bg-center" style={{ backgroundImage: "linear-gradient(rgba(4,0,17,0.7), rgba(4,0,17,0.7)), url('https://i.postimg.cc/G2LTr3Fp/1776346065556.png')" }}>
+        <div className="relative w-full flex flex-col justify-center py-20 mb-0 border-none overflow-hidden bg-cover bg-center" style={{ backgroundImage: "linear-gradient(rgba(4,0,17,0.7), rgba(4,0,17,0.7)), url('https://i.postimg.cc/G2LTr3Fp/1776346065556.png')" }}>
             
             {/* Scroll Revealed Content */}
             <motion.div

@@ -20,15 +20,15 @@ export const ModernButton: React.FC<ModernButtonProps> = ({
   variant = 'ocean',
   className = ''
 }) => {
-  const isMediaButton = ['Watch Now', 'Stream Now', 'Play on Spotify'].includes(text);
-  const baseClasses = "btn flex items-center justify-center gap-3 md:gap-4 rounded-full font-bold uppercase tracking-[0.18em] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 font-heading text-sm md:text-xl w-full max-w-[150px] md:max-w-[280px]";
+  const isMediaButton = ['Watch Now', 'Stream Now', 'Play on Spotify', 'Play Now'].includes(text);
+  const baseClasses = "btn flex items-center justify-center gap-3 md:gap-4 rounded-full font-bold uppercase tracking-[0.18em] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 font-heading text-sm md:text-xl w-full max-w-[150px] md:max-w-[280px] min-w-[150px] md:min-w-[280px]";
 
   const styles: Record<Variant, string> = {
     ocean: "bg-[#2872A1] text-white hover:bg-[#1f5b82]",
     purple: "bg-[#5F4A8B] text-white hover:bg-[#49396b]",
     teal: "bg-teal-600 text-white hover:bg-teal-500",
     ghost: "bg-transparent text-white border border-white/20 hover:bg-white/10",
-    dark: "bg-[#0B0D0F] text-white hover:bg-black"
+    dark: "bg-[#1C3935] text-white hover:bg-[#142b28]"
   };
 
   const glows: Record<Variant, string> = {

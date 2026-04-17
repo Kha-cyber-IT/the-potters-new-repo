@@ -15,7 +15,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         
         {/* Cloud Blue Who We Are Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest text-center md:text-left">Who We Are</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest text-center md:text-left underline decoration-black underline-offset-8">Who We Are</h3>
             <p className="mb-4 text-lg font-medium">Our mission is simple. To bring the Truth of Jesus Christ to the world.</p>
             <p className="mb-8 text-lg font-medium">How do we do that? Through evangelism, discipleship, and church planting.</p>
             
@@ -31,7 +31,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
                 </div>
             </div>
 
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest">Our History</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest underline decoration-black underline-offset-8">Our History</h3>
             <div className="space-y-6 text-lg leading-relaxed font-medium">
                 <p>The Potter's House Christian Church of Eldorado Park was founded in 1997, and has served this community and eventually, all of Southern Africa since. We are part of Christian Fellowship Ministries. Our churches go by the names: The Door, The Potter's House, Victory Chapel and others.</p>
                 <p>Started in Prescott, AZ in the early 1970's during the Jesus People movement, we have been focused on reaching those that have been rejected by the religious world.</p>
@@ -44,7 +44,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         {/* Cloud Blue Ministries Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0 mt-0">
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900">Explore our ministries.</h2>
+                 <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 uppercase tracking-wider md:tracking-widest font-heading text-gray-900 underline decoration-black underline-offset-8">Explore our ministries.</h2>
                  <p className="mb-4 md:mb-8 text-sm md:text-xl font-medium">Find ways you and your family can grow and make impact.</p>
             </div>
             
@@ -138,7 +138,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="text-center mb-8">
-                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] inline-block font-bold text-gray-900 mb-6 font-heading underline decoration-white underline-offset-8">TIME TO ENLARGE</h3>
+                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] inline-block font-bold text-gray-900 mb-6 font-heading underline decoration-black underline-offset-8">TIME TO ENLARGE</h3>
             </div>
             
             <div className="space-y-4 text-base md:text-lg text-center mb-10">

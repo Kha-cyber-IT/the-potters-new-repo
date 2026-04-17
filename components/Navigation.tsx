@@ -254,7 +254,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
               aria-controls="mobile-menu"
               className="p-2 active-elevate rounded-md hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             >
-              {isOpen ? <X className="w-6 h-6 text-white" /> : <CustomMenuIcon className="w-7 h-7" />}
+              {isOpen ? <X className="w-6 h-6 text-white" /> : <CustomMenuIcon className="w-7 h-7 text-white" />}
             </button>
         </div>
       </nav>
@@ -263,6 +263,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       <div 
         className={`fixed inset-0 z-[105] bg-black/60 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
         onClick={() => setIsOpen(false)}
+        aria-hidden="true"
       />
       <div 
         id="mobile-menu"

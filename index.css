@@ -142,12 +142,18 @@
   }
 
   .typing-hero-text {
-    display: inline-block;
+    display: block;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: normal;
     max-width: 100%;
     border-right: 0.08em solid rgba(255, 255, 255, 0.85);
-    animation: typing 6s steps(40, end), blink 1s infinite;
+    animation: typing 3s infinite;
+  }
+
+  .font-heading.underline,
+  .font-heading .underline,
+  .underline.font-heading {
+    text-decoration-color: black !important;
   }
 
   .section-soft-fade {
@@ -175,7 +181,7 @@
   .typing-hero-text {
     white-space: normal;
     border-right: 0;
-    animation: fadeIn 1s ease-out forwards;
+    animation: typing 3s infinite;
   }
 }
 
@@ -196,8 +202,8 @@
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
 }
 
 @keyframes blink {
