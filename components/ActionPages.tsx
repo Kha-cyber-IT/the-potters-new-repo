@@ -102,7 +102,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
   // PAGE 7: PLAN A VISIT (Who We Are color)
   if (page === Page.PlanAVisit) {
     return (
-      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#F0F7FF]">
+      <div className="w-full pt-24 md:pt-32 pb-20 min-h-screen animate-fade-in text-left text-gray-900 bg-[#FFD2C2]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
 
         <div className="relative w-full aspect-[2/1] rounded-none md:rounded-2xl overflow-hidden mb-12 shadow-none md:shadow-2xl border-none md:border md:border-gray-200">
@@ -448,7 +448,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 title="Area-Wide Pioneer Rallies 2026" 
                 variant="teal"
                 icon={Compass}
-                cardBg="bg-[#D8D8B6]"
+                cardBg="bg-[#F7A97C]"
                 items={[
                     { title: "Eastern Cape", desc: "January 30 & 31" },
                     { title: "Cape Town", desc: "March 27 & 28" },
@@ -515,7 +515,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                 title="National & International Events" 
                 variant="teal"
                 icon={Star}
-                cardBg="bg-[#D8D8B6]"
+                cardBg="bg-[#F7A97C]"
                 items={[
                     { title: "National Men's Rally", desc: "June 19 & 20" },
                     { title: "SA Bible Conference 2026", desc: "August 24 - August 28" },
@@ -590,16 +590,16 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 };
 
 const ExpectCard = ({ title, content }: { title: string; content: string }) => (
-    <div className="max-w-2xl mx-auto">
-        <h4 className="text-2xl font-bold text-blue-300 mb-3 uppercase tracking-wider font-heading">{title}</h4>
-        <p className="text-lg leading-relaxed text-gray-700">
+    <div className="max-w-2xl mx-auto bg-[#FDFEAD] p-4 px-4 md:p-6 rounded-2xl border border-gray-900/10 shadow-sm">
+        <h4 className="text-2xl font-bold text-gray-900 mb-3 uppercase tracking-wider font-heading">{title}</h4>
+        <p className="text-lg leading-relaxed text-gray-800">
             {content}
         </p>
     </div>
 );
 
 const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
-    <div className="bg-white/60 md:backdrop-blur-sm border-none md:border md:border-gray-200 p-4 px-4 md:p-6 rounded-none md:rounded-2xl shadow-none md:shadow-sm">
+    <div className="bg-[#FDFEAD] border border-gray-900/10 p-4 px-4 md:p-6 rounded-2xl shadow-sm">
         <h4 className="text-2xl font-bold text-gray-900 mb-4 uppercase font-heading">{day}</h4>
         <div className="space-y-3 text-lg text-gray-700">
             {times.map((t, i) => <p key={i}>{t}</p>)}
@@ -622,7 +622,7 @@ const ScheduleList = ({ region, dates }: { region: string; dates: string[] }) =>
             </ul>
         </div>
         {/* Desktop: premium card */}
-        <div className="hidden md:block bg-[#D8D8B6] border border-black/10 hover:border-black/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
+        <div className="hidden md:block bg-[#F7A97C] border border-black/10 hover:border-black/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
             <h5 className="text-xs font-black text-gray-900 uppercase tracking-[0.2em] mb-4 font-heading">{region}</h5>
             <ul className="space-y-2.5">
                 {dates.map((d, i) => (
@@ -643,7 +643,7 @@ const AnnouncementGroup = ({
   items,
   variant = 'cyan',
   icon: Icon,
-  cardBg = 'bg-[#D8D8B6]',
+  cardBg = 'bg-[#F7A97C]',
 }: {
   title: string;
   items: { title: string; desc: string }[];

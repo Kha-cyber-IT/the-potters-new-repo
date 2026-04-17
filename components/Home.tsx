@@ -8,8 +8,6 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
     'https://i.postimg.cc/ZYc6mcbJ/IMG-20260413-WA0002.jpg',
     'https://i.postimg.cc/qMFhBDWj/IMG-20260407-WA0024.jpg',
     'https://i.postimg.cc/L8ZqJBp2/IMG-20260403-WA0001.jpg',
-    'https://i.postimg.cc/bvcZkDyg/IMG-20260330-WA0038.jpg',
-    'https://i.postimg.cc/xCg8w6Kb/IMG-20260330-WA0039.jpg',
   ];
   const [activeSlide, setActiveSlide] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
@@ -52,9 +50,9 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.78)), url('https://i.postimg.cc/tTGQV7St/1776346333530.png')",
-            backgroundSize: 'min(92vw, 1180px) auto',
+            backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center 54px',
+            backgroundPosition: 'center top',
           }}
         />
 
@@ -300,7 +298,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="relative w-full aspect-[16/7] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
+              className="relative w-full max-w-[1200px] mx-auto aspect-[16/8] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
               onMouseEnter={() => setIsCarouselPaused(true)}
               onMouseLeave={() => setIsCarouselPaused(false)}
             >
@@ -309,7 +307,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   key={src}
                   src={src}
                   alt={`Church carousel ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
                 />
               ))}
               <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between bg-gradient-to-t from-black/65 to-transparent">
@@ -347,7 +345,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                     }
                 }
             }}
-            className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 md:gap-8 items-stretch"
+            className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch"
           >
             {/* Left Side: New to the Church Bento Card */}
             {/* Mobile: edge-to-edge plain text section, Desktop: side-by-side card */}
@@ -356,16 +354,16 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center md:text-left bg-transparent md:bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="flex flex-col text-center bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl mx-4 md:mx-0"
             >
               <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4 underline decoration-black underline-offset-8">
                 New to The Potter's House?
               </h2>
-              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
+              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-4 md:mb-10 leading-relaxed max-w-lg mx-auto">
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-row justify-center md:justify-start gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto md:mx-0">
+              <div className="flex flex-row justify-center gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
@@ -387,7 +385,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="md:hidden flex flex-col items-center text-center bg-transparent px-4 py-8"
+              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8 rounded-2xl mx-4"
             >
               <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2 underline decoration-black underline-offset-8">
                 Stay Connected
@@ -419,7 +417,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="hidden md:flex flex-col items-center text-center bg-[#FFD2C2] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
+              className="hidden md:flex flex-col items-center text-center bg-[#789A99] p-8 md:p-10 justify-center h-full rounded-none md:rounded-3xl"
             >
               <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.2em] font-heading mb-4 underline decoration-black underline-offset-8">
                 Stay Connected

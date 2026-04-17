@@ -134,10 +134,11 @@
 
   .auto-scroll-x {
     width: max-content;
-    animation: autoScrollX 38s linear infinite;
+    animation: autoScrollX 82s linear infinite;
   }
 
-  .auto-scroll-x:hover {
+  .auto-scroll-x:hover,
+  .auto-scroll-x:active {
     animation-play-state: paused;
   }
 
@@ -181,7 +182,8 @@
   .typing-hero-text {
     white-space: normal;
     border-right: 0;
-    animation: typing 3s infinite;
+    animation: none;
+    clip-path: none;
   }
 }
 
