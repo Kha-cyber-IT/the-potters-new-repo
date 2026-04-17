@@ -362,7 +362,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl w-[calc(100%-2rem)] max-w-[330px] md:max-w-none md:w-auto mx-auto md:mx-0 min-h-[220px] md:min-h-0"
+              className="flex flex-col text-center bg-[#789A99] p-4 px-4 md:p-10 justify-center h-full rounded-none md:rounded-3xl w-full md:w-auto"
             >
               <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4 underline decoration-black underline-offset-8">
                 New to The Potter's House?
@@ -371,18 +371,18 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-col md:flex-row justify-center gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto">
+              <div className="flex flex-row justify-center gap-2.5 md:gap-4 w-full mx-auto">
                   <ModernButton
-                    text="Get Connected"
+                    text="Contact Us"
                     onClick={() => setPage(Page.GetConnected)}
                     variant="dark"
-                    className="bg-[#1C3935] hover:bg-[#142b28]"
+                    className="bg-[#1C3935] hover:bg-[#142b28] flex-1 md:flex-none"
                   />
                   <ModernButton
-                    text="Plan Visit"
+                    text="Plan a Visit"
                     onClick={() => setPage(Page.PlanAVisit)}
                     variant="dark"
-                    className="bg-[#1C3935] hover:bg-[#142b28]"
+                    className="bg-[#1C3935] hover:bg-[#142b28] flex-1 md:flex-none"
                   />
               </div>
             </motion.div>
@@ -393,7 +393,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8 rounded-2xl w-[calc(100%-2rem)] max-w-[330px] mx-auto min-h-[220px]"
+              className="md:hidden flex flex-col items-center text-center bg-[#789A99] p-4 px-4 rounded-none w-full"
             >
               <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2 underline decoration-black underline-offset-8">
                 Stay Connected
