@@ -40,6 +40,8 @@ Uses a custom URL-backed routing system (no react-router). The `Page` enum in `t
 - The desktop home feature area uses a pauseable/manual 3-image carousel instead of the previous feature cards.
 - Most buttons keep their original colors. Only `Watch Now`, `Stream Now`, and `Play on Spotify` use the purple liquid/glass style.
 - Conference 2025 and Events 2026 use `#BAD797` page backgrounds with `#F7A97C` desktop cards.
+- Plan Visit expectation text is plain text; only the service time blocks use `#FDFEAD` cards.
+- Mobile hero text is static to prevent first-load mobile menu interference; desktop/page headings may use typing animation.
 - Desktop navigation has only the `Find Church` CTA, linking to `https://cfmmap.org/`.
 - Footer includes the Alberta Street location and PO Box mailing address.
 - Staff includes Albert as Choose to Change Director with lavender desktop staff cards.

@@ -15,7 +15,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
         
         {/* Cloud Blue Who We Are Section */}
         <div className="bg-[#F0F7FF] p-4 md:p-12 md:m-4 md:rounded-xl text-gray-900 mb-0">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest text-center md:text-left underline decoration-black underline-offset-8">Who We Are</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 uppercase font-heading tracking-widest text-center md:text-left underline decoration-black underline-offset-8 auto-type-section mx-auto md:mx-0">Who We Are</h3>
             <p className="mb-4 text-lg font-medium">Our mission is simple. To bring the Truth of Jesus Christ to the world.</p>
             <p className="mb-8 text-lg font-medium">How do we do that? Through evangelism, discipleship, and church planting.</p>
             
@@ -138,7 +138,7 @@ export const InfoPages: React.FC<InfoPageProps> = ({ page, setPage }) => {
             </div>
             
             <div className="text-center mb-8">
-                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] inline-block font-bold text-gray-900 mb-6 font-heading underline decoration-black underline-offset-8">TIME TO ENLARGE</h3>
+                <h3 className="text-sm md:text-base uppercase tracking-[0.2em] inline-block font-bold text-gray-900 mb-6 font-heading underline decoration-black underline-offset-8 auto-type-section">TIME TO ENLARGE</h3>
             </div>
             
             <div className="space-y-4 text-base md:text-lg text-center mb-10">
@@ -305,7 +305,7 @@ const FaithDetail = ({ title, content }: { title: string; content: string }) => 
 );
 
 const StaffMember = ({ img, name, role, bio }: { img: string; name: string; role: string; bio: string }) => (
-    <div className="bg-transparent p-0 rounded-none border-none md:bg-[#C8C0E8] md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
+    <div className="bg-transparent p-0 rounded-none border-none md:bg-[#37B2A2] md:backdrop-blur-sm md:rounded-3xl md:p-8 md:shadow-sm md:border md:border-white/10 flex flex-col md:flex-row items-center">
         <img src={img} alt={name} className="w-1/2 md:w-1/3 aspect-square object-cover rounded-full border-4 border-white mb-6 md:mb-0 md:mr-8" />
         <div className="flex-1 text-center md:text-left">
             <h4 className="text-xl md:text-2xl font-bold text-white md:text-gray-900 uppercase tracking-widest font-heading mb-2">{name}</h4>

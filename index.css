@@ -151,6 +151,13 @@
     animation: typing 3s infinite;
   }
 
+  .auto-type-section {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s infinite;
+  }
+
   .font-heading.underline,
   .font-heading .underline,
   .underline.font-heading {
@@ -184,6 +191,12 @@
     border-right: 0;
     animation: none;
     clip-path: none;
+  }
+
+  .auto-type-section {
+    animation: none;
+    clip-path: none;
+    white-space: normal;
   }
 }
 

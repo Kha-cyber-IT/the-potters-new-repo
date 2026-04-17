@@ -57,6 +57,12 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
     { icon: <Mail className="flex-shrink-0 h-6 w-6" />, label: 'Email', url: 'mailto:joburg@worldcfm.com' },
   ];
 
+  const footerButtons = [
+    { label: 'New Building', page: Page.NewBuilding },
+    { label: 'Conference', page: Page.Conference2025 },
+    { label: 'Broadcast', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
+  ];
+
   return (
     <footer className="bg-black text-white w-full">
 
@@ -78,6 +84,19 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
             ))}
           </div>
         ))}
+
+        {/* Mobile social */}
+        <div className="grid grid-cols-1 gap-3 px-4 py-6 border-b border-white/10">
+          {footerButtons.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => handleFooterLink(link)}
+              className="btn w-full rounded-full bg-[#1C3935] text-white font-bold uppercase tracking-widest text-sm"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
 
         {/* Mobile social */}
         <div className="flex items-center gap-6 px-4 py-6 border-b border-white/10">
@@ -126,6 +145,18 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="max-w-6xl mx-auto mt-10 flex justify-center gap-4">
+          {footerButtons.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => handleFooterLink(link)}
+              className="btn rounded-full bg-[#1C3935] hover:bg-[#142b28] text-white font-bold uppercase tracking-widest text-sm px-6"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
 
         {/* Desktop divider */}
         <div className="max-w-6xl mx-auto border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">

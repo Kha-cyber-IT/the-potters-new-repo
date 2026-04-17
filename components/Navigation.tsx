@@ -36,6 +36,11 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    setIsOpen(false);
+    setActiveSubMenu(null);
+  }, [currentPage]);
+
   // Close desktop dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => setDesktopDropdown(null);
@@ -248,7 +253,12 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
 
             {/* Mobile Menu Toggle — TymeBank hamburger style */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsOpen((open) => !open);
+              }}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
@@ -267,7 +277,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       />
       <div 
         id="mobile-menu"
-        className={`fixed top-0 right-0 w-[80%] max-w-sm z-[110] bg-[#0B0D0F] rounded-bl-2xl shadow-2xl transition-transform duration-300 ease-in-out flex flex-col max-h-[85vh] ${
+        className={`fixed top-0 right-0 h-screen w-[80%] max-w-sm z-[110] bg-[#0B0D0F] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >

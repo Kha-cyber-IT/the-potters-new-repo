@@ -115,7 +115,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
         </div>
         
         <div className="text-center mb-12">
-             <h3 className="inline-block text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-black underline-offset-8">What You Can Expect</h3>
+             <h3 className="inline-block text-gray-900 text-xl md:text-2xl font-bold uppercase tracking-widest font-heading underline decoration-black underline-offset-8 auto-type-section">What You Can Expect</h3>
         </div>
 
         <div className="grid grid-cols-1 gap-12 text-center mb-20">
@@ -151,14 +151,14 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
                     </div>
                 </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
-                <div><TimeCard day="Sunday" times={[
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center items-stretch">
+                <div className="h-full"><TimeCard day="Sunday" times={[
                     "Adult Bible Study & Children's Sunday School | 9:00 AM",
                     "Morning Worship Service | 10:00 AM",
                     "Evening Worship Service | 5:00 PM"
                 ]} /></div>
-                <div><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
-                <div><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
+                <div className="h-full"><TimeCard day="Wednesdays" times={["Midweek Worship Services | 7:00 PM"]} /></div>
+                <div className="h-full"><TimeCard day="Fridays" times={["One80 Concept | 7:00 PM"]} /></div>
             </div>
             
             <div className="pt-10 border-t border-gray-300">
@@ -590,7 +590,7 @@ export const ActionPages: React.FC<ActionPageProps> = ({ page, setPage }) => {
 };
 
 const ExpectCard = ({ title, content }: { title: string; content: string }) => (
-    <div className="max-w-2xl mx-auto bg-[#FDFEAD] p-4 px-4 md:p-6 rounded-2xl border border-gray-900/10 shadow-sm">
+    <div className="max-w-4xl mx-auto">
         <h4 className="text-2xl font-bold text-gray-900 mb-3 uppercase tracking-wider font-heading">{title}</h4>
         <p className="text-lg leading-relaxed text-gray-800">
             {content}
@@ -599,7 +599,7 @@ const ExpectCard = ({ title, content }: { title: string; content: string }) => (
 );
 
 const TimeCard = ({ day, times }: { day: string; times: string[] }) => (
-    <div className="bg-[#FDFEAD] border border-gray-900/10 p-4 px-4 md:p-6 rounded-2xl shadow-sm">
+    <div className="bg-[#FDFEAD] border border-gray-900/10 p-4 px-4 md:p-6 rounded-2xl shadow-sm h-full min-h-[190px] flex flex-col justify-center">
         <h4 className="text-2xl font-bold text-gray-900 mb-4 uppercase font-heading">{day}</h4>
         <div className="space-y-3 text-lg text-gray-700">
             {times.map((t, i) => <p key={i}>{t}</p>)}

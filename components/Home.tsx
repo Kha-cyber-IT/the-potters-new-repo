@@ -11,6 +11,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   ];
   const [activeSlide, setActiveSlide] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
   useEffect(() => {
     if (isCarouselPaused) return;
@@ -19,6 +20,13 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
     }, 5500);
     return () => window.clearInterval(interval);
   }, [isCarouselPaused, carouselImages.length]);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 768);
+    updateIsMobile();
+    window.addEventListener('resize', updateIsMobile);
+    return () => window.removeEventListener('resize', updateIsMobile);
+  }, []);
 
   const sentence = {
     hidden: { opacity: 0 },
@@ -76,12 +84,12 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
 
             {/* The Modern Flowing Heading */}
             <motion.h1
-              variants={sentence}
-              initial="hidden"
-              animate="show"
+              variants={isMobile ? undefined : sentence}
+              initial={isMobile ? false : "hidden"}
+              animate={isMobile ? undefined : "show"}
               className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-black text-white leading-[1.12] tracking-tighter lg:max-w-4xl"
             >
-              <motion.span variants={word} className="typing-hero-text">
+              <motion.span variants={isMobile ? undefined : word} className="typing-hero-text">
                 Our mission is simple. To bring the Truth of Jesus Christ to the world!
               </motion.span>
             </motion.h1>
@@ -354,7 +362,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="flex flex-col text-center bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl mx-4 md:mx-0"
+              className="flex flex-col text-center bg-[#789A99] px-4 py-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl w-[calc(100%-2rem)] max-w-[330px] md:max-w-none md:w-auto mx-auto md:mx-0 min-h-[220px] md:min-h-0"
             >
               <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-2 md:mb-4 underline decoration-black underline-offset-8">
                 New to The Potter's House?
@@ -385,7 +393,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                   hidden: { opacity: 0, scale: 0.95, y: 40 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
               }}
-              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8 rounded-2xl mx-4"
+              className="md:hidden flex flex-col items-center text-center bg-[#789A99] px-4 py-8 rounded-2xl w-[calc(100%-2rem)] max-w-[330px] mx-auto min-h-[220px]"
             >
               <h2 className="text-lg font-black text-gray-900 uppercase tracking-[0.1em] font-heading mb-2 underline decoration-black underline-offset-8">
                 Stay Connected
