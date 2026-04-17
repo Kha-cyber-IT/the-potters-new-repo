@@ -82,7 +82,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Ministries',
       type: 'dropdown' as const,
       subItems: [
-        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -93,18 +92,7 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Events',
       type: 'dropdown' as const,
       subItems: [
-        { label: 'Conference 2025', page: Page.Conference2025 },
         { label: 'Events 2026', page: Page.Events2026 },
-      ]
-    },
-    {
-      id: 'broadcast',
-      label: 'Broadcast',
-      type: 'dropdown' as const,
-      subItems: [
-        { label: 'Stream Now', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
-        { label: 'Stories & Podcasts', page: Page.Stories },
-        { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
       ]
     },
     {
@@ -133,7 +121,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       id: 'Ministries',
       label: 'Ministries',
       subItems: [
-        { label: 'New Building', page: Page.NewBuilding },
         { label: 'Church Planting', page: Page.ChurchPlanting },
         { label: 'Recovery', page: Page.Recovery },
         { label: "Children's Ministry", page: Page.ChildrensMinistry },
@@ -144,16 +131,6 @@ export const Navigation: React.FC<ExtendedNavProps> = ({
       label: 'Events',
       subItems: [
         { label: '2026 Calendar', page: Page.Events2026 },
-        { label: 'Conference 2025', page: Page.Conference2025 }
-      ]
-    },
-    {
-      id: 'Broadcast',
-      label: 'Broadcast',
-      subItems: [
-        { label: 'Stream Now', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
-        { label: 'Stories & Podcasts', page: Page.Stories },
-        { label: 'Media Archive', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' }
       ]
     },
     {

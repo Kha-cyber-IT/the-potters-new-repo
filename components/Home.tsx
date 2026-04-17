@@ -371,7 +371,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 Get in touch with a staff member and let us know how we can help.
               </p>
 
-              <div className="flex flex-row justify-center gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto">
+              <div className="flex flex-col md:flex-row justify-center gap-2.5 md:gap-4 w-full max-w-[330px] md:max-w-none mx-auto">
                   <ModernButton
                     text="Get Connected"
                     onClick={() => setPage(Page.GetConnected)}
