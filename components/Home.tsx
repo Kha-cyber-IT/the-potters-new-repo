@@ -32,20 +32,15 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.08, delayChildren: 0.1 },
     },
   };
 
   const word = {
     hidden: { opacity: 0, y: 30, filter: "blur(5px)" },
     show: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: "easeOut" as const }
+      opacity: 1, y: 0, filter: "blur(0px)",
+      transition: { duration: 0.6, ease: "easeOut" }
     },
   };
 
@@ -58,26 +53,17 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.78)), url('https://i.postimg.cc/tTGQV7St/1776346333530.png')",
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center top',
           }}
         />
 
         <div className="w-full px-4 md:px-6 lg:px-0 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
-
-          {/* LEFT SIDE: Text & Buttons */}
-          <div className="flex flex-col gap-8 w-full max-w-6xl mx-auto lg:mx-0">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+          
+          {/* LEFT SIDE: Flowing Text */}
+          <div className="flex flex-col gap-6 md:gap-8 w-full max-w-6xl mx-auto lg:mx-0">
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <div className="flex items-center gap-4 text-blue-500">
                 <span className="h-[1px] w-12 md:w-16 bg-blue-500"></span>
-                <span className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase">
-                  Faith & Transformation
-                </span>
+                <span className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase">Faith & Transformation</span>
               </div>
             </motion.div>
 
@@ -85,375 +71,137 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               variants={isMobile ? undefined : sentence}
               initial={isMobile ? false : "hidden"}
               animate={isMobile ? undefined : "show"}
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-black text-white leading-[1.12] tracking-tighter lg:max-w-4xl"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-black text-white leading-[1.12] tracking-tighter"
             >
-              <motion.span variants={isMobile ? undefined : word} className="typing-hero-text">
+              <motion.span variants={isMobile ? undefined : word}>
                 Our mission is simple. To bring the Truth of Jesus Christ to the world!
               </motion.span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed font-normal lg:max-w-2xl"
-            >
-              We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span> This is the single greatest hope we have of true life and true transformation!
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="text-lg md:text-2xl text-white/85 leading-relaxed font-normal">
+              We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span>
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-row gap-2.5 md:gap-4 justify-start items-stretch w-full max-w-[330px] md:max-w-none"
-            >
+            {/* FIXED HERO BUTTONS (Sleek mobile sizes & Dark Purple Glow) */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="flex flex-row gap-3 md:gap-4 justify-start">
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="btn flex-1 md:flex-none w-full max-w-none md:max-w-[280px] justify-center bg-blue-600 text-white font-black text-sm md:text-xl rounded-full hover:bg-blue-500 hover:scale-105 active:scale-95 uppercase tracking-[0.18em] md:tracking-widest font-heading flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="h-10 md:h-14 px-5 md:px-10 bg-blue-600 text-white font-black text-[11px] md:text-sm rounded-full uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center gap-2"
               >
                 Who We Are
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
               </button>
-
               <ModernButton
                 text="Stream Now"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                variant="purple"
-                className="flex-1 md:flex-none max-w-none md:max-w-[280px] hover:scale-105 active:scale-95 font-bold uppercase rounded-full font-heading"
+                className="h-10 md:h-14 px-5 md:px-10 bg-[#0B0D0F] hover:bg-[#121519] border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
               />
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE: Stats & Banner */}
-          <div className="flex flex-col gap-8 w-full justify-self-end mt-12 lg:mt-0">
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-6 px-4 md:p-14 relative overflow-hidden shadow-md md:shadow-2xl w-full"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-45 contrast-125 saturate-125"
-                style={{ backgroundImage: "url('https://i.postimg.cc/ZnFQpcTf/502a78-db9fe996869248f6800cc779e84bf461-mv2.jpg')" }}
-              />
-              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-12 md:gap-20 text-center">
+          {/* RIGHT SIDE: The 12K Card & Enlarging Card */}
+          <div className="flex flex-col gap-4 md:gap-8 w-full justify-self-end mt-12 lg:mt-0">
+            <motion.div className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-6 md:p-14 relative overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-cover bg-center opacity-30 contrast-125 saturate-150" style={{ backgroundImage: "url('https://i.postimg.cc/ZnFQpcTf/502a78-db9fe996869248f6800cc779e84bf461-mv2.jpg')" }} />
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-20 text-center">
                 <div>
-                  <h3 className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-4">12K+</h3>
-                  <p className="text-blue-500 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">Lives Changed</p>
+                  <h3 className="text-5xl md:text-6xl font-black text-white tracking-tighter">12K+</h3>
+                  <p className="text-blue-500 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase">Lives Changed</p>
                 </div>
-                <div className="w-[1px] h-20 bg-white/10 hidden sm:block" />
-                <div className="h-[1px] w-20 bg-white/10 sm:hidden" />
+                <div className="w-[1px] h-16 bg-white/10 hidden sm:block" />
                 <div>
-                  <h3 className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-4">45+</h3>
-                  <p className="text-blue-500 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">Global Missions</p>
+                  <h3 className="text-5xl md:text-6xl font-black text-white tracking-tighter">45+</h3>
+                  <p className="text-blue-500 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase">Global Missions</p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            >
-              <div
-                onClick={() => setPage(Page.NewBuilding)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && setPage(Page.NewBuilding)}
-                className="block relative rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 cursor-pointer h-[200px] md:h-[300px] shadow-md md:shadow-2xl group w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-              >
-                <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110 contrast-125 saturate-125"
-                  style={{ backgroundImage: "url('https://i.postimg.cc/MGM1hpjw/ea998c-0f1c76517790470ea0fd9d89718a5005-mv2.jpg')" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050f07] via-[#050f07]/50 to-transparent" />
-                <div className="absolute inset-0 flex flex-col items-center justify-end p-8 md:p-12 text-center z-10">
-                  <h3 className="text-3xl md:text-4xl font-black text-white mb-3 uppercase tracking-tighter">We're Enlarging!</h3>
-                  <p className="text-slate-300 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase group-hover:text-blue-400 transition-colors">Click here to see what's next</p>
-                </div>
+            <motion.div onClick={() => setPage(Page.NewBuilding)} className="block relative rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 cursor-pointer h-[160px] md:h-[300px] shadow-2xl group">
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110" style={{ backgroundImage: "url('https://i.postimg.cc/MGM1hpjw/ea998c-0f1c76517790470ea0fd9d89718a5005-mv2.jpg')" }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-6 md:p-8 text-center">
+                <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter">We're Enlarging!</h3>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* LOWER SECTION */}
-      <div className="w-full text-center px-4 md:px-6 lg:px-0 mt-20 md:mt-40">
+      {/* LOWER CONTENT */}
+      <div className="w-full text-center px-4 md:px-6 mt-12 md:mt-32">
         
-        <div className="mb-24 md:mb-48">
-          <h3 className="inline-block text-white text-xl sm:text-2xl md:text-4xl font-black mb-10 md:mb-12 uppercase tracking-[0.2em] md:tracking-[0.3em] font-heading underline decoration-black underline-offset-8">
-              Weekly Services
-          </h3>
-          
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1400px] mx-auto text-left"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.15 } }
-            }}
-          >
-              <motion.div
-                variants={{
-                    hidden: { opacity: 0, scale: 0.95, y: 40 },
-                    visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-                }}
-                className="w-full bg-[#FEFACD] rounded-2xl md:rounded-3xl p-6"
-              >
-                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-gray-900"> 
-                    <span className="border-l-[6px] md:border-l-[8px] border-[#0B0D0F] pl-4 md:pl-6">Sunday</span>
-                  </h4>
-                  
-                  <div className="flex flex-col space-y-4 md:space-y-3 pl-2 md:pl-4">
-                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
-                          <span className="font-bold text-lg md:text-xl w-32">9:00 AM</span>
-                          <span className="hidden md:inline mx-4">—</span>
-                          <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Bible Study</span>
-                      </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
-                          <span className="font-bold text-lg md:text-xl w-32">10:00 AM</span>
-                          <span className="hidden md:inline mx-4">—</span>
-                          <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Morning Worship</span>
-                      </div>
-                      <div className="flex flex-col md:flex-row md:items-center text-gray-900">
-                          <span className="font-bold text-lg md:text-xl w-32">5:00 PM</span>
-                          <span className="hidden md:inline mx-4">—</span>
-                          <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Evening Worship</span>
-                      </div>
-                  </div>
-              </motion.div>
-
-              <motion.div
-                variants={{
-                    hidden: { opacity: 0, scale: 0.95, y: 40 },
-                    visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-                }}
-                className="w-full bg-[#2C3E50] border border-white/10 rounded-2xl md:rounded-3xl p-6"
-              >
-                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                    <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Wednesday</span>
-                  </h4>
-                  <div className="flex flex-col pl-2 md:pl-4">
-                      <div className="flex flex-col md:flex-row md:items-center text-white">
-                        <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
-                        <span className="hidden md:inline mx-4">—</span>
-                        <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">Weekly Worship</span>
-                    </div>
-                  </div>
-              </motion.div>
-
-              <motion.div
-                variants={{
-                    hidden: { opacity: 0, scale: 0.95, y: 40 },
-                    visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-                }}
-                className="w-full bg-[#2C3E50] border border-white/10 rounded-2xl md:rounded-3xl p-6"
-              >
-                  <h4 className="text-2xl md:text-3xl font-black mb-6 text-white"> 
-                    <span className="border-l-[6px] md:border-l-[8px] border-slate-400 pl-4 md:pl-6">Friday</span>
-                  </h4>
-                  <div className="flex flex-col pl-2 md:pl-4">
-                      <div className="flex flex-col md:flex-row md:items-center text-white">
-                        <span className="font-bold text-lg md:text-xl w-32">7:00 PM</span>
-                        <span className="hidden md:inline mx-4">—</span>
-                        <span className="text-xl md:text-2xl font-medium mt-1 md:mt-0">One80 Content</span>
-                    </div>
-                  </div>
-              </motion.div>
-          </motion.div>
+        {/* SERVICES GRID */}
+        <div className="mb-12 md:mb-24">
+          <h3 className="text-white text-xl md:text-4xl font-black mb-8 md:mb-12 uppercase tracking-widest underline underline-offset-8">Weekly Services</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-[1400px] mx-auto">
+            {/* Sunday Card */}
+            <div className="bg-[#FEFACD] rounded-2xl p-6 text-left">
+              <h4 className="text-2xl font-black mb-4 text-gray-900 border-l-8 border-black pl-4">Sunday</h4>
+              <div className="space-y-2 text-gray-900 font-bold text-sm md:text-base">
+                <p>9:00 AM — Bible Study</p>
+                <p>10:00 AM — Morning Worship</p>
+                <p>5:00 PM — Evening Worship</p>
+              </div>
+            </div>
+            {/* Mid-week Cards */}
+            <div className="bg-[#2C3E50] rounded-2xl p-6 text-left text-white border border-white/10">
+              <h4 className="text-2xl font-black mb-4 border-l-8 border-slate-400 pl-4">Wednesday</h4>
+              <p className="font-bold text-sm md:text-base">7:00 PM — Weekly Worship</p>
+            </div>
+            <div className="bg-[#2C3E50] rounded-2xl p-6 text-left text-white border border-white/10">
+              <h4 className="text-2xl font-black mb-4 border-l-8 border-slate-400 pl-4">Friday</h4>
+              <p className="font-bold text-sm md:text-base">7:00 PM — One80 Content</p>
+            </div>
+          </div>
         </div>
 
-        {/* Carousel (Desktop Only) */}
-        <div className="w-full py-16 md:py-24 px-4 hidden md:block">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.12 } }
-            }}
-            className="max-w-[1400px] mx-auto"
-          >
-            <motion.h3
-              variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 }
-              }}
-              className="text-white text-2xl font-black uppercase tracking-widest font-heading underline underline-offset-8 mb-8 text-center"
-            >
-              Upcoming Event
-            </motion.h3>
-            <motion.div
-              variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
-              }}
-              className="relative w-full max-w-[1200px] mx-auto aspect-[16/6] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0B0D0F]"
-              onMouseEnter={() => setIsCarouselPaused(true)}
-              onMouseLeave={() => setIsCarouselPaused(false)}
-            >
-              {carouselImages.map((src, i) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Church carousel ${i + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${activeSlide === i ? 'opacity-100' : 'opacity-0'}`}
-                />
-              ))}
-              <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between bg-gradient-to-t from-black/65 to-transparent">
-                <div className="flex items-center gap-2">
-                  {carouselImages.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveSlide(i)}
-                      className={`h-2.5 rounded-full transition-all duration-300 ${activeSlide === i ? 'w-8 bg-white' : 'w-2.5 bg-white/50'}`}
-                    />
-                  ))}
-                </div>
-                <div className="flex items-center gap-3">
-                  <button onClick={() => setActiveSlide((activeSlide - 1 + carouselImages.length) % carouselImages.length)} className="btn h-10 w-10 rounded-full bg-white text-black font-black">‹</button>
-                  <button onClick={() => setIsCarouselPaused(!isCarouselPaused)} className="btn h-10 px-5 rounded-full bg-white text-black text-xs font-black uppercase">{isCarouselPaused ? 'Play' : 'Pause'}</button>
-                  <button onClick={() => setActiveSlide((activeSlide + 1) % carouselImages.length)} className="btn h-10 w-10 rounded-full bg-white text-black font-black">›</button>
-                </div>
+        {/* CONNECT HUB - COMPACT SPACING & PADDING ON MOBILE */}
+        <div className="w-full py-8 md:py-16 px-0">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch">
+            {/* New To Church */}
+            <div className="bg-[#789A99] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
+              <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase mb-3 underline underline-offset-8 decoration-2 text-center">New to the Church?</h2>
+              <p className="text-[13px] md:text-lg font-medium text-gray-900/80 mb-6 max-w-md text-center leading-relaxed">Get in touch with us and let us know how we can help.</p>
+              <div className="flex gap-3">
+                <ModernButton text="Contact" onClick={() => setPage(Page.GetConnected)} variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-5 text-[11px] md:text-[13px] rounded-full" />
+                <ModernButton text="Visit" onClick={() => setPage(Page.PlanAVisit)} variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-5 text-[11px] md:text-[13px] rounded-full" />
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+
+            {/* WhatsApp Card */}
+            <div className="bg-[#789A99] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
+              <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase mb-3 underline underline-offset-8 decoration-2 text-center">Stay Connected</h2>
+              <div className="bg-white p-2 md:p-3 rounded-xl mb-5 shadow-sm">
+                {/* Scaled down QR code for mobile */}
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" alt="QR" className="w-16 h-16 md:w-24 md:h-24" />
+              </div>
+              <ModernButton text="Join Channel" href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-6 text-[11px] md:text-[13px] rounded-full" />
+            </div>
+          </div>
         </div>
 
-        {/* CONNECT HUB (Bento Grid) - FIXED CENTERING */}
-        <div className="w-full py-16 md:py-20 px-4 md:px-6 lg:px-0">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.15 } }
-            }}
-            className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch"
-          >
-            {/* New to Church Card */}
-            <motion.div
-              variants={{
-                  hidden: { opacity: 0, scale: 0.95, y: 40 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-              }}
-              className="flex flex-col items-center text-center bg-[#789A99] p-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl w-full"
-            >
-              <h2 className="text-xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-4 underline decoration-black underline-offset-8">
-                New to The Potter's House?
-              </h2>
-              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-6 md:mb-10 leading-relaxed max-w-lg mx-auto">
-                Get in touch with a staff member and let us know how we can help.
-              </p>
-
-              <div className="flex flex-row justify-center gap-2.5 md:gap-4 w-full max-w-sm mx-auto">
-                  <ModernButton
-                    text="Contact Us"
-                    onClick={() => setPage(Page.GetConnected)}
-                    variant="dark"
-                    className="bg-[#1C3935] hover:bg-[#142b28] flex-1"
-                  />
-                  <ModernButton
-                    text="Plan a Visit"
-                    onClick={() => setPage(Page.PlanAVisit)}
-                    variant="dark"
-                    className="bg-[#1C3935] hover:bg-[#142b28] flex-1"
-                  />
-              </div>
-            </motion.div>
-
-            {/* Stay Connected Card */}
-            <motion.div
-              variants={{
-                  hidden: { opacity: 0, scale: 0.95, y: 40 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-              }}
-              className="flex flex-col items-center text-center bg-[#789A99] p-8 md:p-10 justify-center h-full rounded-2xl md:rounded-3xl w-full"
-            >
-              <h2 className="text-xl md:text-4xl font-black text-gray-900 uppercase tracking-[0.1em] md:tracking-[0.2em] font-heading mb-4 underline decoration-black underline-offset-8">
-                Stay Connected
-              </h2>
-              <p className="text-sm md:text-xl font-medium text-gray-900/80 mb-6 leading-relaxed max-w-md mx-auto">
-                Follow us on WhatsApp for daily devotions and updates.
-              </p>
-
-              <div className="bg-white p-3 md:p-4 rounded-xl md:rounded-2xl my-6 inline-block shadow-sm">
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-white flex items-center justify-center overflow-hidden">
-                  <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
-                    alt="WhatsApp QR"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-
-              <ModernButton
-                text="Join Channel"
-                href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G"
-                variant="dark"
-                className="bg-[#1C3935] hover:bg-[#142b28] w-full max-w-sm"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* BROADCASTS SECTION - STYLED LIKE THE ENLARGING CARD */}
-        <div className="w-full py-16 md:py-24 px-4 md:px-6 lg:px-0">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-            }}
-            className="max-w-[1400px] mx-auto"
-          >
-            <div 
-              className="relative w-full h-[200px] md:h-[300px] rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group cursor-default"
-            >
-              {/* Background - Matching Enlarging Card Style */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] group-hover:scale-110 contrast-125 saturate-125"
-                style={{ 
-                  backgroundImage: "url('https://i.postimg.cc/G2LTr3Fp/1776346065556.png')" 
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050f07] via-[#050f07]/60 to-transparent" />
+        {/* BROADCASTS SECTION - TIGHTER SPACING, DARK PURPLE GLOW BUTTON */}
+        <div className="w-full py-8 md:py-16 mb-12">
+          <div className="max-w-[1400px] mx-auto px-0">
+            <div className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
+              {/* Subtle YouTube Background */}
+              <div className="absolute inset-0 bg-cover bg-center opacity-25 contrast-150 saturate-0" style={{ backgroundImage: "url('https://i.postimg.cc/G2LTr3Fp/1776346065556.png')" }} />
               
-              {/* Card Content Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-12 text-center z-10">
-                <div className="mb-2 md:mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-16 md:w-16 text-red-600 drop-shadow-[0_0_10px_rgba(220,38,38,0.5)]" fill="currentColor" viewBox="0 0 24 24">
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="mb-4 md:mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-16 md:w-16 text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.4)]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19.615 3.184c-3.604-.226-11.63-.226-15.234 0C.486 3.407 0 4.888 0 7.5v9c0 2.612.486 4.093 4.381 4.316 3.604.226 11.63.226 15.234 0 3.896-.223 4.381-1.704 4.381-4.316v-9c0-2.612-.486-4.093-4.381-4.316zM9 16.5v-9L16 12l-7 4.5z"/>
                   </svg>
                 </div>
-
-                <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2">
-                  Broadcasts
-                </h3>
-                
-                <p className="text-slate-300 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase mb-6">
-                  Missed Church Services? Watch our archives
-                </p>
-
+                <h3 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-3">Broadcasts</h3>
+                <p className="text-blue-500 text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase mb-8">Missed a service? Watch on YouTube</p>
                 <ModernButton
                   text="Watch Now"
                   href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                  variant="purple"
-                  className="hover:scale-105 active:scale-95 font-bold uppercase rounded-full scale-90 md:scale-100"
+                  className="h-10 md:h-14 px-6 md:px-10 bg-[#0B0D0F] hover:bg-[#121519] border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
