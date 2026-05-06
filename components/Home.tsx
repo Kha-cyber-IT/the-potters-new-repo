@@ -1,5 +1,4 @@
-
-     import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Page, NavigationProps } from '../types';
 import { ModernButton } from './ModernButton';
@@ -83,18 +82,18 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               We are completely centered around Jesus Christ. <span className="text-blue-500 font-bold italic">His love. His power. His message.</span>
             </motion.p>
 
-            {/* FIXED HERO BUTTONS (Sleek mobile sizes & Dark Purple Glow) */}
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="flex flex-row gap-3 md:gap-4 justify-start">
+            {/* FIXED HERO BUTTONS (Glowing Edge on Pitch Black) */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="flex flex-row gap-3 md:gap-4 justify-start items-center">
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="h-10 md:h-14 px-5 md:px-10 bg-blue-600 text-white font-black text-[11px] md:text-sm rounded-full uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center gap-2"
+                className="h-10 md:h-14 px-5 md:px-10 bg-blue-600 text-white font-black text-[11px] md:text-sm rounded-full uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center justify-center gap-2"
               >
                 Who We Are
               </button>
               <ModernButton
                 text="Stream Now"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                className="h-10 md:h-14 px-5 md:px-10 bg-[#000000] hover:bg-[#121519] border border-purple-500/50 shadow-[0_0_18px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
+                className="h-10 md:h-14 px-5 md:px-10 bg-black border border-purple-500 text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
               />
             </motion.div>
           </div>
@@ -182,7 +181,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </div>
         </div>
 
-        {/* BROADCASTS SECTION - DARK PURPLE GLOW BUTTON */}
+        {/* BROADCASTS SECTION - GLOWING EDGE BUTTON */}
         <div className="w-full py-8 md:py-16 mb-12">
           <div className="max-w-[1400px] mx-auto px-0">
             <div className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
@@ -200,7 +199,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 <ModernButton
                   text="Watch Now"
                   href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                  className="h-10 md:h-14 px-6 md:px-10 bg-[#000000] hover:bg-[#121519] border border-purple-500/50 shadow-[0_0_18px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
+                  className="h-10 md:h-14 px-6 md:px-10 bg-black border border-purple-500 text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
                 />
               </div>
             </div>
