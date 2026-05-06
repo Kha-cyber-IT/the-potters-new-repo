@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+     import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Page, NavigationProps } from '../types';
 import { ModernButton } from './ModernButton';
@@ -93,7 +94,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
               <ModernButton
                 text="Stream Now"
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                className="h-10 md:h-14 px-5 md:px-10 bg-[#0B0D0F] hover:bg-[#121519] border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
+                className="h-10 md:h-14 px-5 md:px-10 bg-[#000000] hover:bg-[#121519] border border-purple-500/50 shadow-[0_0_18px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
               />
             </motion.div>
           </div>
@@ -134,7 +135,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           <h3 className="text-white text-xl md:text-4xl font-black mb-8 md:mb-12 uppercase tracking-widest underline underline-offset-8">Weekly Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-[1400px] mx-auto">
             {/* Sunday Card */}
-            <div className="bg-[#FEFACD] rounded-2xl p-6 text-left">
+            <div className="bg-[#FEFACD] rounded-2xl p-6 text-left shadow-sm">
               <h4 className="text-2xl font-black mb-4 text-gray-900 border-l-8 border-black pl-4">Sunday</h4>
               <div className="space-y-2 text-gray-900 font-bold text-sm md:text-base">
                 <p>9:00 AM — Bible Study</p>
@@ -142,44 +143,46 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 <p>5:00 PM — Evening Worship</p>
               </div>
             </div>
-            {/* Mid-week Cards */}
-            <div className="bg-[#2C3E50] rounded-2xl p-6 text-left text-white border border-white/10">
-              <h4 className="text-2xl font-black mb-4 border-l-8 border-slate-400 pl-4">Wednesday</h4>
+            {/* Mid-week Cards (Updated Hex Colors) */}
+            <div className="bg-[#F26749] rounded-2xl p-6 text-left text-white shadow-sm">
+              <h4 className="text-2xl font-black mb-4 border-l-8 border-white/40 pl-4">Wednesday</h4>
               <p className="font-bold text-sm md:text-base">7:00 PM — Weekly Worship</p>
             </div>
-            <div className="bg-[#2C3E50] rounded-2xl p-6 text-left text-white border border-white/10">
-              <h4 className="text-2xl font-black mb-4 border-l-8 border-slate-400 pl-4">Friday</h4>
+            <div className="bg-[#F5E6A3] rounded-2xl p-6 text-left text-gray-900 shadow-sm">
+              <h4 className="text-2xl font-black mb-4 border-l-8 border-black/20 pl-4">Friday</h4>
               <p className="font-bold text-sm md:text-base">7:00 PM — One80 Content</p>
             </div>
           </div>
         </div>
 
-        {/* CONNECT HUB - COMPACT SPACING & PADDING ON MOBILE */}
+        {/* CONNECT HUB - UPDATED HEX COLORS AND TEXT */}
         <div className="w-full py-8 md:py-16 px-0">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch">
-            {/* New To Church */}
-            <div className="bg-[#789A99] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
-              <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase mb-3 underline underline-offset-8 decoration-2 text-center">New to the Church?</h2>
+            {/* New To Church (Updated Bg and Buttons) */}
+            <div className="bg-[#ACC8A2] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
+              <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase mb-3 underline underline-offset-8 decoration-2 text-center">New to The Potter's House?</h2>
               <p className="text-[13px] md:text-lg font-medium text-gray-900/80 mb-6 max-w-md text-center leading-relaxed">Get in touch with us and let us know how we can help.</p>
               <div className="flex gap-3">
-                <ModernButton text="Contact" onClick={() => setPage(Page.GetConnected)} variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-5 text-[11px] md:text-[13px] rounded-full" />
-                <ModernButton text="Visit" onClick={() => setPage(Page.PlanAVisit)} variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-5 text-[11px] md:text-[13px] rounded-full" />
+                <ModernButton text="Contact" onClick={() => setPage(Page.GetConnected)} className="bg-[#2872A1] hover:bg-[#1f5a80] text-white h-10 px-5 text-[11px] md:text-[13px] rounded-full font-bold uppercase" />
+                <ModernButton text="Visit" onClick={() => setPage(Page.PlanAVisit)} className="bg-[#2872A1] hover:bg-[#1f5a80] text-white h-10 px-5 text-[11px] md:text-[13px] rounded-full font-bold uppercase" />
               </div>
             </div>
 
-            {/* WhatsApp Card */}
-            <div className="bg-[#789A99] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
+            {/* WhatsApp Card (Updated Bg and Button) */}
+            <div className="bg-[#ffd3c0] p-6 md:p-12 rounded-2xl md:rounded-[3rem] flex flex-col items-center justify-center">
               <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase mb-3 underline underline-offset-8 decoration-2 text-center">Stay Connected</h2>
+              <p className="text-[13px] md:text-lg font-medium text-gray-900/80 mb-4 max-w-md text-center leading-relaxed">
+                Follow us on WhatsApp for daily devotions and updates. Scan the QR code or click below to join.
+              </p>
               <div className="bg-white p-2 md:p-3 rounded-xl mb-5 shadow-sm">
-                {/* Scaled down QR code for mobile */}
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" alt="QR" className="w-16 h-16 md:w-24 md:h-24" />
               </div>
-              <ModernButton text="Join Channel" href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" variant="dark" className="bg-[#1C3935] hover:bg-[#142b28] h-10 px-6 text-[11px] md:text-[13px] rounded-full" />
+              <ModernButton text="Join Channel" href="https://whatsapp.com/channel/0029Vb5ddJxCHDymMM02UE3G" className="bg-[#2872A1] hover:bg-[#1f5a80] text-white h-10 px-6 text-[11px] md:text-[13px] rounded-full font-bold uppercase" />
             </div>
           </div>
         </div>
 
-        {/* BROADCASTS SECTION - TIGHTER SPACING, DARK PURPLE GLOW BUTTON */}
+        {/* BROADCASTS SECTION - DARK PURPLE GLOW BUTTON */}
         <div className="w-full py-8 md:py-16 mb-12">
           <div className="max-w-[1400px] mx-auto px-0">
             <div className="bg-[#121519] border border-white/10 rounded-2xl md:rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
@@ -197,7 +200,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 <ModernButton
                   text="Watch Now"
                   href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                  className="h-10 md:h-14 px-6 md:px-10 bg-[#0B0D0F] hover:bg-[#121519] border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
+                  className="h-10 md:h-14 px-6 md:px-10 bg-[#000000] hover:bg-[#121519] border border-purple-500/50 shadow-[0_0_18px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300"
                 />
               </div>
             </div>
