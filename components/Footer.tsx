@@ -57,8 +57,6 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
     { icon: <Mail className="flex-shrink-0 h-6 w-6" />, label: 'Email', url: 'mailto:joburg@worldcfm.com' },
   ];
 
-  const footerButtons: { label: string; page?: Page; url?: string }[] = [];
-
   return (
     <footer className="bg-black text-white w-full">
 
@@ -73,7 +71,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
               <button
                 key={link.label}
                 onClick={() => handleFooterLink(link)}
-                className="w-full text-left px-4 py-3 text-base font-medium text-white/90 active:bg-white/5 transition-colors"
+                className="w-full text-left px-4 py-2 text-sm font-medium text-white/75 active:bg-white/5 transition-colors"
               >
                 {link.label}
               </button>
