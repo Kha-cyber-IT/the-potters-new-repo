@@ -65,7 +65,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
   // State to trigger the counters when they scroll into view
   const [statsInView, setStatsInView] = useState(false);
 
-  // --- EXCITING TEXT ANIMATION VARIANTS (Enabled on ALL devices) ---
+  // --- EXCITING TEXT ANIMATION VARIANTS ---
   const containerReveal = {
     hidden: { opacity: 0 },
     show: {
@@ -133,34 +133,36 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="flex flex-row gap-4 justify-start items-center flex-wrap mt-4">
               <button
                 onClick={() => setPage(Page.AboutUs)}
-                className="h-12 md:h-14 px-8 md:px-10 bg-transparent border-2 border-[#27408b] text-[#27408b] hover:bg-[#27408b] hover:text-white font-bold text-xs md:text-sm rounded-full uppercase tracking-widest transition-all"
+                className="flex items-center justify-center h-12 md:h-14 px-8 md:px-10 bg-transparent border-2 border-[#27408b] text-[#27408b] hover:bg-[#27408b] hover:text-white font-bold text-xs md:text-sm rounded-full uppercase tracking-widest transition-all"
               >
                 Who We Are
               </button>
-              <ModernButton
-                text="Stream Now"
+              
+              {/* FIXED STREAM NOW BUTTON (Added !bg-black to override any global theme colors causing the light purple issue) */}
+              <a
                 href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                className="h-12 md:h-14 px-8 md:px-10 bg-black border border-purple-500 text-white text-xs md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
-              />
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center h-12 md:h-14 px-8 md:px-10 !bg-black border border-purple-500 text-white text-xs md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
+              >
+                Stream Now
+              </a>
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE: The Blob Container holding the LOGO */}
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 0.8 }} className="relative flex justify-center items-center h-[400px] md:h-[600px] w-full mt-8 lg:mt-0 px-10 md:px-20">
+          {/* RIGHT SIDE: The Blob Container holding the Photo (Fixed for Mobile sizing) */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 0.8 }} className="relative flex justify-center items-center aspect-square max-w-[350px] md:max-w-none md:h-[600px] w-full mx-auto mt-8 lg:mt-0 px-4 md:px-0">
             <div 
               className="absolute w-[90%] h-[90%] bg-[#f5b900] z-0 translate-x-4 translate-y-4"
               style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
             />
-            <div
-              className="relative z-10 w-full h-full bg-white flex justify-center items-center p-8 md:p-16 shadow-xl"
+            {/* The Photo Blob */}
+            <img 
+              src="https://i.postimg.cc/MGM1hpjw/ea998c-0f1c76517790470ea0fd9d89718a5005-mv2.jpg" 
+              alt="Church Congregation" 
+              className="relative z-10 w-[90%] h-[90%] object-cover shadow-xl"
               style={{ borderRadius: '50% 50% 40% 60% / 60% 40% 50% 50%' }}
-            >
-              <img 
-                src="https://i.postimg.cc/wxF6GYmn/icon.png" 
-                alt="The Potter's House Logo" 
-                className="w-full max-w-[200px] md:max-w-[280px] h-auto object-contain"
-              />
-            </div>
+            />
           </motion.div>
         </div>
       </section>
@@ -169,7 +171,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       <div className="w-full px-4 md:px-6 relative z-20 -mt-10 md:-mt-20 mb-12">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
           
-          {/* Global Stats Card (Resized for mobile and triggers on scroll) */}
+          {/* Global Stats Card */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +202,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
             </div>
           </motion.div>
 
-          {/* Restored "We're Enlarging" Card */}
+          {/* "We're Enlarging" Card */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +224,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
       {/* LOWER CONTENT */}
       <div className="w-full text-center px-4 md:px-6 mt-12 md:mt-24">
         
-        {/* SERVICES GRID (Fade Reveal) */}
+        {/* SERVICES GRID */}
         <div className="mb-12 md:mb-24">
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -264,7 +266,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </div>
         </div>
 
-        {/* CONNECT HUB (Fade Reveal) */}
+        {/* CONNECT HUB */}
         <div className="w-full py-8 md:py-16 px-0">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-stretch">
             
@@ -303,7 +305,7 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
           </div>
         </div>
 
-        {/* BROADCASTS SECTION (Fade Reveal) */}
+        {/* BROADCASTS SECTION */}
         <div className="w-full py-8 md:py-16 mb-12">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8 }}
@@ -320,11 +322,14 @@ export const Home: React.FC<NavigationProps> = ({ setPage }) => {
                 </div>
                 <h3 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-3">Broadcasts</h3>
                 <p className="text-blue-500 text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase mb-8">Missed a service? Watch on YouTube</p>
-                <ModernButton
-                  text="Watch Now"
+                <a
                   href="https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA"
-                  className="h-10 md:h-14 px-6 md:px-10 bg-black border border-purple-500 text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
-                />
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-10 md:h-14 px-6 md:px-10 !bg-black border border-purple-500 text-white text-[11px] md:text-sm rounded-full font-bold uppercase transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.6),inset_0_0_10px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.9),inset_0_0_15px_rgba(168,85,247,0.6)]"
+                >
+                  Watch Now
+                </a>
               </div>
             </div>
           </motion.div>
