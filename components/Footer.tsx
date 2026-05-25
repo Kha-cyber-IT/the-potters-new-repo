@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Page, NavigationProps } from '../types';
-import { Youtube, Music, Mail } from 'lucide-react';
 
 export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
   const sections = [
@@ -51,10 +50,38 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
     handleClick(link.page, link.scrollTarget);
   };
 
+  // Official SVG Icons with brand hover colors
   const socialLinks = [
-    { icon: <Youtube className="flex-shrink-0 h-6 w-6" />, label: 'YouTube', url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA' },
-    { icon: <Music className="flex-shrink-0 h-6 w-6" />, label: 'Spotify', url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc' },
-    { icon: <Mail className="flex-shrink-0 h-6 w-6" />, label: 'Email', url: 'mailto:joburg@worldcfm.com' },
+    { 
+      label: 'YouTube', 
+      url: 'https://m.youtube.com/channel/UCHUgOJkBGl1760u1fxAFvyA',
+      hoverClass: 'hover:text-[#FF0000] hover:border-[#FF0000]',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      )
+    },
+    { 
+      label: 'Spotify', 
+      url: 'https://open.spotify.com/show/4vp0VQPypNmILRJcIfn1lc',
+      hoverClass: 'hover:text-[#1DB954] hover:border-[#1DB954]',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.45 17.332c-.212.351-.67.466-1.02.253-2.795-1.706-6.315-2.091-10.457-1.146-.402.093-.8-.16-.893-.564-.093-.404.16-.8.564-.893 4.514-1.026 8.405-.589 11.551 1.33.351.213.466.669.254 1.02zm1.162-2.585c-.266.435-.845.576-1.28.312-3.197-1.96-8.118-2.551-11.954-1.396-.51.154-1.047-.134-1.201-.644-.154-.51.134-1.047.644-1.201 4.385-1.319 9.851-.652 13.479 1.572.435.266.576.845.312 1.28zm.134-2.709C15.14 9.873 8.795 9.613 5.12 10.728c-.628.191-1.298-.163-1.488-.791-.191-.628.162-1.297.791-1.488 4.22-1.28 11.238-1.002 15.65 1.616.564.336.75.992.414 1.556-.336.564-.992.75-1.556.414z"/>
+        </svg>
+      )
+    },
+    { 
+      label: 'Email', 
+      url: 'mailto:joburg@worldcfm.com',
+      hoverClass: 'hover:text-[#3b82f6] hover:border-[#3b82f6]',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      )
+    },
   ];
 
   return (
@@ -62,7 +89,7 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
 
       {/* Mobile footer — plain text, edge-to-edge */}
       <div className="md:hidden">
-        {sections.map((section, si) => (
+        {sections.map((section) => (
           <div key={section.heading} className="border-b border-white/10">
             <p className="px-4 pt-5 pb-2 text-[11px] font-bold tracking-[0.25em] uppercase text-white/40">
               {section.heading}
@@ -79,21 +106,29 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
           </div>
         ))}
 
-        {/* Mobile social */}
-        <div className="flex items-center gap-6 px-4 py-6 border-b border-white/10">
-          {socialLinks.map((s) => (
-            <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
-              className="text-white/60 hover:text-white transition-colors"
-              title={s.label}>
-              {s.icon}
-            </a>
-          ))}
+        {/* Mobile social & address (Centered) */}
+        <div className="flex flex-col items-center justify-center px-4 py-10 gap-6">
+          <div className="flex items-center gap-6">
+            {socialLinks.map((s) => (
+              <a 
+                key={s.label} 
+                href={s.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`flex items-center justify-center h-12 w-12 rounded-full bg-white/5 border border-white/10 text-white/70 transition-all duration-300 ${s.hoverClass}`}
+                title={s.label}
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
+          
+          <p className="text-[10px] text-white/30 text-center leading-relaxed max-w-[280px]">
+            11 ALBERTA STR, ELDORADO PARK, SOWETO <br /> 
+            The Potter's House Christian Fellowship Ministries ©<br /><br />
+            Mailing Address: PO Box X1510, Glenvista, 2058
+          </p>
         </div>
-
-        <p className="px-4 py-5 text-[10px] text-white/30">
-          11 ALBERTA STR, ELDORADO PARK, SOWETO | The Potter's House Christian Fellowship Ministries ©<br />
-          Mailing Address: PO Box X1510, Glenvista, 2058
-        </p>
       </div>
 
       {/* Desktop footer — horizontal single-plane layout */}
@@ -127,21 +162,31 @@ export const Footer: React.FC<NavigationProps> = ({ setPage }) => {
           ))}
         </motion.div>
 
-        {/* Desktop divider */}
-        <div className="max-w-6xl mx-auto border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
+        {/* Desktop divider & Centered Social/Address */}
+        <div className="max-w-6xl mx-auto border-t border-white/10 mt-16 pt-10 flex flex-col items-center justify-center gap-8">
+          
+          {/* Centered Icons */}
+          <div className="flex items-center gap-5">
             {socialLinks.map((s) => (
-              <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
-                className="group flex items-center justify-center h-10 w-10 rounded-full bg-white/8 hover:bg-white border border-white/15 hover:border-white text-white/70 hover:text-black transition-all duration-300"
-                title={s.label}>
+              <a 
+                key={s.label} 
+                href={s.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`group flex items-center justify-center h-12 w-12 rounded-full bg-white/5 border border-white/15 text-white/70 transition-all duration-300 ${s.hoverClass}`}
+                title={s.label}
+              >
                 {s.icon}
               </a>
             ))}
           </div>
-          <p className="text-[11px] text-white/30 text-center md:text-right leading-relaxed">
+
+          {/* Centered Text */}
+          <p className="text-[11px] text-white/30 text-center leading-relaxed">
             11 ALBERTA STR, ELDORADO PARK, SOWETO | The Potter's House Christian Fellowship Ministries ©<br />
             Mailing Address: PO Box X1510, Glenvista, 2058
           </p>
+
         </div>
       </div>
     </footer>
